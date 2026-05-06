@@ -1,0 +1,106 @@
+{
+  "deckTitle": "点突变驱动的适应性进化",
+  "section": "Point Mutation",
+  "slides": [
+    {
+      "label": "PPT 01",
+      "title": "什么是点突变？",
+      "subtitle": "病毒 RNA 复制中的单点改变，可以成为适应性进化的起点。",
+      "points": [
+        "单个核苷酸替换，可能改变编码氨基酸",
+        "蛋白功能变化会影响入侵、传播或免疫识别",
+        "SARS-CoV-2 的 RBD 区域承受强正选择压力"
+      ],
+      "image": "img/1-1.png",
+      "alt": "点突变概念示意图",
+      "caption": "点突变：从单个碱基变化到蛋白功能改变",
+      "diagram": "base-substitution",
+      "layout": "image-focus"
+    },
+    {
+      "label": "PPT 02",
+      "title": "点突变的两大核心功能",
+      "subtitle": "点突变直接影响病毒能否更有效传播，以及能否突破既有免疫屏障。",
+      "points": [
+        "优化 ACE2 亲和力，提高细胞入侵效率",
+        "改变抗原表位，降低中和抗体识别",
+        "传播优势与免疫突破共同推动变异株扩张"
+      ],
+      "image": "img/1-2.png",
+      "alt": "ACE2 亲和力与免疫逃逸示意图",
+      "caption": "RBD 突变同时作用于受体结合与抗体识别",
+      "diagram": "dual-function",
+      "layout": "split-visual"
+    },
+    {
+      "label": "PPT 03",
+      "title": "N501Y：趋同进化的典型证据",
+      "subtitle": "同一个有利突变在不同谱系中反复出现，说明它被自然选择稳定保留。",
+      "points": [
+        "Alpha、Beta、Gamma 独立获得 N501Y",
+        "RBD-ACE2 亲和力提升约 2.1-3.5 倍",
+        "有利突变会在不同病毒背景中被反复选择"
+      ],
+      "image": "img/1-3.png",
+      "alt": "N501Y 趋同进化图",
+      "caption": "N501Y 在多个谱系中独立出现，增强受体结合",
+      "diagram": "convergence",
+      "layout": "image-focus"
+    },
+    {
+      "label": "PPT 04",
+      "title": "Omicron：从更强结合转向更强逃逸",
+      "subtitle": "Omicron 的关键策略是在维持受体结合的同时，优先获得免疫逃逸优势。",
+      "points": [
+        "不再单纯追求更高 ACE2 亲和力",
+        "K417N、E484A、Q493R 改变抗原表位",
+        "亲和力被维持，抗体识别显著下降"
+      ],
+      "image": "img/1-4.png",
+      "alt": "Omicron BA.1 突变亲和力缓冲图",
+      "caption": "Omicron 多突变组合显示亲和力缓冲效应",
+      "diagram": "immune-escape",
+      "layout": "image-focus"
+    },
+    {
+      "label": "PPT 05",
+      "title": "免疫缺陷宿主：体内进化工厂",
+      "subtitle": "长期感染为病毒提供持续复制和突变积累的时间窗口。",
+      "points": [
+        "免疫低下患者可发生数月持续感染",
+        "体内进化速率高，突变积累更充分",
+        "新突变可能外溢进入人群，形成变异株来源"
+      ],
+      "diagram": "host-factory",
+      "layout": "diagram-focus"
+    },
+    {
+      "label": "PPT 06",
+      "title": "上位性效应：突变不是单打独斗",
+      "subtitle": "一个突变的效果取决于已有遗传背景，组合效应可能超过简单相加。",
+      "points": [
+        "突变效果依赖其他突变构成的背景",
+        "Q493E 在 Omicron 背景下更利于免疫逃逸",
+        "N501Y / Beta 背景可缓冲多突变带来的亲和力下降"
+      ],
+      "image": "img/1-5.png",
+      "alt": "双突变循环与上位性效应图",
+      "caption": "双突变循环揭示突变组合的非加性效应",
+      "diagram": "epistasis",
+      "layout": "split-visual"
+    },
+    {
+      "label": "PPT 07",
+      "title": "总结：点突变的核心地位",
+      "subtitle": "点突变提供原始变异，上位性和选择压力决定哪些突变最终扩张。",
+      "points": [
+        "点突变是新冠进化的基础引擎",
+        "RBD 同时影响入侵能力与免疫逃逸",
+        "N501Y 体现趋同进化，Omicron 体现突变组合优势",
+        "免疫缺陷宿主加速突变产生，上位性提高进化灵活性"
+      ],
+      "diagram": "summary-map",
+      "layout": "summary"
+    }
+  ]
+}

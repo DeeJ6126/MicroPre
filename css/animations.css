@@ -1,0 +1,132 @@
+@keyframes fadeUp {
+  from {
+    transform: translateY(14px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dashFlow {
+  from {
+    stroke-dashoffset: 42;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes nodeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.slide.is-active .slide-label,
+.slide.is-active .slide-title,
+.slide.is-active .slide-subtitle,
+.slide.is-active .bullet-list li,
+.slide.is-active .media-frame,
+.slide.is-active .diagram-card {
+  animation: fadeUp 620ms ease both;
+}
+
+.slide.is-active .slide-title {
+  animation-delay: 70ms;
+}
+
+.slide.is-active .slide-subtitle {
+  animation-delay: 130ms;
+}
+
+.slide.is-active .bullet-list li:nth-child(1) {
+  animation-delay: 170ms;
+}
+
+.slide.is-active .bullet-list li:nth-child(2) {
+  animation-delay: 230ms;
+}
+
+.slide.is-active .bullet-list li:nth-child(3) {
+  animation-delay: 290ms;
+}
+
+.slide.is-active .bullet-list li:nth-child(4) {
+  animation-delay: 350ms;
+}
+
+.slide.is-active .media-frame {
+  animation-delay: 170ms;
+}
+
+.slide.is-active .diagram-card {
+  animation-delay: 250ms;
+}
+
+.diagram-card.is-animated .svg-arrow,
+.diagram-card.is-animated .summary-link,
+.diagram-card.is-animated .effect-line,
+.diagram-card.is-animated .timeline,
+.diagram-card.is-animated .spread-arrow {
+  stroke-dasharray: 10 8;
+  animation: dashFlow 1.25s linear infinite;
+}
+
+.diagram-card.is-animated .is-hot,
+.diagram-card.is-animated .rbd-core,
+.diagram-card.is-animated .selection-core,
+.diagram-card.is-animated .summary-core,
+.diagram-card.is-animated .synergy-badge {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: softPulse 1.9s ease-in-out infinite;
+}
+
+.diagram-card.is-animated .variant-cloud circle,
+.diagram-card.is-animated .time-node circle,
+.diagram-card.is-animated .protein-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nodeFloat 2.4s ease-in-out infinite;
+}
+
+.diagram-card.is-animated .variant-cloud circle:nth-child(2),
+.diagram-card.is-animated .protein-node:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.diagram-card.is-animated .variant-cloud circle:nth-child(4),
+.diagram-card.is-animated .protein-node:nth-child(4) {
+  animation-delay: 0.42s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
