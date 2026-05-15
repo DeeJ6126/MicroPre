@@ -10,7 +10,17 @@
 
 @keyframes dashFlow {
   from {
-    stroke-dashoffset: 42;
+    stroke-dashoffset: 48;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes templateFlow {
+  from {
+    stroke-dashoffset: 120;
   }
 
   to {
@@ -22,23 +32,29 @@
   0%,
   100% {
     transform: scale(1);
-    opacity: 0.92;
   }
 
   50% {
-    transform: scale(1.04);
-    opacity: 1;
+    transform: scale(1.045);
   }
 }
 
-@keyframes nodeFloat {
+@keyframes orbitPulse {
   0%,
   100% {
+    opacity: 0.72;
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-5px);
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -47,8 +63,9 @@
 .slide.is-active .slide-subtitle,
 .slide.is-active .bullet-list li,
 .slide.is-active .media-frame,
-.slide.is-active .diagram-card {
-  animation: fadeUp 620ms ease both;
+.slide.is-active .diagram-card,
+.slide.is-active .protein-panel {
+  animation: fadeUp 600ms ease both;
 }
 
 .slide.is-active .slide-title {
@@ -56,68 +73,80 @@
 }
 
 .slide.is-active .slide-subtitle {
-  animation-delay: 130ms;
+  animation-delay: 120ms;
 }
 
 .slide.is-active .bullet-list li:nth-child(1) {
-  animation-delay: 170ms;
+  animation-delay: 165ms;
 }
 
 .slide.is-active .bullet-list li:nth-child(2) {
-  animation-delay: 230ms;
+  animation-delay: 225ms;
 }
 
 .slide.is-active .bullet-list li:nth-child(3) {
-  animation-delay: 290ms;
-}
-
-.slide.is-active .bullet-list li:nth-child(4) {
-  animation-delay: 350ms;
+  animation-delay: 285ms;
 }
 
 .slide.is-active .media-frame {
-  animation-delay: 170ms;
+  animation-delay: 155ms;
 }
 
 .slide.is-active .diagram-card {
-  animation-delay: 250ms;
+  animation-delay: 230ms;
+}
+
+.slide.is-active .protein-panel {
+  animation-delay: 285ms;
 }
 
 .diagram-card.is-animated .svg-arrow,
 .diagram-card.is-animated .summary-link,
-.diagram-card.is-animated .effect-line,
-.diagram-card.is-animated .timeline,
-.diagram-card.is-animated .spread-arrow {
-  stroke-dasharray: 10 8;
-  animation: dashFlow 1.25s linear infinite;
+.diagram-card.is-animated .transfer-bridge,
+.diagram-card.is-animated .jump-arc,
+.diagram-card.is-animated .nascent-rna,
+.diagram-card.is-animated .crossover,
+.diagram-card.is-animated .external-dna,
+.diagram-card.is-animated .peak-curve {
+  stroke-dasharray: 14 10;
+  animation: dashFlow 1.35s linear infinite;
 }
 
-.diagram-card.is-animated .is-hot,
-.diagram-card.is-animated .rbd-core,
-.diagram-card.is-animated .selection-core,
-.diagram-card.is-animated .summary-core,
-.diagram-card.is-animated .synergy-badge {
+.diagram-card.is-animated .rna-template path,
+.diagram-card.is-animated .cloud-rna,
+.diagram-card.is-animated .mini-rna {
+  stroke-dasharray: 18 12;
+  animation: templateFlow 1.75s linear infinite;
+}
+
+.diagram-card.is-animated .polymerase,
+.diagram-card.is-animated .evo-core,
+.diagram-card.is-animated .advantage-node,
+.diagram-card.is-animated .stat-orbit,
+.diagram-card.is-animated .spike-peak {
   transform-box: fill-box;
   transform-origin: center;
-  animation: softPulse 1.9s ease-in-out infinite;
+  animation: softPulse 1.8s ease-in-out infinite;
 }
 
-.diagram-card.is-animated .variant-cloud circle,
-.diagram-card.is-animated .time-node circle,
-.diagram-card.is-animated .protein-node {
+.diagram-card.is-animated .plasmid,
+.diagram-card.is-animated .factor-list rect,
+.diagram-card.is-animated .controlled-tags rect,
+.diagram-card.is-animated .segment {
   transform-box: fill-box;
   transform-origin: center;
-  animation: nodeFloat 2.4s ease-in-out infinite;
+  animation: orbitPulse 2.4s ease-in-out infinite;
 }
 
-.diagram-card.is-animated .variant-cloud circle:nth-child(2),
-.diagram-card.is-animated .protein-node:nth-child(3) {
-  animation-delay: 0.24s;
+.diagram-card.is-animated .factor-list rect:nth-child(3),
+.diagram-card.is-animated .controlled-tags rect:nth-child(3),
+.diagram-card.is-animated .segment:nth-of-type(2) {
+  animation-delay: 0.25s;
 }
 
-.diagram-card.is-animated .variant-cloud circle:nth-child(4),
-.diagram-card.is-animated .protein-node:nth-child(4) {
-  animation-delay: 0.42s;
+.diagram-card.is-animated .factor-list rect:nth-child(5),
+.diagram-card.is-animated .controlled-tags rect:nth-child(5) {
+  animation-delay: 0.5s;
 }
 
 @media (prefers-reduced-motion: reduce) {
