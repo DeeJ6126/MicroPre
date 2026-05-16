@@ -94,15 +94,15 @@
 
 @keyframes transducePhageApproach {
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0);
   }
 
-  62% {
-    transform: translate(346px, 54px) rotate(8deg);
+  68% {
+    transform: translate(184px, -2px);
   }
 
   100% {
-    transform: translate(388px, 74px) rotate(8deg);
+    transform: translate(216px, 0);
   }
 }
 

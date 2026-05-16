@@ -401,7 +401,6 @@ const diagrams = {
           <path d="M 0 0 L 10 5 L 0 10 z" />
         </marker>
       </defs>
-      <text class="svg-kicker" x="88" y="58">transformation / conjugation / transduction</text>
       <g class="bacterium bacterium-donor">
         <ellipse cx="206" cy="220" rx="112" ry="62" />
         <text x="206" y="226">供体细胞</text>
@@ -414,12 +413,12 @@ const diagrams = {
         <ellipse cx="646" cy="220" rx="126" ry="72" />
         <text x="646" y="226">受体细胞</text>
       </g>
+      <path class="transfer-bridge conjugation-arrow" marker-end="url(#arrow-prok)" d="M 268 184 C 382 164, 488 172, 556 208" />
       <g class="process-labels">
         <text x="172" y="104">转导</text>
         <text x="430" y="154">接合</text>
         <text x="380" y="356">转化</text>
       </g>
-      <path class="transfer-bridge conjugation-arrow" marker-end="url(#arrow-prok)" d="M 268 184 C 382 164, 488 172, 556 208" />
       <path class="transfer-bridge transformation-arrow" marker-end="url(#arrow-prok)" d="M 356 338 C 444 328, 516 292, 568 244" />
       <g class="transformation-dna" data-prok-trigger="transformation" role="button" tabindex="0" aria-label="点击演示外源 DNA 通过转化进入受体细胞">
         <path class="external-dna" d="M 250 338 C 286 314, 326 362, 364 338 S 438 316, 476 338" />
@@ -427,14 +426,14 @@ const diagrams = {
         <circle class="dna-handle" cx="476" cy="338" r="8" />
       </g>
       <g class="phage-transfer" data-prok-trigger="transduction" role="button" tabindex="0" aria-label="点击演示噬菌体靠近受体细胞并注入遗传物质">
-        <polygon class="phage-head" points="144,116 176,96 208,116 208,154 176,174 144,154" />
-        <line class="phage-tail" x1="176" y1="174" x2="176" y2="222" />
-        <line class="phage-leg" x1="176" y1="222" x2="146" y2="250" />
-        <line class="phage-leg" x1="176" y1="222" x2="176" y2="256" />
-        <line class="phage-leg" x1="176" y1="222" x2="206" y2="250" />
+        <polygon class="phage-head" points="176,82 206,60 236,82 236,118 206,140 176,118" />
+        <line class="phage-tail" x1="232" y1="134" x2="316" y2="178" />
+        <line class="phage-leg" x1="316" y1="178" x2="286" y2="194" />
+        <line class="phage-leg" x1="316" y1="178" x2="304" y2="212" />
+        <line class="phage-leg" x1="316" y1="178" x2="350" y2="188" />
       </g>
-      <path class="transfer-bridge phage-approach" marker-end="url(#arrow-prok)" d="M 220 148 C 356 108, 512 118, 590 168" />
-      <path class="phage-dna-injection" marker-end="url(#arrow-prok)" d="M 560 178 C 592 188, 612 198, 632 212" />
+      <path class="transfer-bridge phage-approach" marker-end="url(#arrow-prok)" d="M 350 188 C 438 158, 500 154, 566 174" />
+      <path class="phage-dna-injection" marker-end="url(#arrow-prok)" d="M 566 174 C 594 186, 618 202, 642 220" />
       <text class="svg-note" x="430" y="408">点击 DNA、质粒或噬菌体，分别演示三类原核重组路径</text>
     </svg>
   `,
