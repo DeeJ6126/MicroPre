@@ -4,6 +4,7 @@ let activeProteinResizeHandler = null;
 window.PresentationEffects = {
   activate(slide) {
     restartDiagramMotion(slide);
+    bindProkaryoticTransferInteractions(slide);
     mountProteinViewer(slide);
   }
 };
@@ -13,8 +14,44 @@ function restartDiagramMotion(slide) {
 
   diagrams.forEach((diagram) => {
     diagram.classList.remove("is-animated");
+    diagram.classList.remove("is-transforming", "is-conjugating", "is-transducing");
     void diagram.offsetWidth;
     diagram.classList.add("is-animated");
+  });
+}
+
+function bindProkaryoticTransferInteractions(slide) {
+  const diagram = slide.querySelector(".diagram-prokaryotic-transfer");
+  if (!diagram || diagram.dataset.bound === "true") {
+    return;
+  }
+
+  diagram.dataset.bound = "true";
+  const classByAction = {
+    transformation: "is-transforming",
+    conjugation: "is-conjugating",
+    transduction: "is-transducing"
+  };
+
+  diagram.querySelectorAll("[data-prok-trigger]").forEach((trigger) => {
+    const run = () => {
+      const actionClass = classByAction[trigger.dataset.prokTrigger];
+      if (!actionClass) {
+        return;
+      }
+
+      diagram.classList.remove(actionClass);
+      void diagram.offsetWidth;
+      diagram.classList.add(actionClass);
+    };
+
+    trigger.addEventListener("click", run);
+    trigger.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        run();
+      }
+    });
   });
 }
 

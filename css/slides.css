@@ -701,6 +701,74 @@ marker path {
   stroke-linecap: round;
 }
 
+.conjugation-arrow {
+  stroke: var(--ice-blue-soft);
+}
+
+.transformation-arrow,
+.phage-approach {
+  stroke: rgba(250, 250, 250, 0.58);
+  stroke-dasharray: 10 10;
+}
+
+.plasmid-transfer,
+.transformation-dna,
+.phage-transfer {
+  cursor: pointer;
+  outline: none;
+}
+
+.plasmid-transfer:focus-visible,
+.transformation-dna:focus-visible,
+.phage-transfer:focus-visible {
+  filter: drop-shadow(0 0 10px rgba(214, 229, 244, 0.9));
+}
+
+.plasmid {
+  fill: rgba(217, 157, 54, 0.28);
+}
+
+.plasmid-loop {
+  fill: none;
+  stroke: var(--warning);
+  stroke-width: 4;
+}
+
+.dna-handle {
+  fill: var(--warning);
+  stroke: rgba(250, 250, 250, 0.72);
+  stroke-width: 2;
+}
+
+.phage-head {
+  fill: rgba(214, 229, 244, 0.24);
+  stroke: var(--ice-blue-soft);
+  stroke-width: 4;
+}
+
+.phage-tail,
+.phage-leg {
+  stroke: var(--ice-blue-soft);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.phage-dna-injection {
+  fill: none;
+  stroke: var(--warning);
+  stroke-dasharray: 8 8;
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0;
+}
+
+.process-labels text {
+  fill: var(--ice-blue-soft);
+  font-size: 18px;
+  font-weight: 900;
+  text-anchor: middle;
+}
+
 .compare-card ellipse {
   fill: rgba(250, 250, 250, 0.15);
   stroke: rgba(250, 250, 250, 0.42);

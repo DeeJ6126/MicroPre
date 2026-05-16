@@ -58,6 +58,71 @@
   }
 }
 
+@keyframes transformDnaIntoCell {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  72% {
+    transform: translate(278px, -92px) scale(0.58);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(314px, -108px) scale(0.42);
+    opacity: 0.18;
+  }
+}
+
+@keyframes conjugatePlasmidIntoCell {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+
+  76% {
+    transform: translate(344px, 28px) scale(0.62);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(384px, 38px) scale(0.45);
+    opacity: 0.22;
+  }
+}
+
+@keyframes transducePhageApproach {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  62% {
+    transform: translate(346px, 54px) rotate(8deg);
+  }
+
+  100% {
+    transform: translate(388px, 74px) rotate(8deg);
+  }
+}
+
+@keyframes injectPhageDna {
+  0%,
+  55% {
+    opacity: 0;
+    stroke-dashoffset: 34;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
 .slide.is-active .slide-label,
 .slide.is-active .slide-title,
 .slide.is-active .slide-subtitle,
@@ -156,6 +221,28 @@
 .diagram-card.is-animated .factor-list rect:nth-child(5),
 .diagram-card.is-animated .controlled-tags rect:nth-child(5) {
   animation-delay: 0.5s;
+}
+
+.diagram-card.is-transforming .transformation-dna {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: transformDnaIntoCell 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.diagram-card.is-conjugating .plasmid-transfer {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: conjugatePlasmidIntoCell 1.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.diagram-card.is-transducing .phage-transfer {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: transducePhageApproach 1.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.diagram-card.is-transducing .phage-dna-injection {
+  animation: injectPhageDna 1.45s ease both;
 }
 
 @media (prefers-reduced-motion: reduce) {
