@@ -746,11 +746,17 @@ marker path {
   stroke-width: 4;
 }
 
+.phage-neck,
+.phage-sheath,
 .phage-tail,
 .phage-leg {
   stroke: var(--ice-blue-soft);
   stroke-width: 5;
   stroke-linecap: round;
+}
+
+.phage-sheath {
+  fill: rgba(214, 229, 244, 0.18);
 }
 
 .phage-dna-injection {

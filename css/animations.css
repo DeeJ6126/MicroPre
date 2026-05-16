@@ -98,11 +98,11 @@
   }
 
   68% {
-    transform: translate(184px, -2px);
+    transform: translate(360px, 22px);
   }
 
   100% {
-    transform: translate(216px, 0);
+    transform: translate(440px, 30px);
   }
 }
 

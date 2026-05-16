@@ -415,7 +415,7 @@ const diagrams = {
       </g>
       <path class="transfer-bridge conjugation-arrow" marker-end="url(#arrow-prok)" d="M 268 184 C 382 164, 488 172, 556 208" />
       <g class="process-labels">
-        <text x="172" y="104">转导</text>
+        <text x="206" y="34">转导</text>
         <text x="430" y="154">接合</text>
         <text x="380" y="356">转化</text>
       </g>
@@ -426,14 +426,16 @@ const diagrams = {
         <circle class="dna-handle" cx="476" cy="338" r="8" />
       </g>
       <g class="phage-transfer" data-prok-trigger="transduction" role="button" tabindex="0" aria-label="点击演示噬菌体靠近受体细胞并注入遗传物质">
-        <polygon class="phage-head" points="176,82 206,60 236,82 236,118 206,140 176,118" />
-        <line class="phage-tail" x1="232" y1="134" x2="316" y2="178" />
-        <line class="phage-leg" x1="316" y1="178" x2="286" y2="194" />
-        <line class="phage-leg" x1="316" y1="178" x2="304" y2="212" />
-        <line class="phage-leg" x1="316" y1="178" x2="350" y2="188" />
+        <polygon class="phage-head" points="180,24 206,6 232,24 232,54 206,72 180,54" />
+        <line class="phage-neck" x1="206" y1="72" x2="206" y2="82" />
+        <rect class="phage-sheath" x="196" y="82" width="20" height="24" rx="6" />
+        <line class="phage-tail" x1="206" y1="106" x2="206" y2="118" />
+        <line class="phage-leg" x1="206" y1="118" x2="180" y2="132" />
+        <line class="phage-leg" x1="206" y1="118" x2="206" y2="138" />
+        <line class="phage-leg" x1="206" y1="118" x2="232" y2="132" />
       </g>
-      <path class="transfer-bridge phage-approach" marker-end="url(#arrow-prok)" d="M 350 188 C 438 158, 500 154, 566 174" />
-      <path class="phage-dna-injection" marker-end="url(#arrow-prok)" d="M 566 174 C 594 186, 618 202, 642 220" />
+      <path class="transfer-bridge phage-approach" marker-end="url(#arrow-prok)" d="M 250 76 C 390 58, 520 86, 622 140" />
+      <path class="phage-dna-injection" marker-end="url(#arrow-prok)" d="M 646 148 V 222" />
       <text class="svg-note" x="430" y="408">点击 DNA、质粒或噬菌体，分别演示三类原核重组路径</text>
     </svg>
   `,
