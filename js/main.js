@@ -454,20 +454,29 @@ const diagrams = {
         <marker id="arrow-rdrp" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
           <path d="M 0 0 L 10 5 L 0 10 z" />
         </marker>
+        <marker id="arrow-switch" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.8" markerHeight="5.8" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" />
+        </marker>
       </defs>
       <text class="svg-kicker" x="80" y="58">co-infection + homologous pairing + polymerase pausing</text>
       <g class="template-cloud">
+        <text class="template-label" x="142" y="120">当前模板</text>
         <path class="cloud-rna a" d="M 88 150 C 160 102, 238 198, 310 150 S 466 150, 538 150" />
+        <text class="template-label" x="154" y="218">相似模板</text>
         <path class="cloud-rna b" d="M 110 246 C 182 198, 260 294, 332 246 S 488 246, 560 246" />
+        <text class="template-label" x="164" y="304">其他模板</text>
         <path class="cloud-rna c" d="M 142 332 C 214 284, 292 380, 364 332 S 520 332, 592 332" />
       </g>
       <g class="polymerase engine">
-        <circle cx="430" cy="196" r="48" />
-        <text x="430" y="204">RdRp</text>
+        <circle cx="430" cy="178" r="48" />
+        <text x="430" y="186">RdRp</text>
       </g>
-      <path class="stall-ring" d="M 378 196 A 52 52 0 1 1 480 196" />
-      <path class="svg-arrow" marker-end="url(#arrow-rdrp)" d="M 478 220 C 548 248, 610 284, 684 318" />
+      <circle class="stall-ring" cx="430" cy="178" r="57" />
+      <text class="switch-label" x="430" y="98">暂停 / 脱离</text>
+      <path class="switch-arrow" marker-end="url(#arrow-switch)" d="M 462 204 C 506 212, 536 228, 558 246" />
+      <text class="switch-label" x="622" y="220">切换到相似模板</text>
       <g class="factor-list">
+        <text class="factor-title" x="742" y="76">促成因素</text>
         <rect x="650" y="96" width="184" height="54" rx="16" />
         <text x="742" y="129">结合松动</text>
         <rect x="650" y="176" width="184" height="54" rx="16" />
