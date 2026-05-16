@@ -134,6 +134,10 @@ async function mountProteinViewer(slide) {
     activeProteinStage = stage;
     activeProteinResizeHandler = resizeHandler;
     panel.dataset.ready = "true";
+    requestAnimationFrame(() => {
+      stage.handleResize();
+      window.setTimeout(() => stage.handleResize(), 350);
+    });
   } catch (error) {
     container.innerHTML = `
       <div class="protein-fallback protein-fallback--error">

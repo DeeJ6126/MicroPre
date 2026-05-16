@@ -123,7 +123,12 @@
 .diagram-card.is-animated .evo-core,
 .diagram-card.is-animated .advantage-node,
 .diagram-card.is-animated .stat-orbit,
-.diagram-card.is-animated .spike-peak {
+.diagram-card.is-animated .spike-peak,
+.diagram-card.is-animated .rbd-core,
+.diagram-card.is-animated .selection-core,
+.diagram-card.is-animated .summary-core,
+.diagram-card.is-animated .epi-hot,
+.diagram-card.is-animated .base-strip .is-hot {
   transform-box: fill-box;
   transform-origin: center;
   animation: softPulse 1.8s ease-in-out infinite;
@@ -132,7 +137,10 @@
 .diagram-card.is-animated .plasmid,
 .diagram-card.is-animated .factor-list rect,
 .diagram-card.is-animated .controlled-tags rect,
-.diagram-card.is-animated .segment {
+.diagram-card.is-animated .segment,
+.diagram-card.is-animated .variant-cloud circle,
+.diagram-card.is-animated .protein-chain circle,
+.diagram-card.is-animated .mutation-tags text {
   transform-box: fill-box;
   transform-origin: center;
   animation: orbitPulse 2.4s ease-in-out infinite;

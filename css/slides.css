@@ -225,6 +225,10 @@
   grid-template-rows: minmax(0, 1fr) minmax(130px, 0.38fr);
 }
 
+.slide[data-layout="split-visual"] .slide-visual {
+  grid-template-rows: minmax(0, 1fr) minmax(120px, 0.42fr);
+}
+
 .slide[data-layout="protein-focus"] {
   grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
 }
@@ -283,7 +287,7 @@
 .protein-viewer {
   position: relative;
   z-index: 1;
-  min-height: 0;
+  min-height: clamp(250px, 39vh, 500px);
   margin: clamp(8px, 0.8vw, 12px) 0;
   overflow: hidden;
   background: var(--frost-white);
@@ -425,6 +429,134 @@ marker path {
   stroke: var(--warning);
 }
 
+.base-strip rect,
+.protein-chain rect,
+.function-box rect,
+.lineage rect,
+.epi-grid rect,
+.summary-node rect {
+  fill: rgba(250, 250, 250, 0.14);
+  stroke: rgba(250, 250, 250, 0.34);
+  stroke-width: 2;
+}
+
+.base-strip .is-hot,
+.protein-chain .is-hot,
+.epi-hot {
+  fill: var(--warning);
+  stroke: rgba(250, 250, 250, 0.72);
+}
+
+.base-strip text,
+.function-box text,
+.lineage text,
+.epi-grid text,
+.summary-node text,
+.rbd-text,
+.rbd-subtext,
+.selection-main,
+.selection-sub,
+.surface-text,
+.ace2-text,
+.host-label,
+.time-node text,
+.summary-core-title,
+.summary-core-sub {
+  fill: var(--frost-white);
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.base-strip text,
+.function-box text,
+.lineage text,
+.epi-grid text,
+.summary-node text {
+  font-size: 18px;
+}
+
+.protein-chain circle {
+  fill: rgba(250, 250, 250, 0.26);
+  stroke: rgba(250, 250, 250, 0.54);
+  stroke-width: 3;
+}
+
+.protein-chain circle.is-hot,
+.function-box-alt rect {
+  fill: rgba(180, 108, 142, 0.62);
+}
+
+.effect-line,
+.timeline,
+.stall-ring {
+  fill: none;
+  stroke: var(--warning);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.stall-ring {
+  stroke: rgba(250, 250, 250, 0.82);
+  stroke-dasharray: 8 8;
+  stroke-width: 5;
+}
+
+.rbd-text,
+.selection-main,
+.summary-core-title {
+  font-size: 24px;
+}
+
+.rbd-subtext,
+.selection-sub,
+.summary-core-sub {
+  font-size: 16px;
+}
+
+.rbd-surface {
+  fill: rgba(250, 250, 250, 0.22);
+  stroke: rgba(250, 250, 250, 0.56);
+  stroke-width: 3;
+}
+
+.mutation-tags text {
+  fill: var(--warning);
+  font-size: 16px;
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.antibody {
+  fill: none;
+  stroke: var(--ice-blue-soft);
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.antibody-faded {
+  opacity: 0.42;
+}
+
+.ace2-block {
+  fill: var(--warning);
+  stroke: rgba(250, 250, 250, 0.58);
+  stroke-width: 2;
+}
+
+.host-head,
+.host-body {
+  fill: rgba(250, 250, 250, 0.14);
+  stroke: rgba(250, 250, 250, 0.42);
+  stroke-width: 3;
+}
+
+.time-node circle {
+  fill: var(--warning);
+  stroke: rgba(250, 250, 250, 0.68);
+  stroke-width: 3;
+}
+
 .polymerase circle,
 .rbd-core,
 .selection-core,
@@ -434,6 +566,16 @@ marker path {
   fill: var(--warning);
   stroke: rgba(250, 250, 250, 0.74);
   stroke-width: 3;
+}
+
+.diagram-rdRp-switch-engine .polymerase circle {
+  fill: #d6e5f4;
+  stroke: rgba(250, 250, 250, 0.95);
+  stroke-width: 4;
+}
+
+.diagram-rdRp-switch-engine .polymerase text {
+  fill: #173254;
 }
 
 .polymerase text,
