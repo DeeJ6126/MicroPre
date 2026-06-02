@@ -1,0 +1,783 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT1：引入：什么是点突变？"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                85,
+                374,
+                101
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "同学们好，今天我们来讲新冠病毒进化最基础、最核心的机制 ——点突变驱动的适应性进化。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                104,
+                848,
+                137
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "点突变，就是病毒 RNA 在复制时，单个核苷酸发生替换，最终导致编码的氨基酸改变。它是 SARS-CoV-2 进化的基础驱动力，尤其集中在刺突蛋白受体结合域 RBD，这里承受着最强的正选择压力。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                141,
+                848,
+                193
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/fedf0474a7afbee0feee81f6c6a3ab0423355f0e40266d0d370b999e5cfb034e.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n    A[\"Codon\"] --> B[\"DNA: 5' AAG 3' TTC 5'\"]\n    B --> C[\"AAA TTT TAG ATC AGG TCC ACG TGC\"]\n    B --> D[\"AAA UAG AGG ACG\"]\n    E[\"Protein\"] --> F[\"Lys: NH2-CH2-NH-C(=O)\"]\n    F --> G[\"Lys: NH2-CH2-NH-C(=O)\"]\n    G --> H[\"STOP: [■\"]]\n    H --> I[\"Arg: [HN-CH2-NH2-CH2-NH-C(=O)\"]\n    I --> J[\"basic\"]\n    J --> K[\"Thr: [HO-CH2-NH-C(=O)\"]\n    K --> L[\"polar\"]]\n    M[\"Synonymous / Silent\"] --> N[\"Nonsense\"]\n    M --> O[\"Missense\"]\n    P[\"Conservative\"] --> Q[\"Non-conservative\"]\n```",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                157,
+                205,
+                606,
+                438
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT2：一、点突变的两大核心功能"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                474,
+                418,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "点突变主要做两件事，直接决定病毒能不能传播、能不能逃避免疫："
+                    }
+                ]
+            },
+            "bbox": [
+                146,
+                493,
+                668,
+                508
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. 优化 ACE2 亲和力：让病毒更容易结合人体细胞受体。ACE2（血管紧张素转换酶 2）是一种广泛存在于人体细胞表面的跨膜蛋白，也是 SARS-CoV-2（新冠病毒）入侵人体细胞的关键受体"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. 实现免疫逃逸：让抗体认不出来，突破疫苗与既往感染免疫 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                174,
+                512,
+                848,
+                583
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b63816fe933c6e0bd76294330364fabe8fe6d27fb31d342a1dd4ec511b235eb3.jpg"
+                },
+                "content": "| RBD site | Wuhan-Hu-1 | Alpha (N501Y) | Beta (K417N+E484K+N501Y) | Delta (L452R+T478K) | Eta (E484K) |\n| -------- | ---------- | ------------- | ------------------------ | ------------------- | ----------- |\n| 331      | -          | -             | -                        | -                   | -           |\n| 340      | -          | -             | -                        | -                   | -           |\n| 345      | -          | -             | -                        | -                   | -           |\n| 350      | -          | -             | -                        | -                   | -           |\n| 355      | -          | -             | -                        | -                   | -           |\n| 360      | -          | -             | -                        | -                   | -           |\n| 365      | -          | -             | -                        | -                   | -           |\n| 370      | -          | -             | -                        | -                   | -           |\n| 375      | -          | -             | -                        | -                   | -           |\n| 380      | -          | -             | -                        | -                   | -           |\n| 385      | -          | -             | -                        | -                   | -           |\n| 390      | -          | -             | -                        | -                   | -           |\n| 395      | -          | -             | -                        | -                   | -           |\n| 400      | -          | -             | -                        | -                   | -           |\n| 405      | -          | -             | -                        | -                   | -           |\n| 410      | -          | -             | -                        | -                   | -           |\n| 415      | -          | -             | -                        | -                   | -           |\n| 420      | -          | -             | -                        | -                   | -           |\n| 425      | -          | -             | -                        | -                   | -           |\n| 430      | -          | -             | -                        | -                   | -           |\n| 435      | -          | -             | -                        | -                   | -           |\n| 440      | -          | -             | -                        | -                   | -           |\n| 445      | -          | -             | -                        | -                   | -           |\n| 450      | -          | -             | -                        | -                   | -           |\n| 455      | -          | -             | -                        | -                   | -           |\n| 460      | -          | -             | -                        | -                   | -           |\n| 465      | -          | -             | -                        | -                   | -           |\n| 470      | -          | -             | -                        | -                   | -           |\n| 475      | -          | -             | -                        | -                   | -           |\n| 480      | -          | -             | -                        | -                   | -           |\n| 485      | -          | -             | -                        | -                   | -           |\n| 490      | -          | -             | -                        | -                   | -           |\n| 495      | -          | -             | -                        | -                   | -           |\n| 500      | -          | -             | -                        | -                   | -           |\n| 505      | -          | -             | -                        | -                   | -           |\n| 510      | -          | -             | -                        | -                   | -           |\n| 515      | -          | -             | -                        | -                   | -           |\n| 520      | -          | -             | -                        | -                   | -           |\n| 525      | -          | -             | -                        | -                   | -           |\n| 530      | -          | -             | -                        | -                   | n.d.        |\n\nThe heatmap displays the Δlog₁₀(KD) values for different genetic variants (e.g., Alpha, Beta, Delta, Eta) across multiple RBD sites. The color scale ranges from n.d. to 2, indicating the magnitude of Δlog₁₀(KD). The color gradient from dark blue to dark red reflects the relative change in Δlog₁₀(KD).",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig.1.Deep mutational scanning maps of ACE2-binding affnity forall single-aminoacid mutations in five SARS-CoV-2RBDvariants. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "图1.五种SARS-CoV-2刺突蛋白受体结合域变体所有单氨基酸突变的血管紧张素转换酶2结合亲和力深度突变扫描图谱"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "heatmap",
+            "bbox": [
+                152,
+                590,
+                690,
+                816
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT3：二、关键突变：N501Y 的趋同进化"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                146,
+                882,
+                478,
+                898
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最经典的例子就是 N501Y。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                85,
+                354,
+                101
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "它在 Alpha、Beta、Gamma 三个不同谱系独立出现、反复发生，这叫趋同进化。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                104,
+                778,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "功能非常明确：把 RBD 与 ACE2 的亲和力提高 2.1–3.5 倍，显著增强入侵能力。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                122,
+                779,
+                139
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "这就是自然选择最典型的证据：哪个突变有用，病毒就反复用哪个。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                141,
+                670,
+                156
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2a40f3d55cacf7ef87e7fba53e1c565869cb3c2c7ce2cf7b4ce47bfb8f152703.jpg"
+                },
+                "content": "T265I S1188L A1708D I2230T K3353R E1264D\nORF1a ORF1b S M N\nT1001I K1655K K1795Q del 3675-3677\ndel 3675-3677\ndel 3675-3677\nV1 (alpha, B.1.1.7 or 501Y.V1)\nV2 (beta, B.1.351 or 501Y.V2)\nV3 (gamma, P.1 or 501Y.V3)\nL18F L18F P28S D80A del 144 D213G K417N N501Y K417P N501Y H615Y A701V S982A D1118H Q57H S253P\nRBD S 3a E M 6 7 8 9b 14 N\nT20N del 69-70 D138Y R190S del 241-243 E484K A570D P681H T716I T1927I V1178F S171L P71L D3L T205I\nE484K",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure1SARs-Cov-2genomemapindicatingthe locationsandencodedaminoacidchanges ofwhatweconsideredhere tobe signature mutations of V1,V2,and V3 sequences "
+                    },
+                    {
+                        "type": "text",
+                        "content": "图1新冠病毒基因组图谱，标注了本研究中认定的V1、V2和V3序列特征突变的位置及其编码的氨基酸变化"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                157,
+                166,
+                591,
+                369
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT4：三、Omicron：从 “更强结合” 转向 “更强逃逸”"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                456,
+                571,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "到了 Omicron，点突变策略发生关键转变："
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                475,
+                478,
+                489
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "不再一味追求更高 ACE2 亲和力，而是在维持结合的同时，优先选免疫逃逸突变。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                493,
+                779,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "比如："
+                    }
+                ]
+            },
+            "bbox": [
+                146,
+                512,
+                193,
+                526
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": ". K417N "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "E484A "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Q493R "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                176,
+                531,
+                262,
+                581
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "这些突变不显著降低亲和力，但大幅改变抗原表位，躲开中和抗体。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                585,
+                668,
+                601
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2568e09fdd035d76f86b755295e630c2398bb316fab6763df4637a8241084517.jpg"
+                },
+                "content": "Single mutation effects measured in Wuhan-Hu-1 and Single mutation effects measured in Beta.\n| Mutations ordered by effect on affinity | Wuhan-Hu-1 (Δlog₁₀(KD)) | Measured Omicron affinity (Δlog₁₀(KD)) |\n| :--- | :--- | :--- |\n| N501Y | 0.0 | 0.0 |\n| S477N | 1.2 | 0.0 |\n| G339D | 1.8 | 0.0 |\n| T478K | 2.0 | 0.0 |\n| N440K | 2.1 | 0.0 |\n| S373P | 2.2 | 0.0 |\n| Q498R | 1.6 | 0.0 |\n| E484A | 1.4 | 0.0 |\n| S371L | 1.2 | 0.0 |\n| Q493R | 0.8 | 0.0 |\n| G446S | -0.5 | 0.0 |\n| K417N | -1.0 | 0.0 |\n| G496S | -1.5 | 0.0 |\n| Y505H | -2.5 | 0.0 |\n| Measured Omicron affinity (left) vs. Measured Omicron affinity (right) (dashed red line).",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "B "
+                    },
+                    {
+                        "type": "text",
+                        "content": "（B）奥密克戎 BA.1 突变的亲和力缓冲效应。每个图展示了在武汉-Hu-1（左）或 Beta（右）"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                171,
+                638,
+                823,
+                870
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "RBD 中测得的奥密克戎 BA.1 每个单 RBD 替换对 ACE2 结合亲和力[Δlog10(Kd)]的单独效应的累积叠加。即使背景中的参考状态不同，突变效应也按标注方向计算；例如，Beta 背景中的 N501Y 效应与测得的 Y501N 突变效应符号相反。红线表示武汉-Hu-1 的亲和力，星号表示奥密克戎 BA.1 RBD 相对于武汉-Hu-1 的实际亲和力"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                85,
+                850,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT5：四、免疫缺陷宿主：点突变的 “进化工厂”"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                178,
+                529,
+                193
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "综述里特别强调：免疫低下人群是病毒突变的重要来源。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                196,
+                583,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "比如 HIV 共感染、长期使用免疫抑制剂的患者，病毒可以在体内持续存活数月，进化速率比普通感染快得多，积累大量突变。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                215,
+                847,
+                249
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "这些人相当于病毒的体内进化温床，源源不断产生新突变，最终扩散到人群，形成新变异株。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                252,
+                847,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT6：五、上位性效应：突变不是单打独斗"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                288,
+                489,
+                305
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "点突变还有一个高级玩法：上位性（epistasis）。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                307,
+                512,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "意思是：一个突变的效果，依赖其他突变的背景。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                326,
+                529,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "比如 Q493E 这个突变，在早期毒株里作用很小，但在 Omicron 背景下，能大幅增强免疫逃逸。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                344,
+                847,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "多个突变组合起来，实现 1+1>2 的效果，这是 Omicron 如此成功的关键之一。"
+                    }
+                ]
+            },
+            "bbox": [
+                146,
+                382,
+                761,
+                398
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3a96fa1b0913ee7272407c5bcab06d09215fa6ea7ed66b1ab5ba0c1c8c98d2e4.jpg"
+                },
+                "content": "| Number mutations | Binding affinity (-log₁₀(KD)) |\n| ---------------- | ----------------------------- |\n| Wuhan-Hu-1       | 8.5                           |\n| N501Y            | 9.8                           |\n| Q498R            | 8.2                           |\n| N501Y+Q498R      | 11.5                          |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "（A）双突变循环图，展示 N501Y 与 Q498R 之"
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                149,
+                403,
+                473,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "间的正上位相互作用。星号表示假设加性效应时预期的双突变结合亲和力"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                678,
+                715,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "回到 PPT4，Omicron 这么多突变加起来，在原始株背景下亲和力会掉到很低，但在有 N501Y的 Beta 背景下就能维持正常亲和力，这就是上位性效应带来的 “亲和力缓冲”"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                715,
+                850,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "PPT7：总结：点突变的核心地位"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                789,
+                401,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最后做个小结："
+                    }
+                ]
+            },
+            "bbox": [
+                146,
+                808,
+                263,
+                822
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. 点突变是新冠进化的基础引擎"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. RBD 是热点区域，负责入侵 + 逃逸"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3. N501Y 是趋同进化典范"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4. Omicron 靠突变组合实现高效逃逸 "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                174,
+                827,
+                495,
+                898
+            ]
+        }
+    ],
+    [
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5. 免疫缺陷宿主加速突变产生"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6. 上位性让病毒进化更灵活"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                176,
+                85,
+                423,
+                118
+            ]
+        }
+    ]
+]

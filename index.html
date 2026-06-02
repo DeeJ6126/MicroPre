@@ -1,39 +1,33 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SARS-CoV-2 分子进化：点突变与重组</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/slides.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-  </head>
-  <body>
-    <div class="presentation-shell">
-      <header class="deck-header" aria-label="演示页眉">
-        <div class="brand-mark" aria-hidden="true">ZJU</div>
-        <div>
-          <p class="deck-kicker">Microbiology Presentation</p>
-          <h1 id="deck-title">SARS-CoV-2 分子进化：点突变与重组</h1>
-        </div>
-      </header>
-
-      <main id="slide-stage" class="slide-stage" aria-live="polite"></main>
-
-      <footer class="deck-footer" aria-label="演示页脚">
-        <span id="slide-counter">01 / 01</span>
-        <span id="deck-section">Point Mutation</span>
-      </footer>
-
-      <button id="prev-button" class="nav-button prev-button" type="button" aria-label="上一页">
-        Prev
-      </button>
-      <button id="next-button" class="nav-button next-button" type="button" aria-label="下一页">
-        Next
-      </button>
-    </div>
-
-    <script src="js/effects.js" defer></script>
-    <script src="js/main.js" defer></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SARS-CoV-2 分子进化</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="deck" role="application" aria-label="SARS-CoV-2 分子进化演示">
+    <header class="deck-header" aria-label="演示页眉">
+      <div class="deck-header__brand" aria-hidden="true">B</div>
+      <div class="deck-header__info">
+        <p class="deck-header__kicker">Molecular Evolution</p>
+        <h1 id="deck-title" class="deck-header__title">SARS-CoV-2 分子进化</h1>
+      </div>
+      <span id="deck-section" class="deck-header__section">Point Mutation</span>
+    </header>
+    <main id="slide-stage" class="slide-stage" aria-live="polite"></main>
+    <footer class="deck-footer" aria-label="演示页脚">
+      <div class="deck-footer__left"><span id="slide-counter" class="deck-counter">01 / 22</span></div>
+    </footer>
+    <nav class="deck-nav" aria-label="幻灯片导航">
+      <button id="prev-btn" class="nav-btn nav-btn--prev" type="button" aria-label="上一页" disabled>← Prev</button>
+      <button id="next-btn" class="nav-btn" type="button" aria-label="下一页">Next →</button>
+    </nav>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>

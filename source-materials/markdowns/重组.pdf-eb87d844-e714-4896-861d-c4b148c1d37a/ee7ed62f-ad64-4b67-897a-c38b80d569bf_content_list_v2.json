@@ -1,0 +1,860 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "逐字稿 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                87,
+                206,
+                101
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "我接下来将介绍病毒分子进化机制中的一个关键过程——重组。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                117,
+                657,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SARS-CoV-2 是一种 RNA 病毒，它的重组并不是我们在真核生物中熟悉的染色体重组，而是一种发生在复制过程中的模板切换。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                148,
+                853,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "具体来说，当两个不同病毒谱系同时感染同一个宿主细胞时，病毒的 RNA依赖RNA聚合酶 会在复制 RNA 的过程中，从一个模板“跳跃”到另一个模板上继续复制。最终，就会形成一个由不同来源片段拼接而成的“嵌合基因组”。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                200,
+                848,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "这个过程有时也被称为 copy-choice 机制，本质上并不是基因交换，而是复制过程中的“轨道切换”。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                274,
+                840,
+                312
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "为了更好理解这种机制，我们可以做一个简单对比。"
+                    }
+                ]
+            },
+            "bbox": [
+                146,
+                326,
+                564,
+                344
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在真核生物中，重组通常发生在减数分裂过程中，涉及同源染色体的配对和片段交换，是一种结构化、受控的遗传过程。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                357,
+                840,
+                395
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "而在原核生物中，比如细菌，重组通常通过转化、接合或转导实现，本质上是细胞之间的基因流动，依赖外源 DNA 或质粒。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                410,
+                847,
+                448
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "相比之下，SARS-CoV-2 的重组既不依赖染色体配对，也不依赖外源 DNA 的摄取，而是发生在病毒 RNA 复制瞬间的一次“模板跳跃”。这体现了病毒进化机制的高度简化和高效。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                463,
+                848,
+                521
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "而SARS-CoV-2 的模板切换之所以能够高效发生，是因为 RdRp 与 RNA 结合相对不稳定，在共感染条件下周围存在大量相似模板，同时 RNA 的序列同源性和二级结构为重新配对提供了条件。再加上冠状病毒本身具有跳跃式转录机制，使得这种‘换轨复制’不仅可能，而且高效，具有选择性。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                537,
+                847,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "接下来我们看一个非常典型的例子，也就是 Omicron 时代的重要重组谱系——XBB。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                632,
+                831,
+                648
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "研究表明，XBB 是由两个 BA.2 亚谱系，BJ.1 和 BM.1.1.1，通过重组产生的。它的重组断点位于刺突蛋白的受体结合域，也就是 Spike RBD 区域。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                663,
+                843,
+                701
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "这个位置非常关键，因为它直接决定病毒与宿主细胞受体的结合能力，同时也是中和抗体的主要作用靶点。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                715,
+                848,
+                753
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "因此，XBB 的不同基因片段组合在一起，使它同时具备更强的免疫逃逸能力和一定程度的传播优势。这种“功能叠加”，正是重组最重要的进化意义之一。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                768,
+                848,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "从更宏观的角度来看，在 Omicron 流行阶段，病毒的进化并不是单一机制驱动的，而是多种机制共同作用的结果，包括抗原漂移、趋同进化，以及我们这里重点讨论的重组。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                820,
+                848,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "大规模系统发育研究显示，在 160 万条病毒基因组序列中，已经检测到589 个重组事件，约2.7 % 的序列具有可识别的重组祖先。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                872,
+                843,
+                910
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "更有意思的是，这些重组断点并不是随机分布的，而是明显集中在病毒基因组的 3’端区域，尤其是 Spike 基因附近。这说明重组在功能上可能受到选择压力的影响。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                86,
+                850,
+                124
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "那么，为什么重组对 Omicron 尤其重要？"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                139,
+                490,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "原因在于，突变通常是逐步积累的，而重组可以在一次事件中，将多个已经存在的有利突变组合到一起，从而显著加快进化速度。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                170,
+                848,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "换句话说，重组相当于一种“进化加速器”，使病毒能够更快适应宿主免疫系统的压力。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                222,
+                838,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "最后，我用一句话总结这一部分内容："
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                253,
+                455,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "真核生物的重组，是染色体层面的遗传重排；原核生物的重组，是细胞之间的基因流动；而 SARS-CoV-2 的重组，是复制过程中发生的模板切换。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                285,
+                847,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "它的独特之处在于，可以在一次事件中整合多个有利突变，从而帮助 Omicron 亚型快速获得免疫逃逸和传播优势。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                336,
+                848,
+                375
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "演示"
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                885,
+                189,
+                900
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Slide1：什么是病毒重组"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                87,
+                347,
+                103
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SARS-CoV-2 是一种 RNA 病毒，它的重组并不是我们在真核生物中熟悉的染色体重组，而是一种发生在复制过程中的模板切换。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                117,
+                855,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（机制演示）"
+                    }
+                ]
+            },
+            "bbox": [
+                157,
+                168,
+                250,
+                186
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Slide2：与真核生物不同"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                200,
+                347,
+                217
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在真核生物中，重组通常发生在减数分裂过程中，涉及同源染色体的配对和片段交换，是一种结构化、受控的遗传过程。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                231,
+                840,
+                271
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Slide3：与原核生物不同"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                285,
+                347,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "而在原核生物中，比如细菌，重组通常通过转化、接合或转导实现，本质上是细胞之间的基因流动，依赖外源 DNA 或质粒。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                315,
+                847,
+                354
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Slide4：对比总结 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                368,
+                290,
+                384
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "相比之下，SARS-CoV-2 的重组既不依赖染色体配对，也不依赖外源 DNA 的摄取，而是发生在病毒 RNA 复制瞬间的一次“模板跳跃”。这体现了病毒进化机制的高度简化和高效。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                398,
+                847,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（来3个动画，分别演示三种生物的遗传物质重组事件，进行直观对比）"
+                    }
+                ]
+            },
+            "bbox": [
+                156,
+                472,
+                732,
+                489
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Slide5：机制"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                502,
+                255,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "而 SARS-CoV-2 的模板切换之所以能够高效发生，是因为 RdRp 与 RNA 结合相对不稳定，在共感染条件下周围存在大量相似模板，同时 RNA 的序列同源性和二级结构为重新配对提供了条件。再加上冠状病毒本身具有跳跃式转录机制，使得这种‘换轨复制’不仅可能，而且高效，具有选择性。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                533,
+                847,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（动画展现机理）"
+                    }
+                ]
+            },
+            "bbox": [
+                157,
+                630,
+                287,
+                646
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Slide6：Omicron 例子：XBB"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                144,
+                661,
+                381,
+                676
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "XBB 是很好的案例：研究显示它由两个共流行的 BA.2 系谱 BJ.1 和 BM.1.1.1 重组产生，断点位于 Spike RBD 区域；其不同片段共同增强免疫逃逸和细胞融合能力。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                690,
+                840,
+                731
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/f86b17a968c6f390d6ca67483a4371366fe1aa197419498c19bd88982641c95f.jpg"
+                },
+                "content": "SARS-CoV-2\nORFab\n(structural accessory)\nORF1a\nORF1b\nSpike\nE M N\n3a 6 7ab\nBA.2.75\nBJ.1\nXBB\nBA.2.75 + BJ",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                147,
+                86,
+                453,
+                170
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/258d42202236c5c9c2c0c914590bc8f19f5c7a5fa25a459f8573dae2196e478b.jpg"
+                },
+                "content": "3D protein structure of an XBB subunit with labeled amino acid residues and green ligand binding sites",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "上方展示基因组，下方展示重组"
+                    },
+                    {
+                        "type": "text",
+                        "content": "Slide7：为什么重组的频率"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "sub_type": "chemical",
+            "bbox": [
+                216,
+                177,
+                388,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Omicron 时代，重组、抗原漂移、趋同进化共同推动 SARS-CoV-2 改变抗原性。大规模系统发育研究还在 160 万条序列中识别出 589 个重组事件，约 2.7% 测序基因组有可检测重组祖先，且刺突基因区域存在重组频率峰值。"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                349,
+                850,
+                409
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f552c0a4e901d1a3a101336d891ec10933106cd61cfbeb1f71ec7507ace61318.jpg"
+                },
+                "content": "| SARS-CoV-2 genome coordinate | Breakpoint intervals |\n| ----------------------------- | -------------------- |\n| 1,000                         | 2.5                  |\n| 2,000                         | 3.0                  |\n| 3,000                         | 3.5                  |\n| 4,000                         | 3.5                  |\n| 5,000                         | 3.5                  |\n| 6,000                         | 3.5                  |\n| 7,000                         | 3.5                  |\n| 8,000                         | 3.5                  |\n| 9,000                         | 3.5                  |\n| 10,000                        | 3.5                  |\n| 11,000                        | 3.5                  |\n| 12,000                        | 3.5                  |\n| 13,000                        | 3.5                  |\n| 14,000                        | 3.5                  |\n| 15,000                        | 3.5                  |\n| 16,000                        | 3.5                  |\n| 17,000                        | 3.5                  |\n| 18,000                        | 4.0                  |\n| 19,000                        | 4.5                  |\n| 20,000                        | 5.5                  |\n| 21,000                        | 6.5                  |\n| 22,000                        | 7.5                  |\n| 23,000                        | 8.5                  |\n| 24,000                        | 8.5                  |\n| 25,000                        | 8.5                  |\n| 26,000                        | 8.5                  |\n| 27,000                        | 7.5                  |\n| 28,000                        | 6.5                  |\n| 29,000                        | 5.5                  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "a "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                174,
+                428,
+                806,
+                618
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/52d40b757336c3933f913535afb9bf26e6e141dd46873872baf4ea9f4fb030a5.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "bar_stacked",
+            "bbox": [
+                147,
+                620,
+                621,
+                717
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3014e903ad1acbdfd83aa3fa2663a6d32fb4327f5a352d73bb7a3bf4c6491589.jpg"
+                },
+                "content": "| Genomic coordinate | 0 | 5,000 | 10,000 | 15,000 | 20,000 | 25,000 |\n|---|---|---|---|---|---|---|\n| 355,373 (Acceptor) | A | G | G | G | A | T |\n| 355,845 (Recombinant) | A | G | G | G | A | T |\n| Donor | G | A | A | T | A | C |\n| 872 | | | | | | |\n| 2,031 | | | | | | |\n| 7,863 | | | | | | |\n| 19,839 | | | C | T | G | G |\n| 23,126 | | | G | G | G | T |\n| 23,403 | | | A | G | A | T |\n| 23,586 | | | A | G | A | T |\n| 28,905 | | | T | G | G | T |\n| 29,254 | | | G | G | G | T |\n| 29,315 | | | T | T | T | T |\n\nLegend:\n| Category (Acceptor) / Recombinant (Donor) |\n|---|\n| 355,373 (Acceptor) |\n| 355,845 (Recombinant) |\n| 171,142 (Donor) |\nGenomic coordinate: 0 to 25,000.",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "heatmap",
+            "bbox": [
+                621,
+                620,
+                847,
+                717
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b435ef4e55e00a0aecfe3507f0521e4c3bff473957af21f54baa5c01fac4351a.jpg"
+                },
+                "content": "| Genomic | 7,389 (Acceptor) | 20,083 (Recombinant) | 20,071 (Donor) |\n|---|---|---|---|\n| 210 | G | T | C |\n| 3,267 | T | C | T |\n| 3,457 | C | T | T |\n| 4,965 | C | T | T |\n| 7,165 | C | A | T |\n| 10,183 | A | G | T |\n| 11,201 | A | G | T |\n| 17,253 | G | T | C |\n| 18,877 | T | A | G |\n| 20,396 | T | C | G |\n| 21,034 | T | C | C |\n| 21,895 | A | C | G |\n| 22,022 | A | C | G |\n| 22,444 | G | T | C |\n| 22,882 | G | T | G |\n| 22,917 | G | C | G |\n| 23,012 | C | G | G |\n| 23,604 | C | G | G |\n| 24,794 | G | G | G |\n| 24,863 | G | T | G |\n| 25,469 | C | G | G |\n| 25,563 | C | T | G |\n| 26,173 | T | G | G |\n| 26,735 | T | C | C |\n| 27,299 | T | C | T |\n| 27,405 | C | T | C |\n| 27,638 | T | T | C |\n| 28,183 | C | T | C |\n| 28,277 | T | C | G |\n| 28,854 | T | G | T |\n| 28,881 | G | T | C |\n| 29,742 | G | T | T |\nGenomic coordinate axis: 0 to 25,000.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Slide8：重组对于病毒进化的重要性"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar_stacked",
+            "bbox": [
+                147,
+                721,
+                847,
+                825
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "真核重组是染色体层面的遗传重排，原核重组是细胞间基因流动，而 SARS-CoV-2 重组是病毒复制中的模板切换；它能在一次事件中整合多个有利突变，因此可使 Omicron"
+                    }
+                ]
+            },
+            "bbox": [
+                144,
+                871,
+                850,
+                910
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "亚型快速获得免疫逃逸和传播优势。"
+                    }
+                ]
+            },
+            "bbox": [
+                147,
+                86,
+                436,
+                102
+            ]
+        }
+    ]
+]

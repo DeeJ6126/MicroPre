@@ -1,0 +1,1598 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * SARS-CoV-2 分子进化 — 科学纪录片风格 (方向 C)
+ * style.css
+ *
+ * Foundation: Neutral Modern design tokens (spacing, radii, motion,
+ * elevation, component shapes) overlaid with 方向 C visual identity
+ * (color, typography, glass surfaces, 2D-depth diagram language).
+ *
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Google Fonts ─────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600&display=swap');
+
+/* ─── Root tokens ───────────────────────────────────────────────── */
+:root {
+  /* 方向 C — Surface (light, airy, glass-friendly) */
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-warm: #faf7f5;
+
+  /* 方向 C — Foreground (deep sea blue, warm muted) */
+  --fg: #1a3a4a;
+  --fg-2: #2a4a5a;
+  --muted: #5a6a7a;
+  --meta: #7a8a9a;
+
+  /* 方向 C — Accent (leaf green) */
+  --accent: #3a8c6f;
+  --accent-on: #ffffff;
+  --accent-hover: color-mix(in oklab, #3a8c6f, black 8%);
+  --accent-active: color-mix(in oklab, #3a8c6f, black 14%);
+
+  /* 方向 C — Warm highlight (amber, for data emphasis) */
+  --highlight: #c17f3b;
+  --highlight-soft: rgba(193, 127, 59, 0.15);
+
+  /* 方向 C — Accent soft variants for glass/glow */
+  --accent-soft: rgba(58, 140, 111, 0.12);
+  --accent-glow: rgba(58, 140, 111, 0.20);
+  --accent-glow-strong: rgba(58, 140, 111, 0.35);
+
+  /* 方向 C — Deep blue soft (background tints) */
+  --deep-blue-soft: rgba(26, 58, 74, 0.06);
+  --deep-blue-glass: rgba(26, 58, 74, 0.03);
+
+  /* Semantic colors */
+  --success: #17a34a;
+  --warn: #c17f3b;
+  --danger: #dc2626;
+
+  /* Neutral Modern — Border */
+  --border: #e2e6ea;
+  --border-soft: #eceff3;
+
+  /* 方向 C — Glass surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 8px 32px rgba(26, 58, 74, 0.08);
+  --glass-shadow-strong: 0 12px 48px rgba(26, 58, 74, 0.12);
+
+  /* Neutral Modern — Typography */
+  /* 方向 C: DM Sans for display (modern rounded), EB Garamond for body (narrative rhythm) */
+  --font-display: 'DM Sans', 'Noto Sans SC', -apple-system, system-ui, sans-serif;
+  --font-body: 'EB Garamond', 'Noto Serif SC', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  /* Neutral Modern — Type scale (px) */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 48px;
+  --text-4xl: 64px;
+
+  /* — Slide-specific scale (vw-based for 1920 canvas) */
+  --slide-label: clamp(11px, 0.7vw, 15px);
+  --slide-title: clamp(24px, 2.8vw, 48px);
+  --slide-subtitle: clamp(14px, 1.0vw, 20px);
+  --slide-body: clamp(13px, 0.85vw, 17px);
+  --slide-caption: clamp(10px, 0.6vw, 13px);
+
+  --leading-body: 1.55;
+  --leading-tight: 1.15;
+  --tracking-display: -0.015em;
+
+  /* Neutral Modern — Spacing (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-20: 80px;
+
+  /* Neutral Modern — Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+
+  /* Neutral Modern — Elevation */
+  --elev-flat: none;
+  --elev-ring: 0 0 0 1px var(--border);
+  --elev-raised: 0 2px 8px rgba(26, 58, 74, 0.08);
+
+  /* Neutral Modern — Focus ring */
+  --focus-ring: 0 0 0 3px color-mix(in oklab, var(--accent), transparent 70%);
+
+  /* Neutral Modern — Motion */
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasis: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Deck layout */
+  --header-h: 9%;
+  --footer-h: 6.5%;
+  --slide-inset-top: 9.5%;
+  --slide-inset-bot: 7.5%;
+  --slide-inset-horiz: 4.2%;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+ * Base / Reset
+ * ═══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button { font: inherit; cursor: pointer; border: none; background: none; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+svg { overflow: visible; }
+
+/* ═══════════════════════════════════════════════════════════════
+ * Deck container — 16:9 scale-to-fit
+ * ═══════════════════════════════════════════════════════════════ */
+.deck {
+  position: relative;
+  width: min(100vw, 177.78vh);   /* 16/9 = 1.7778 */
+  height: min(100vh, 56.25vw);    /* 9/16 = 0.5625 */
+  min-width: 320px;
+  min-height: 180px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 0 80px rgba(26, 58, 74, 0.06);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+/* ─── Deck top accent bar ──────────────────────────────────── */
+.deck::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--fg), var(--accent), var(--highlight));
+  z-index: 100;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Header
+ * ═══════════════════════════════════════════════════════════════ */
+.deck-header {
+  position: absolute;
+  top: 0; left: var(--slide-inset-horiz); right: var(--slide-inset-horiz);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: 20;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.deck-header__brand {
+  width: clamp(28px, 2.6vw, 44px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--accent-on);
+  font-family: var(--font-display);
+  font-size: clamp(10px, 0.7vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.deck-header__info { flex: 1; min-width: 0; }
+
+.deck-header__kicker {
+  margin-bottom: 1px;
+  font-family: var(--font-system);
+  font-size: var(--slide-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.deck-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(11px, 1.0vw, 18px);
+  font-weight: 600;
+  color: var(--fg);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: var(--tracking-display);
+}
+
+.deck-header__section {
+  font-family: var(--font-system);
+  font-size: var(--slide-label);
+  color: var(--muted);
+  white-space: nowrap;
+  background: var(--deep-blue-soft);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Slide stage
+ * ═══════════════════════════════════════════════════════════════ */
+.slide-stage {
+  position: absolute;
+  top: var(--slide-inset-top);
+  left: var(--slide-inset-horiz);
+  right: var(--slide-inset-horiz);
+  bottom: var(--slide-inset-bot);
+  z-index: 2;
+}
+
+/* ─── Slide base ─────────────────────────────────────────────── */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  gap: 2.5%;
+  align-content: center;
+  opacity: 0;
+  transform: translateX(3%) scale(0.99);
+  pointer-events: none;
+  transition: opacity 450ms var(--ease-standard),
+              transform 500ms var(--ease-emphasis);
+  will-change: transform, opacity;
+}
+
+.slide.is-active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+
+.slide.is-exiting-left {
+  opacity: 0;
+  transform: translateX(-3%) scale(0.99);
+}
+
+.slide.is-exiting-right {
+  opacity: 0;
+  transform: translateX(3%) scale(0.99);
+}
+
+/* ─── Slide content (text column) ───────────────────────────── */
+.slide-content {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.slide-eyebrow {
+  font-family: var(--font-system);
+  font-size: var(--slide-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.slide-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+}
+
+.slide-title {
+  font-family: var(--font-display);
+  font-size: var(--slide-title);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--fg);
+  max-width: 14em;
+}
+
+.slide-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--slide-subtitle);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 38em;
+}
+
+.slide-body {
+  font-family: var(--font-body);
+  font-size: var(--slide-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--fg);
+  max-width: 42em;
+  white-space: pre-line;
+}
+
+.bullet-list {
+  display: grid;
+  gap: clamp(6px, 0.5vw, 10px);
+  margin-top: clamp(4px, 0.6vw, 12px);
+}
+
+.bullet-list li {
+  position: relative;
+  padding: clamp(6px, 0.55vw, 10px) clamp(12px, 0.9vw, 16px)
+           clamp(6px, 0.55vw, 10px) clamp(28px, 2.0vw, 38px);
+  font-size: var(--slide-body);
+  line-height: 1.45;
+  color: var(--fg);
+  background: var(--deep-blue-glass);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  overflow-wrap: anywhere;
+}
+
+.bullet-list li::before {
+  position: absolute;
+  top: 0.95em;
+  left: clamp(11px, 0.85vw, 16px);
+  width: 7px;
+  height: 7px;
+  content: '';
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* ─── Slide visual (image + diagram area) ───────────────────── */
+.slide-visual {
+  display: grid;
+  gap: clamp(6px, 0.6vw, 12px);
+  align-self: stretch;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Layout variants
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* Default: image-focus (text 0.72fr / visual 1.28fr) */
+.slide,
+.slide[data-layout="image-focus"] {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+}
+.slide[data-layout="image-focus"] .slide-visual {
+  grid-template-rows: minmax(0, 1fr) minmax(0, auto);
+}
+
+/* Split visual: text + two visual rows */
+.slide[data-layout="split-visual"] {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+}
+.slide[data-layout="split-visual"] .slide-visual {
+  grid-template-rows: minmax(0, 1fr) minmax(0, auto);
+}
+
+/* Diagram focus: larger diagram area */
+.slide[data-layout="diagram-focus"],
+.slide[data-layout="hero-mechanism"] {
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+}
+.slide[data-layout="diagram-focus"] .slide-visual,
+.slide[data-layout="hero-mechanism"] .slide-visual {
+  grid-template-rows: minmax(0, 1fr);
+}
+.slide[data-layout="diagram-focus"] .diagram-card,
+.slide[data-layout="hero-mechanism"] .diagram-card {
+  min-height: 100%;
+}
+
+/* Wide diagram: wider visual */
+.slide[data-layout="wide-diagram"] {
+  grid-template-columns: minmax(0, 0.64fr) minmax(0, 1.36fr);
+}
+.slide[data-layout="wide-diagram"] .slide-visual {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* Summary: balanced split */
+.slide[data-layout="summary"] {
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+}
+.slide[data-layout="summary"] .slide-visual {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+/* Protein focus: text + image + 3D viewer */
+.slide[data-layout="protein-focus"] {
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
+}
+.slide[data-layout="protein-focus"] .slide-visual {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, auto);
+}
+.slide[data-layout="protein-focus"] .media-frame {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+.slide[data-layout="protein-focus"] .protein-panel {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  min-height: 100%;
+}
+.slide[data-layout="protein-focus"] .diagram-card {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Media frames (images)
+ * ═══════════════════════════════════════════════════════════════ */
+.media-frame {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+}
+
+.media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.image-caption {
+  padding: clamp(5px, 0.45vw, 10px) clamp(8px, 0.6vw, 14px);
+  font-family: var(--font-system);
+  font-size: var(--slide-caption);
+  color: var(--muted);
+  line-height: 1.35;
+  background: var(--deep-blue-glass);
+  border-top: 1px solid var(--border-soft);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Diagram cards — glass science-documentary surface
+ * ═══════════════════════════════════════════════════════════════ */
+.diagram-card {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(140px, 20vh, 280px);
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Subtle grid overlay for scientific feel */
+.diagram-card::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background:
+    linear-gradient(rgba(26, 58, 74, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 58, 74, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.diagram-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * SVG mechanism diagrams — 方向 C adapted (light bg, deep blue ink)
+ * ═══════════════════════════════════════════════════════════════ */
+.mechanism-svg {
+  width: 100%;
+  height: auto;
+  min-height: clamp(130px, 16vh, 220px);
+  padding: 2%;
+}
+
+.mechanism-svg-large {
+  min-height: clamp(180px, 32vh, 400px);
+}
+
+/* SVG arrow markers (defined in each SVG <defs>) */
+.mechanism-svg .svg-arrow,
+.mechanism-svg .summary-link,
+.mechanism-svg .transfer-bridge,
+.mechanism-svg .jump-arc,
+.mechanism-svg .nascent-rna,
+.mechanism-svg .switch-arrow,
+.mechanism-svg .crossover,
+.mechanism-svg .external-dna,
+.mechanism-svg .peak-curve {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.75;
+}
+
+.mechanism-svg .switch-arrow,
+.mechanism-svg .effect-line {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.mechanism-svg .jump-arc {
+  stroke-width: 3;
+  stroke: var(--accent);
+  stroke-dasharray: 6 4;
+}
+
+/* Marker fills */
+.mechanism-svg marker path {
+  fill: var(--fg);
+}
+.mechanism-svg #arrow-switch path,
+.mechanism-svg #arrow-accent path {
+  fill: var(--accent);
+}
+.mechanism-svg #arrow-highlight path {
+  fill: var(--highlight);
+}
+
+/* Kicker text */
+.mechanism-svg .svg-kicker {
+  fill: var(--accent);
+  font-family: var(--font-system);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-anchor: start;
+}
+
+/* General text */
+.mechanism-svg text {
+  font-family: var(--font-system);
+  fill: var(--fg);
+  text-anchor: middle;
+}
+
+.mechanism-svg .svg-note,
+.mechanism-svg .effect-text {
+  font-size: 14px;
+  fill: var(--muted);
+  font-weight: 500;
+}
+
+.mechanism-svg .effect-text {
+  fill: var(--fg);
+  font-weight: 500;
+}
+
+/* RNA templates, chromosomes */
+.mechanism-svg .rna-template path,
+.mechanism-svg .cloud-rna,
+.mechanism-svg .mini-rna {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+.mechanism-svg .template-b path,
+.mechanism-svg .cloud-rna.b,
+.mechanism-svg .mini-rna.b {
+  stroke: var(--accent);
+  opacity: 0.7;
+}
+
+.mechanism-svg .cloud-rna.c {
+  stroke: var(--highlight);
+  opacity: 0.5;
+}
+
+/* Columns, blocks, boxes */
+.mechanism-svg .base-strip rect,
+.mechanism-svg .protein-chain rect,
+.mechanism-svg .function-box rect,
+.mechanism-svg .lineage rect,
+.mechanism-svg .epi-grid rect,
+.mechanism-svg .summary-node rect,
+.mechanism-svg .template-label rect,
+.mechanism-svg .factor-list rect,
+.mechanism-svg .controlled-tags rect,
+.mechanism-svg .compare-card rect,
+.mechanism-svg .evo-track rect {
+  fill: var(--deep-blue-soft);
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+/* Hot / highlighted elements */
+.mechanism-svg .base-strip .is-hot,
+.mechanism-svg .protein-chain .is-hot,
+.mechanism-svg .epi-hot {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+/* Core circles */
+.mechanism-svg .rbd-core,
+.mechanism-svg .selection-core,
+.mechanism-svg .summary-core,
+.mechanism-svg .polymerase circle,
+.mechanism-svg .stat-orbit circle,
+.mechanism-svg .advantage-node,
+.mechanism-svg .evo-core {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
+.mechanism-svg .stall-ring {
+  fill: none;
+  stroke: var(--accent-glow);
+  stroke-dasharray: 6 6;
+  stroke-width: 3;
+}
+
+/* Text within boxes */
+.mechanism-svg .base-strip text,
+.mechanism-svg .function-box text,
+.mechanism-svg .lineage text,
+.mechanism-svg .epi-grid text,
+.mechanism-svg .summary-node text,
+.mechanism-svg .rbd-text,
+.mechanism-svg .selection-main,
+.mechanism-svg .selection-sub,
+.mechanism-svg .surface-text,
+.mechanism-svg .ace2-text,
+.mechanism-svg .host-label,
+.mechanism-svg .time-node text,
+.mechanism-svg .summary-core-title,
+.mechanism-svg .summary-core-sub,
+.mechanism-svg .compare-title,
+.mechanism-svg .evo-track text,
+.mechanism-svg .genome-axis text,
+.mechanism-svg .compare-card text,
+.mechanism-svg .bacterium text {
+  fill: var(--fg);
+  font-family: var(--font-system);
+  font-weight: 600;
+  text-anchor: middle;
+  font-size: 15px;
+}
+
+.mechanism-svg .rbd-text,
+.mechanism-svg .selection-main,
+.mechanism-svg .summary-core-title {
+  font-size: 20px;
+}
+
+.mechanism-svg .rbd-subtext,
+.mechanism-svg .selection-sub,
+.mechanism-svg .summary-core-sub {
+  font-size: 13px;
+  fill: var(--muted);
+}
+
+.mechanism-svg .rbd-surface {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+  opacity: 0.6;
+}
+
+.mechanism-svg .mutation-tags text {
+  fill: var(--highlight);
+  font-size: 14px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.mechanism-svg .antibody {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.mechanism-svg .antibody-faded {
+  opacity: 0.4;
+}
+
+.mechanism-svg .ace2-block {
+  fill: var(--highlight-soft);
+  stroke: var(--highlight);
+  stroke-width: 2;
+}
+
+/* Bacterium cells */
+.mechanism-svg .bacterium ellipse {
+  fill: var(--deep-blue-soft);
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+/* Chromosomes */
+.mechanism-svg .chromosome,
+.mechanism-svg .crossover,
+.mechanism-svg .mini-chromosome {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.mechanism-svg .chromosome-blue,
+.mechanism-svg .mini-chromosome {
+  stroke: var(--fg);
+  opacity: 0.5;
+}
+
+.mechanism-svg .chromosome-silver,
+.mechanism-svg .mini-chromosome.alt {
+  stroke: var(--muted);
+  opacity: 0.4;
+}
+
+.mechanism-svg .crossover {
+  stroke: var(--accent);
+  stroke-width: 4;
+  opacity: 0.7;
+}
+
+/* Host diagram */
+.mechanism-svg .host-body,
+.mechanism-svg .host-head {
+  fill: var(--deep-blue-soft);
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.mechanism-svg .timeline {
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.mechanism-svg .time-node circle {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.mechanism-svg .variant-cloud circle {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+/* Plasmid / transfer */
+.mechanism-svg .plasmid,
+.mechanism-svg .external-dna {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+
+.mechanism-svg .plasmid-loop {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
+.mechanism-svg .dna-handle {
+  fill: var(--accent);
+  stroke: var(--accent-on);
+  stroke-width: 1.5;
+}
+
+.mechanism-svg .conjugation-arrow {
+  stroke: var(--fg);
+  opacity: 0.6;
+}
+
+.mechanism-svg .transformation-arrow,
+.mechanism-svg .phage-approach {
+  stroke: var(--muted);
+  stroke-dasharray: 8 8;
+  opacity: 0.6;
+}
+
+.mechanism-svg .phage-head {
+  fill: var(--deep-blue-soft);
+  stroke: var(--fg);
+  stroke-width: 2.5;
+}
+
+.mechanism-svg .phage-neck,
+.mechanism-svg .phage-sheath,
+.mechanism-svg .phage-tail,
+.mechanism-svg .phage-leg {
+  stroke: var(--fg);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.mechanism-svg .phage-sheath {
+  fill: var(--deep-blue-soft);
+}
+
+.mechanism-svg .phage-dna-injection {
+  fill: none;
+  stroke: var(--accent);
+  stroke-dasharray: 6 6;
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0;
+}
+
+.mechanism-svg .process-labels text {
+  fill: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* Interactive triggers */
+.mechanism-svg .plasmid-transfer,
+.mechanism-svg .transformation-dna,
+.mechanism-svg .phage-transfer {
+  cursor: pointer;
+  outline: none;
+}
+
+.mechanism-svg .plasmid-transfer:focus-visible,
+.mechanism-svg .transformation-dna:focus-visible,
+.mechanism-svg .phage-transfer:focus-visible {
+  filter: drop-shadow(0 0 8px rgba(58, 140, 111, 0.5));
+}
+
+/* Chimera / segments */
+.mechanism-svg .chimera rect:first-child,
+.mechanism-svg .segment-bj {
+  fill: #8a7aaa;
+  opacity: 0.7;
+}
+
+.mechanism-svg .chimera rect:nth-child(2),
+.mechanism-svg .segment-bm {
+  fill: #7aaa8a;
+  opacity: 0.7;
+}
+
+.mechanism-svg .chimera text {
+  fill: var(--accent-on);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mechanism-svg .chimera {
+  opacity: 0;
+}
+
+/* Breakpoint line */
+.mechanism-svg .breakpoint {
+  stroke: var(--highlight);
+  stroke-dasharray: 5 5;
+  stroke-width: 2;
+}
+
+/* Stats */
+.mechanism-svg .stat-value {
+  fill: var(--fg);
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.mechanism-svg .stat-label {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+/* Genome axis */
+.mechanism-svg .genome-axis rect {
+  fill: var(--deep-blue-soft);
+  stroke: var(--border);
+  stroke-width: 1.5;
+}
+
+.mechanism-svg .genome-axis .spike-peak {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.mechanism-svg .spread-arrow {
+  stroke: var(--accent);
+}
+
+/* Template labels */
+.mechanism-svg .template-label {
+  fill: var(--muted);
+  font-size: 13px;
+  text-anchor: start;
+  font-weight: 500;
+}
+
+.mechanism-svg .switch-label {
+  fill: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mechanism-svg .factor-title {
+  fill: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mechanism-svg .genome-label {
+  fill: var(--fg);
+  font-size: 14px;
+  font-weight: 600;
+  text-anchor: end;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Protein viewer (NGL)
+ * ═══════════════════════════════════════════════════════════════ */
+.protein-panel {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  align-items: stretch;
+  padding: clamp(8px, 0.7vw, 14px);
+  min-height: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.protein-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(26, 58, 74, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 58, 74, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.protein-panel > * { position: relative; z-index: 2; }
+
+.protein-panel__topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-system);
+  font-size: var(--slide-caption);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.protein-panel__topline strong {
+  color: var(--fg);
+}
+
+.protein-viewer {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(180px, 28vh, 380px);
+  margin: var(--space-2) 0;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+}
+
+.protein-viewer canvas,
+.protein-viewer div {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.protein-fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  min-height: 180px;
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--muted);
+  font-size: var(--slide-caption);
+}
+
+.protein-fallback__spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.protein-fallback--error strong {
+  color: var(--fg);
+}
+
+.protein-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  font-size: var(--slide-caption);
+  color: var(--muted);
+  margin-bottom: var(--space-1);
+}
+
+.protein-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px 8px;
+  background: var(--deep-blue-glass);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+}
+
+.protein-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.protein-source {
+  font-family: var(--font-system);
+  font-size: var(--slide-caption);
+  color: var(--meta);
+  line-height: 1.35;
+}
+
+.protein-note {
+  margin: 0;
+  font-family: var(--font-system);
+  font-size: 0.58rem;
+  color: var(--meta);
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Navigation
+ * ═══════════════════════════════════════════════════════════════ */
+.deck-nav {
+  position: absolute;
+  bottom: 1.2%;
+  right: var(--slide-inset-horiz);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  z-index: 30;
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(56px, 4.4vw, 80px);
+  height: clamp(28px, 2.2vw, 36px);
+  padding: 0 clamp(10px, 0.9vw, 16px);
+  font-family: var(--font-system);
+  font-size: clamp(11px, 0.7vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--accent-on);
+  background: var(--fg);
+  border: none;
+  border-radius: var(--radius-pill);
+  transition: background var(--motion-fast) var(--ease-standard),
+              transform var(--motion-fast) var(--ease-standard),
+              box-shadow var(--motion-fast) var(--ease-standard);
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 58, 74, 0.15);
+}
+
+.nav-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  transform: none;
+}
+
+.nav-btn--prev {
+  background: transparent;
+  color: var(--fg);
+  border: 1.5px solid var(--border);
+}
+
+.nav-btn--prev:hover:not(:disabled) {
+  background: var(--deep-blue-soft);
+  border-color: var(--fg);
+}
+
+.deck-counter {
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 0.7vw, 14px);
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-right: var(--space-1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Footer / counter bar
+ * ═══════════════════════════════════════════════════════════════ */
+.deck-footer {
+  position: absolute;
+  bottom: 0;
+  left: var(--slide-inset-horiz);
+  right: var(--slide-inset-horiz);
+  height: calc(var(--footer-h) - 0.5%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 2px;
+}
+
+.deck-footer__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.deck-footer__section {
+  font-family: var(--font-system);
+  font-size: var(--slide-caption);
+  color: var(--meta);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Animation keyframes — SVG flow and pulse
+ * ═══════════════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes dashFlow {
+  from { stroke-dashoffset: 40; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes dashFlowReverse {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 40; }
+}
+
+@keyframes softPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.75; transform: scale(1.04); }
+}
+
+@keyframes orbitPulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(58, 140, 111, 0.2)); }
+  50%      { filter: drop-shadow(0 0 12px rgba(58, 140, 111, 0.5)); }
+}
+
+/* ─── DNA transformation keyframes (slide 10) ─────────────── */
+@keyframes transformDnaIntoCell {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  65%  { transform: translate(260px, -80px) scale(0.6); opacity: 1; }
+  100% { transform: translate(310px, -100px) scale(0.4); opacity: 0.15; }
+}
+
+@keyframes conjugatePlasmidIntoCell {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  70%  { transform: translate(320px, 24px) scale(0.6); opacity: 1; }
+  100% { transform: translate(370px, 36px) scale(0.42); opacity: 0.2; }
+}
+
+@keyframes transducePhageApproach {
+  0%   { transform: translate(0, 0); }
+  65%  { transform: translate(340px, 20px); }
+  100% { transform: translate(420px, 28px); }
+}
+
+@keyframes injectPhageDna {
+  0%, 55% { opacity: 0; stroke-dashoffset: 30; }
+  65%     { opacity: 1; }
+  100%    { opacity: 1; stroke-dashoffset: 0; }
+}
+
+/* ─── Slide entrance animations ────────────────────────────── */
+.slide.is-active .slide-eyebrow,
+.slide.is-active .slide-title,
+.slide.is-active .slide-subtitle,
+.slide.is-active .bullet-list li,
+.slide.is-active .media-frame,
+.slide.is-active .diagram-card,
+.slide.is-active .protein-panel {
+  animation: fadeUp 600ms var(--ease-emphasis) both;
+}
+
+.slide.is-active .slide-title       { animation-delay: 60ms; }
+.slide.is-active .slide-subtitle    { animation-delay: 110ms; }
+.slide.is-active .bullet-list li:nth-child(1) { animation-delay: 150ms; }
+.slide.is-active .bullet-list li:nth-child(2) { animation-delay: 200ms; }
+.slide.is-active .bullet-list li:nth-child(3) { animation-delay: 250ms; }
+.slide.is-active .bullet-list li:nth-child(4) { animation-delay: 300ms; }
+.slide.is-active .bullet-list li:nth-child(5) { animation-delay: 350ms; }
+.slide.is-active .bullet-list li:nth-child(6) { animation-delay: 400ms; }
+.slide.is-active .media-frame       { animation-delay: 140ms; }
+.slide.is-active .diagram-card      { animation-delay: 210ms; }
+.slide.is-active .protein-panel     { animation-delay: 260ms; }
+
+/* ─── SVG flow animations when diagram is visible ────────── */
+.diagram-card.is-animated .svg-arrow,
+.diagram-card.is-animated .summary-link,
+.diagram-card.is-animated .transfer-bridge,
+.diagram-card.is-animated .jump-arc,
+.diagram-card.is-animated .nascent-rna,
+.diagram-card.is-animated .switch-arrow,
+.diagram-card.is-animated .crossover,
+.diagram-card.is-animated .external-dna,
+.diagram-card.is-animated .peak-curve {
+  stroke-dasharray: 12 8;
+  animation: dashFlow 1.2s linear infinite;
+}
+
+.diagram-card.is-animated .rna-template path,
+.diagram-card.is-animated .cloud-rna,
+.diagram-card.is-animated .mini-rna {
+  stroke-dasharray: 16 10;
+  animation: dashFlowReverse 2s linear infinite;
+}
+
+/* ─── Slide 8: Template switch step animation ─────────────── */
+
+/* CSS transitions for smooth step-by-step animation */
+.ts-pol {
+  transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.ts-pol-ring {
+  transition: fill 0.6s ease, stroke 0.6s ease;
+}
+.ts-chain-a,
+.ts-chain-detach,
+.ts-chain-b {
+  transition: opacity 1.0s ease;
+}
+.ts-pair-a,
+.ts-pair-b {
+  transition: opacity 0.8s ease;
+}
+.ts-jump-arc {
+  transition: opacity 1.0s ease, stroke-dashoffset 1.2s linear;
+}
+.ts-chimeric {
+  transition: opacity 0.6s ease 0.3s;
+}
+
+.ts-pol-ring.ts-pulse {
+  animation: tsPulse 1s ease-in-out infinite;
+}
+@keyframes tsPulse {
+  0%, 100% { stroke-width: 2.5; filter: drop-shadow(0 0 0 transparent); }
+  50%      { stroke-width: 3.5; filter: drop-shadow(0 0 8px rgba(58,140,111,0.45)); }
+}
+
+.diagram-card.is-animated .polymerase circle,
+.diagram-card.is-animated .evo-core,
+.diagram-card.is-animated .advantage-node,
+.diagram-card.is-animated .stat-orbit,
+.diagram-card.is-animated .spike-peak,
+.diagram-card.is-animated .rbd-core,
+.diagram-card.is-animated .selection-core,
+.diagram-card.is-animated .summary-core,
+.diagram-card.is-animated .epi-hot,
+.diagram-card.is-animated .base-strip .is-hot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: softPulse 1.8s ease-in-out infinite;
+}
+
+.diagram-card.is-animated .plasmid,
+.diagram-card.is-animated .factor-list rect,
+.diagram-card.is-animated .controlled-tags rect,
+.diagram-card.is-animated .segment,
+.diagram-card.is-animated .variant-cloud circle,
+.diagram-card.is-animated .protein-chain circle,
+.diagram-card.is-animated .mutation-tags text {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orbitPulse 2.2s ease-in-out infinite;
+}
+
+.diagram-card.is-animated .factor-list rect:nth-child(3),
+.diagram-card.is-animated .controlled-tags rect:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.diagram-card.is-animated .factor-list rect:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* ─── Slide 10 interaction animations ─────────────────────── */
+.diagram-card.is-transforming .transformation-dna {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: transformDnaIntoCell 1.3s var(--ease-emphasis) both;
+}
+
+.diagram-card.is-conjugating .plasmid-transfer {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: conjugatePlasmidIntoCell 1.3s var(--ease-emphasis) both;
+}
+
+.diagram-card.is-transducing .phage-transfer {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: transducePhageApproach 1.4s var(--ease-emphasis) both;
+}
+
+.diagram-card.is-transducing .phage-dna-injection {
+  animation: injectPhageDna 1.4s ease both;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * prefers-reduced-motion
+ * ═══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+ *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .slide {
+    transition: opacity 200ms ease;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Error / fallback state
+ * ═══════════════════════════════════════════════════════════════ */
+.slide--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12);
+}
+
+.slide--error .slide-content {
+  max-width: 500px;
+}
+
+
+/* PDF fidelity interaction pass */
+.media-frame.is-image-error {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+}
+.media-frame.is-image-error img { display: none; }
+.media-frame.is-image-error::before {
+  content: '图片加载失败';
+  color: var(--muted);
+  font-family: var(--font-system);
+  font-size: var(--slide-body);
+}
+.diagram-card[role="button"] { cursor: pointer; }
+.diagram-card[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), var(--glass-shadow);
+}
+.diagram-card.is-focused {
+  animation: diagramFocus 720ms var(--ease-emphasis);
+}
+.diagram-card.is-focused .is-hot,
+.diagram-card.is-focused .rbd-core,
+.diagram-card.is-focused .selection-core,
+.diagram-card.is-focused .epi-hot,
+.diagram-card.is-focused .stall-ring,
+.diagram-card.is-focused .spike-peak {
+  filter: drop-shadow(0 0 12px var(--accent-glow-strong));
+}
+.diagram-base-substitution[data-step="1"] .is-hot,
+.diagram-base-substitution[data-step="2"] .svg-arrow,
+.diagram-base-substitution[data-step="3"] .effect-line,
+.diagram-dual-function[data-step="1"] .svg-arrow:first-of-type,
+.diagram-dual-function[data-step="2"] .svg-arrow:last-of-type,
+.diagram-convergence[data-step="1"] .svg-arrow:nth-of-type(1),
+.diagram-convergence[data-step="2"] .svg-arrow:nth-of-type(2),
+.diagram-convergence[data-step="3"] .svg-arrow:nth-of-type(3),
+.diagram-convergence[data-step="4"] .selection-core,
+.diagram-host-factory[data-step="1"] .timeline,
+.diagram-host-factory[data-step="2"] circle,
+.diagram-host-factory[data-step="3"] .spread-arrow,
+.diagram-epistasis[data-step="1"] .svg-arrow:first-of-type,
+.diagram-epistasis[data-step="2"] .svg-arrow:last-of-type,
+.diagram-epistasis[data-step="3"] .epi-hot,
+.diagram-rdRp-switch-engine[data-step="1"] .stall-ring,
+.diagram-rdRp-switch-engine[data-step="2"] .switch-arrow,
+.diagram-rdRp-switch-engine[data-step="3"] path,
+.diagram-eukaryotic-crossing[data-step="1"] path,
+.diagram-eukaryotic-crossing[data-step="2"] .crossover,
+.diagram-xbb-genome[data-step="1"] .svg-arrow,
+.diagram-xbb-genome[data-step="2"] .breakpoint {
+  filter: drop-shadow(0 0 12px var(--accent-glow-strong));
+}
+.diagram-immune-escape[data-step="1"] text:nth-of-type(2),
+.diagram-immune-escape[data-step="2"] text:nth-of-type(3),
+.diagram-immune-escape[data-step="3"] text:nth-of-type(4),
+.diagram-immune-escape[data-step="4"] .svg-arrow {
+  filter: drop-shadow(0 0 10px var(--highlight-soft));
+  font-weight: 700;
+}
+.diagram-frequency-landscape[data-step="1"] svg circle:nth-of-type(1),
+.diagram-frequency-landscape[data-step="2"] svg circle:nth-of-type(2),
+.diagram-frequency-landscape[data-step="3"] .spike-peak,
+.diagram-frequency-landscape[data-step="4"] .peak-curve {
+  filter: drop-shadow(0 0 12px var(--accent-glow-strong));
+}
+.diagram-three-way-comparison[data-compare="euk"] svg > rect:nth-of-type(1),
+.diagram-three-way-comparison[data-compare="prok"] svg > rect:nth-of-type(2),
+.diagram-three-way-comparison[data-compare="virus"] svg > rect:nth-of-type(3) {
+  stroke: var(--accent);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+.diagram-three-way-comparison .comparison-card > rect {
+  transition: stroke 220ms ease, stroke-width 220ms ease, fill 220ms ease, filter 220ms ease;
+}
+.diagram-three-way-comparison .comparison-card--virus .mini-jump {
+  opacity: 0;
+}
+.diagram-three-way-comparison[data-compare="euk"] .comparison-card--euk > rect,
+.diagram-three-way-comparison[data-compare="prok"] .comparison-card--prok > rect,
+.diagram-three-way-comparison[data-compare="virus"] .comparison-card--virus > rect {
+  stroke: var(--accent);
+  stroke-width: 3;
+  fill: rgba(58, 140, 111, 0.045);
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+.diagram-three-way-comparison[data-compare="euk"] .chromosome-left {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pairChromosomeLeft 1.15s var(--ease-emphasis) both;
+}
+.diagram-three-way-comparison[data-compare="euk"] .chromosome-right {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pairChromosomeRight 1.15s var(--ease-emphasis) both;
+}
+.diagram-three-way-comparison[data-compare="prok"] .uptake-arrow {
+  stroke: var(--accent);
+  marker-end: url("#tw-arrow-accent");
+}
+.diagram-three-way-comparison[data-compare="prok"] .uptake-dna {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: comparisonDnaUptake 1.15s var(--ease-emphasis) both;
+}
+.diagram-three-way-comparison[data-compare="prok"] .uptake-dna path,
+.diagram-three-way-comparison[data-compare="prok"] .uptake-dna circle {
+  stroke: var(--accent);
+  fill: var(--accent);
+}
+.diagram-three-way-comparison[data-compare="virus"] .template-b {
+  stroke: var(--accent);
+}
+.diagram-three-way-comparison[data-compare="virus"] .mini-rdrp {
+  animation: miniTemplateJump 1.65s var(--ease-emphasis) both;
+  stroke: var(--accent);
+}
+.diagram-three-way-comparison[data-compare="virus"] .mini-rdrp-label {
+  animation: miniTemplateJumpLabel 1.65s var(--ease-emphasis) both;
+}
+.diagram-three-way-comparison[data-compare="virus"] .mini-jump {
+  opacity: 1;
+  animation: dashFlow 1.1s linear infinite;
+}
+.slide[data-layout="protein-focus"] .slide-visual {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+@keyframes diagramFocus {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.012); }
+  100% { transform: scale(1); }
+}
+@keyframes pairChromosomeLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(16px); }
+}
+@keyframes pairChromosomeRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(-16px); }
+}
+@keyframes comparisonDnaUptake {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  78% { transform: translate(58px, 36px) scale(0.72); opacity: 1; }
+  100% { transform: translate(72px, 46px) scale(0.55); opacity: 0.48; }
+}
+@keyframes miniTemplateJump {
+  0% { transform: translate(0, 0); }
+  45% { transform: translate(0, 76px); }
+  72% { transform: translate(76px, 76px); }
+  100% { transform: translate(76px, 112px); }
+}
+@keyframes miniTemplateJumpLabel {
+  0% { transform: translate(0, 0); }
+  45% { transform: translate(0, 76px); }
+  72% { transform: translate(76px, 76px); }
+  100% { transform: translate(76px, 112px); }
+}

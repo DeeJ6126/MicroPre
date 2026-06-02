@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SARS-CoV-2 分子进化：点突变与重组</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --bg: #f7f8fa; --surface: #ffffff; --surface-warm: #faf7f5;
+  --fg: #1a3a4a; --fg-2: #2a4a5a; --muted: #5a6a7a; --meta: #7a8a9a;
+  --accent: #3a8c6f; --accent-on: #ffffff;
+  --accent-hover: color-mix(in oklab, #3a8c6f, black 8%);
+  --accent-active: color-mix(in oklab, #3a8c6f, black 14%);
+  --highlight: #c17f3b; --highlight-soft: rgba(193,127,59,0.15);
+  --accent-soft: rgba(58,140,111,0.12);
+  --accent-glow: rgba(58,140,111,0.20);
+  --accent-glow-strong: rgba(58,140,111,0.35);
+  --deep-blue-soft: rgba(26,58,74,0.06);
+  --deep-blue-glass: rgba(26,58,74,0.03);
+  --success: #17a34a; --warn: #c17f3b; --danger: #dc2626;
+  --border: #e2e6ea; --border-soft: #eceff3;
+  --glass-bg: rgba(255,255,255,0.72);
+  --glass-border: rgba(255,255,255,0.35);
+  --glass-shadow: 0 8px 32px rgba(26,58,74,0.08);
+  --glass-shadow-strong: 0 12px 48px rgba(26,58,74,0.12);
+  --font-display: 'DM Sans','Noto Sans SC',-apple-system,system-ui,sans-serif;
+  --font-body: 'EB Garamond','Noto Serif SC',Georgia,serif;
+  --font-mono: 'JetBrains Mono',ui-monospace,monospace;
+  --font-system: -apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --text-xs: 12px; --text-sm: 14px; --text-base: 16px;
+  --text-lg: 20px; --text-xl: 24px; --text-2xl: 32px; --text-3xl: 48px; --text-4xl: 64px;
+  --slide-label: clamp(11px,0.7vw,15px);
+  --slide-title: clamp(24px,2.8vw,48px);
+  --slide-subtitle: clamp(14px,1.0vw,20px);
+  --slide-body: clamp(13px,0.85vw,17px);
+  --slide-caption: clamp(10px,0.6vw,13px);
+  --leading-body: 1.55; --leading-tight: 1.15; --tracking-display: -0.015em;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-12:48px;--space-20:80px;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-pill:9999px;
+  --elev-flat:none;--elev-ring:0 0 0 1px var(--border);--elev-raised:0 2px 8px rgba(26,58,74,0.08);
+  --focus-ring: 0 0 0 3px color-mix(in oklab,var(--accent),transparent 70%);
+  --motion-fast:150ms;--motion-base:250ms;
+  --ease-standard:cubic-bezier(0.2,0,0,1);--ease-emphasis:cubic-bezier(0.22,1,0.36,1);
+  --header-h:9%;--footer-h:6.5%;--slide-inset-top:9.5%;--slide-inset-bot:7.5%;--slide-inset-horiz:4.2%;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;font-family:var(--font-body);font-size:var(--text-base);line-height:var(--leading-body);color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+button{font:inherit;cursor:pointer;border:none;background:none}
+img{display:block;max-width:100%}ul{list-style:none}svg{overflow:visible}
+.deck{position:relative;width:min(100vw,177.78vh);height:min(100vh,56.25vw);min-width:320px;min-height:180px;margin:0 auto;overflow:hidden;background:var(--surface);box-shadow:0 0 80px rgba(26,58,74,0.06)}
+body{display:grid;place-items:center;background:var(--bg)}
+.deck::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--fg),var(--accent),var(--highlight));z-index:100}
+.deck-header{position:absolute;top:0;left:var(--slide-inset-horiz);right:var(--slide-inset-horiz);height:var(--header-h);display:flex;align-items:center;gap:var(--space-4);z-index:20;border-bottom:1px solid var(--border-soft)}
+.deck-header__brand{width:clamp(28px,2.6vw,44px);aspect-ratio:1;display:grid;place-items:center;border-radius:var(--radius-sm);background:var(--accent);color:var(--accent-on);font-family:var(--font-display);font-size:clamp(10px,0.7vw,14px);font-weight:700}
+.deck-header__info{flex:1;min-width:0}
+.deck-header__kicker{margin-bottom:1px;font-family:var(--font-system);font-size:var(--slide-label);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent)}
+.deck-header__title{font-family:var(--font-display);font-size:clamp(11px,1.0vw,18px);font-weight:600;color:var(--fg);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:var(--tracking-display)}
+.deck-header__section{font-family:var(--font-system);font-size:var(--slide-label);color:var(--muted);white-space:nowrap;background:var(--deep-blue-soft);padding:4px 12px;border-radius:var(--radius-pill)}
+.slide-stage{position:absolute;top:var(--slide-inset-top);left:var(--slide-inset-horiz);right:var(--slide-inset-horiz);bottom:var(--slide-inset-bot);z-index:2}
+.slide{position:absolute;inset:0;display:grid;gap:2.5%;align-content:center;opacity:0;transform:translateX(3%) scale(0.99);pointer-events:none;transition:opacity 450ms var(--ease-standard),transform 500ms var(--ease-emphasis);will-change:transform,opacity}
+.slide.is-active{opacity:1;transform:translateX(0) scale(1);pointer-events:auto}
+.slide.is-exiting-left{opacity:0;transform:translateX(-3%) scale(0.99)}
+.slide.is-exiting-right{opacity:0;transform:translateX(3%) scale(0.99)}
+.slide-content{position:relative;z-index:3;align-self:center;min-width:0;display:flex;flex-direction:column;gap:var(--space-2)}
+.slide-eyebrow{font-family:var(--font-system);font-size:var(--slide-label);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:var(--space-2)}
+.slide-eyebrow::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:1px}
+.slide-title{font-family:var(--font-display);font-size:var(--slide-title);font-weight:600;line-height:var(--leading-tight);letter-spacing:var(--tracking-display);color:var(--fg);max-width:14em}
+.slide-subtitle{font-family:var(--font-body);font-size:var(--slide-subtitle);font-weight:400;line-height:1.45;color:var(--muted);max-width:38em}
+.bullet-list{display:grid;gap:clamp(6px,0.5vw,10px);margin-top:clamp(4px,0.6vw,12px)}
+.bullet-list li{position:relative;padding:clamp(6px,0.55vw,10px) clamp(12px,0.9vw,16px) clamp(6px,0.55vw,10px) clamp(28px,2.0vw,38px);font-size:var(--slide-body);line-height:1.45;color:var(--fg);background:var(--deep-blue-glass);border:1px solid var(--border-soft);border-radius:var(--radius-md);overflow-wrap:anywhere}
+.bullet-list li::before{position:absolute;top:0.95em;left:clamp(11px,0.85vw,16px);width:7px;height:7px;content:'';background:var(--accent);border-radius:50%;opacity:0.7}
+.slide-visual{display:grid;gap:clamp(6px,0.6vw,12px);align-self:stretch;min-width:0;min-height:0}
+.slide,.slide[data-layout="image-focus"]{grid-template-columns:minmax(0,0.72fr) minmax(0,1.28fr)}
+.slide[data-layout="image-focus"] .slide-visual{grid-template-rows:minmax(0,1fr) minmax(0,auto)}
+.slide[data-layout="split-visual"]{grid-template-columns:minmax(0,0.72fr) minmax(0,1.28fr)}
+.slide[data-layout="split-visual"] .slide-visual{grid-template-rows:minmax(0,1fr) minmax(0,auto)}
+.slide[data-layout="diagram-focus"],.slide[data-layout="hero-mechanism"]{grid-template-columns:minmax(0,0.78fr) minmax(0,1.22fr)}
+.slide[data-layout="diagram-focus"] .slide-visual,.slide[data-layout="hero-mechanism"] .slide-visual{grid-template-rows:minmax(0,1fr)}
+.slide[data-layout="diagram-focus"] .diagram-card,.slide[data-layout="hero-mechanism"] .diagram-card{min-height:100%}
+.slide[data-layout="wide-diagram"]{grid-template-columns:minmax(0,0.64fr) minmax(0,1.36fr)}
+.slide[data-layout="wide-diagram"] .slide-visual{grid-template-rows:minmax(0,1fr)}
+.slide[data-layout="summary"]{grid-template-columns:minmax(0,0.7fr) minmax(0,1.3fr)}
+.slide[data-layout="summary"] .slide-visual{grid-template-rows:minmax(0,1fr)}
+.slide[data-layout="protein-focus"]{grid-template-columns:minmax(0,0.6fr) minmax(0,1.4fr)}
+.slide[data-layout="protein-focus"] .slide-visual{grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);grid-template-rows:minmax(0,1fr) minmax(0,auto)}
+.slide[data-layout="protein-focus"] .media-frame{grid-row:1/2;grid-column:1/2}
+.slide[data-layout="protein-focus"] .protein-panel{grid-row:1/3;grid-column:2/3;min-height:100%}
+.slide[data-layout="protein-focus"] .diagram-card{grid-row:2/3;grid-column:1/2}
+.media-frame{display:grid;grid-template-rows:minmax(0,1fr) auto;overflow:hidden;background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-md);box-shadow:var(--glass-shadow)}
+.media-frame img{width:100%;height:100%;object-fit:contain;display:block}
+.image-caption{padding:clamp(5px,0.45vw,10px) clamp(8px,0.6vw,14px);font-family:var(--font-system);font-size:var(--slide-caption);color:var(--muted);line-height:1.35;background:var(--deep-blue-glass);border-top:1px solid var(--border-soft)}
+.diagram-card{position:relative;display:grid;place-items:center;min-height:clamp(140px,20vh,280px);overflow:hidden;background:var(--glass-bg);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--glass-border);border-radius:var(--radius-lg);box-shadow:var(--glass-shadow)}
+.diagram-card::before{position:absolute;inset:0;content:'';background:linear-gradient(rgba(26,58,74,0.03)1px,transparent 1px),linear-gradient(90deg,rgba(26,58,74,0.03)1px,transparent 1px);background-size:24px 24px;pointer-events:none;z-index:0}
+.diagram-card>*{position:relative;z-index:1}
+.mechanism-svg{width:100%;height:auto;min-height:clamp(130px,16vh,220px);padding:2%}
+.mechanism-svg-large{min-height:clamp(180px,32vh,400px)}
+.mechanism-svg .svg-arrow,.mechanism-svg .summary-link,.mechanism-svg .transfer-bridge,.mechanism-svg .jump-arc,.mechanism-svg .nascent-rna,.mechanism-svg .switch-arrow,.mechanism-svg .crossover,.mechanism-svg .external-dna,.mechanism-svg .peak-curve{fill:none;stroke:var(--fg);stroke-width:2.5;stroke-linecap:round;opacity:0.75}
+.mechanism-svg .switch-arrow,.mechanism-svg .effect-line{stroke:var(--accent);stroke-width:3}
+.mechanism-svg .jump-arc{stroke-width:3;stroke:var(--accent);stroke-dasharray:6 4}
+.mechanism-svg .svg-kicker{fill:var(--accent);font-family:var(--font-system);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;text-anchor:start}
+.mechanism-svg text{font-family:var(--font-system);fill:var(--fg);text-anchor:middle}
+.mechanism-svg .svg-note,.mechanism-svg .effect-text{font-size:14px;fill:var(--muted);font-weight:500}
+.mechanism-svg .effect-text{fill:var(--fg)}
+.mechanism-svg .rna-template path,.mechanism-svg .cloud-rna,.mechanism-svg .mini-rna{fill:none;stroke:var(--fg);stroke-width:4;stroke-linecap:round;opacity:0.5}
+.mechanism-svg .template-b path,.mechanism-svg .cloud-rna.b,.mechanism-svg .mini-rna.b{stroke:var(--accent);opacity:0.7}
+.mechanism-svg .cloud-rna.c{stroke:var(--highlight);opacity:0.5}
+.mechanism-svg .base-strip rect,.mechanism-svg .protein-chain rect,.mechanism-svg .function-box rect,.mechanism-svg .lineage rect,.mechanism-svg .epi-grid rect,.mechanism-svg .summary-node rect,.mechanism-svg .template-label rect,.mechanism-svg .factor-list rect,.mechanism-svg .controlled-tags rect,.mechanism-svg .compare-card rect,.mechanism-svg .evo-track rect{fill:var(--deep-blue-soft);stroke:var(--border);stroke-width:1.5}
+.mechanism-svg .base-strip .is-hot,.mechanism-svg .protein-chain .is-hot,.mechanism-svg .epi-hot{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.mechanism-svg .rbd-core,.mechanism-svg .selection-core,.mechanism-svg .summary-core,.mechanism-svg .polymerase circle,.mechanism-svg .stat-orbit circle,.mechanism-svg .advantage-node,.mechanism-svg .evo-core{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2.5}
+.mechanism-svg .stall-ring{fill:none;stroke:var(--accent-glow);stroke-dasharray:6 6;stroke-width:3}
+.mechanism-svg .base-strip text,.mechanism-svg .function-box text,.mechanism-svg .lineage text,.mechanism-svg .epi-grid text,.mechanism-svg .rbd-text,.mechanism-svg .selection-main,.mechanism-svg .bacterium text{fill:var(--fg);font-family:var(--font-system);font-weight:600;text-anchor:middle;font-size:15px}
+.mechanism-svg .rbd-text,.mechanism-svg .selection-main,.mechanism-svg .summary-core-title{font-size:20px}
+.mechanism-svg .rbd-subtext,.mechanism-svg .selection-sub,.mechanism-svg .summary-core-sub{font-size:13px;fill:var(--muted)}
+.mechanism-svg .rbd-surface{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2;opacity:0.6}
+.mechanism-svg .mutation-tags text{fill:var(--highlight);font-size:14px;font-weight:600;text-anchor:middle}
+.mechanism-svg .antibody{fill:none;stroke:var(--border);stroke-width:6;stroke-linecap:round}
+.mechanism-svg .antibody-faded{opacity:0.4}
+.mechanism-svg .ace2-block{fill:var(--highlight-soft);stroke:var(--highlight);stroke-width:2}
+.mechanism-svg .bacterium ellipse{fill:var(--deep-blue-soft);stroke:var(--border);stroke-width:2}
+.mechanism-svg .chromosome,.mechanism-svg .crossover,.mechanism-svg .mini-chromosome{fill:none;stroke-width:8;stroke-linecap:round}
+.mechanism-svg .chromosome-blue,.mechanism-svg .mini-chromosome{stroke:var(--fg);opacity:0.5}
+.mechanism-svg .chromosome-silver,.mechanism-svg .mini-chromosome.alt{stroke:var(--muted);opacity:0.4}
+.mechanism-svg .crossover{stroke:var(--accent);stroke-width:4;opacity:0.7}
+.mechanism-svg .host-body,.mechanism-svg .host-head{fill:var(--deep-blue-soft);stroke:var(--border);stroke-width:2}
+.mechanism-svg .timeline{stroke:var(--border);stroke-width:2}
+.mechanism-svg .time-node circle{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.mechanism-svg .variant-cloud circle{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.mechanism-svg .plasmid,.mechanism-svg .external-dna{fill:none;stroke:var(--accent);stroke-width:3}
+.mechanism-svg .plasmid-loop{fill:none;stroke:var(--accent);stroke-width:2.5}
+.mechanism-svg .dna-handle{fill:var(--accent);stroke:var(--accent-on);stroke-width:1.5}
+.mechanism-svg .conjugation-arrow{stroke:var(--fg);opacity:0.6}
+.mechanism-svg .transformation-arrow,.mechanism-svg .phage-approach{stroke:var(--muted);stroke-dasharray:8 8;opacity:0.6}
+.mechanism-svg .phage-head{fill:var(--deep-blue-soft);stroke:var(--fg);stroke-width:2.5}
+.mechanism-svg .phage-neck,.mechanism-svg .phage-sheath,.mechanism-svg .phage-tail,.mechanism-svg .phage-leg{stroke:var(--fg);stroke-width:3;stroke-linecap:round}
+.mechanism-svg .phage-sheath{fill:var(--deep-blue-soft)}
+.mechanism-svg .phage-dna-injection{fill:none;stroke:var(--accent);stroke-dasharray:6 6;stroke-width:3;stroke-linecap:round;opacity:0}
+.mechanism-svg .process-labels text{fill:var(--accent);font-size:15px;font-weight:600;text-anchor:middle}
+.mechanism-svg .plasmid-transfer,.mechanism-svg .transformation-dna,.mechanism-svg .phage-transfer{cursor:pointer;outline:none}
+.mechanism-svg .plasmid-transfer:focus-visible,.mechanism-svg .transformation-dna:focus-visible,.mechanism-svg .phage-transfer:focus-visible{filter:drop-shadow(0 0 8px rgba(58,140,111,0.5))}
+.mechanism-svg .chimera rect:first-child,.mechanism-svg .segment-bj{fill:#8a7aaa;opacity:0.7}
+.mechanism-svg .chimera rect:nth-child(2),.mechanism-svg .segment-bm{fill:#7aaa8a;opacity:0.7}
+.mechanism-svg .chimera text{fill:var(--accent-on);font-weight:600;font-size:13px}
+.mechanism-svg .breakpoint{stroke:var(--highlight);stroke-dasharray:5 5;stroke-width:2}
+.mechanism-svg .stat-value{fill:var(--fg);font-size:26px;font-weight:700;font-family:var(--font-mono)}
+.mechanism-svg .stat-label{fill:var(--muted);font-size:12px}
+.mechanism-svg .genome-axis rect{fill:var(--deep-blue-soft);stroke:var(--border);stroke-width:1.5}
+.mechanism-svg .genome-axis .spike-peak{fill:var(--accent-soft);stroke:var(--accent)}
+.mechanism-svg .spread-arrow{stroke:var(--accent)}
+.mechanism-svg .template-label{fill:var(--muted);font-size:13px;text-anchor:start;font-weight:500}
+.mechanism-svg .switch-label{fill:var(--accent);font-size:13px;font-weight:600}
+.mechanism-svg .genome-label{fill:var(--fg);font-size:14px;font-weight:600;text-anchor:end}
+.protein-panel{position:relative;display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;align-items:stretch;padding:clamp(8px,0.7vw,14px);min-height:100%;background:var(--glass-bg);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--glass-border);border-radius:var(--radius-lg);box-shadow:var(--glass-shadow)}
+.protein-panel::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(26,58,74,0.03)1px,transparent 1px),linear-gradient(90deg,rgba(26,58,74,0.03)1px,transparent 1px);background-size:24px 24px;pointer-events:none;z-index:0;opacity:0.5}
+.protein-panel>*{position:relative;z-index:2}
+.protein-panel__topline{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);font-family:var(--font-system);font-size:var(--slide-caption);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--muted)}
+.protein-panel__topline strong{color:var(--fg)}
+.protein-viewer{position:relative;z-index:1;min-height:clamp(180px,28vh,380px);margin:var(--space-2) 0;overflow:hidden;background:var(--bg);border:1px solid var(--border-soft);border-radius:var(--radius-sm)}
+.protein-viewer canvas,.protein-viewer div{max-width:100%;max-height:100%}
+.protein-fallback{display:grid;place-items:center;height:100%;min-height:180px;padding:var(--space-5);text-align:center;color:var(--muted);font-size:var(--slide-caption)}
+.protein-fallback__spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+.protein-fallback--error strong{color:var(--fg)}
+.protein-legend{display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;font-size:var(--slide-caption);color:var(--muted);margin-bottom:var(--space-1)}
+.protein-legend span{display:inline-flex;align-items:center;gap:var(--space-1);padding:3px 8px;background:var(--deep-blue-glass);border:1px solid var(--border-soft);border-radius:var(--radius-pill)}
+.protein-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.protein-source{font-family:var(--font-system);font-size:var(--slide-caption);color:var(--meta);line-height:1.35}
+.deck-nav{position:absolute;bottom:1.2%;right:var(--slide-inset-horiz);display:flex;align-items:center;gap:var(--space-2);z-index:30}
+.nav-btn{display:inline-flex;align-items:center;justify-content:center;min-width:clamp(56px,4.4vw,80px);height:clamp(28px,2.2vw,36px);padding:0 clamp(10px,0.9vw,16px);font-family:var(--font-system);font-size:clamp(11px,0.7vw,13px);font-weight:600;letter-spacing:0.03em;color:var(--accent-on);background:var(--fg);border:none;border-radius:var(--radius-pill);transition:background var(--motion-fast) var(--ease-standard),transform var(--motion-fast) var(--ease-standard),box-shadow var(--motion-fast) var(--ease-standard)}
+.nav-btn:hover:not(:disabled){background:var(--accent);transform:translateY(-1px);box-shadow:0 4px 12px rgba(26,58,74,0.15)}
+.nav-btn:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+.nav-btn:disabled{opacity:0.3;cursor:default}
+.nav-btn--prev{background:transparent;color:var(--fg);border:1.5px solid var(--border)}
+.nav-btn--prev:hover:not(:disabled){background:var(--deep-blue-soft);border-color:var(--fg)}
+.deck-counter{font-family:var(--font-mono);font-size:clamp(11px,0.7vw,14px);color:var(--muted);letter-spacing:0.02em;margin-right:var(--space-1)}
+.deck-footer{position:absolute;bottom:0;left:var(--slide-inset-horiz);right:var(--slide-inset-horiz);height:calc(var(--footer-h) - 0.5%);display:flex;align-items:center;justify-content:space-between;z-index:20;border-top:1px solid var(--border-soft);padding-top:2px}
+.deck-footer__left{display:flex;align-items:center;gap:var(--space-3)}
+@keyframes fadeUp{from{transform:translateY(14px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes dashFlow{from{stroke-dashoffset:40}to{stroke-dashoffset:0}}
+@keyframes templateFlow{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes softPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.75;transform:scale(1.04)}}
+@keyframes orbitPulse{0%,100%{opacity:0.6}50%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes transformDnaIntoCell{0%{transform:translate(0,0)scale(1);opacity:1}65%{transform:translate(260px,-80px)scale(0.6);opacity:1}100%{transform:translate(310px,-100px)scale(0.4);opacity:0.15}}
+@keyframes conjugatePlasmidIntoCell{0%{transform:translate(0,0)scale(1);opacity:1}70%{transform:translate(320px,24px)scale(0.6);opacity:1}100%{transform:translate(370px,36px)scale(0.42);opacity:0.2}}
+@keyframes transducePhageApproach{0%{transform:translate(0,0)}65%{transform:translate(340px,20px)}100%{transform:translate(420px,28px)}}
+@keyframes injectPhageDna{0%,55%{opacity:0;stroke-dashoffset:30}65%{opacity:1}100%{opacity:1;stroke-dashoffset:0}}
+.slide.is-active .slide-eyebrow,.slide.is-active .slide-title,.slide.is-active .slide-subtitle,.slide.is-active .bullet-list li,.slide.is-active .media-frame,.slide.is-active .diagram-card,.slide.is-active .protein-panel{animation:fadeUp 600ms var(--ease-emphasis) both}
+.slide.is-active .slide-title{animation-delay:60ms}
+.slide.is-active .slide-subtitle{animation-delay:110ms}
+.slide.is-active .bullet-list li:nth-child(1){animation-delay:150ms}
+.slide.is-active .bullet-list li:nth-child(2){animation-delay:200ms}
+.slide.is-active .bullet-list li:nth-child(3){animation-delay:250ms}
+.slide.is-active .bullet-list li:nth-child(4){animation-delay:300ms}
+.slide.is-active .media-frame{animation-delay:140ms}
+.slide.is-active .diagram-card{animation-delay:210ms}
+.slide.is-active .protein-panel{animation-delay:260ms}
+.diagram-card.is-animated .svg-arrow,.diagram-card.is-animated .summary-link,.diagram-card.is-animated .transfer-bridge,.diagram-card.is-animated .jump-arc,.diagram-card.is-animated .nascent-rna,.diagram-card.is-animated .switch-arrow,.diagram-card.is-animated .crossover,.diagram-card.is-animated .external-dna,.diagram-card.is-animated .peak-curve{stroke-dasharray:12 8;animation:dashFlow 1.2s linear infinite}
+.diagram-card.is-animated .rna-template path,.diagram-card.is-animated .cloud-rna,.diagram-card.is-animated .mini-rna{stroke-dasharray:16 10;animation:templateFlow 1.5s linear infinite}
+.diagram-card.is-animated .polymerase circle,.diagram-card.is-animated .evo-core,.diagram-card.is-animated .advantage-node,.diagram-card.is-animated .spike-peak,.diagram-card.is-animated .rbd-core,.diagram-card.is-animated .selection-core,.diagram-card.is-animated .summary-core,.diagram-card.is-animated .epi-hot,.diagram-card.is-animated .base-strip .is-hot{transform-box:fill-box;transform-origin:center;animation:softPulse 1.8s ease-in-out infinite}
+.diagram-card.is-animated .plasmid,.diagram-card.is-animated .factor-list rect,.diagram-card.is-animated .controlled-tags rect,.diagram-card.is-animated .variant-cloud circle{transform-box:fill-box;transform-origin:center;animation:orbitPulse 2.2s ease-in-out infinite}
+.diagram-card.is-animated .factor-list rect:nth-child(3),.diagram-card.is-animated .controlled-tags rect:nth-child(3){animation-delay:0.2s}
+.diagram-card.is-animated .factor-list rect:nth-child(5){animation-delay:0.4s}
+.diagram-card.is-transforming .transformation-dna{transform-box:fill-box;transform-origin:center;animation:transformDnaIntoCell 1.3s var(--ease-emphasis) both}
+.diagram-card.is-conjugating .plasmid-transfer{transform-box:fill-box;transform-origin:center;animation:conjugatePlasmidIntoCell 1.3s var(--ease-emphasis) both}
+.diagram-card.is-transducing .phage-transfer{transform-box:fill-box;transform-origin:center;animation:transducePhageApproach 1.4s var(--ease-emphasis) both}
+.diagram-card.is-transducing .phage-dna-injection{animation:injectPhageDna 1.4s ease both}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}.slide{transition:opacity 200ms ease}}
+.slide--error{display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--space-12)}
+.slide--error .slide-content{max-width:500px}
+  </style>
+</head>
+<body>
+  <div class="deck" role="application" aria-label="SARS-CoV-2 分子进化演示">
+    <header class="deck-header" aria-label="演示页眉">
+      <div class="deck-header__brand" aria-hidden="true">B</div>
+      <div class="deck-header__info">
+        <p class="deck-header__kicker">Molecular Evolution</p>
+        <h1 id="deck-title" class="deck-header__title">SARS-CoV-2 分子进化</h1>
+      </div>
+      <span id="deck-section" class="deck-header__section">Point Mutation</span>
+    </header>
+    <main id="slide-stage" class="slide-stage" aria-live="polite"></main>
+    <footer class="deck-footer" aria-label="演示页脚">
+      <div class="deck-footer__left">
+        <span id="slide-counter" class="deck-counter">01 / 15</span>
+      </div>
+    </footer>
+    <nav class="deck-nav" aria-label="幻灯片导航">
+      <button id="prev-btn" class="nav-btn nav-btn--prev" type="button" aria-label="上一页" disabled>← Prev</button>
+      <button id="next-btn" class="nav-btn" type="button" aria-label="下一页">Next →</button>
+    </nav>
+  </div>
+<script>
+'use strict';var st={slides:[],currentIndex:0,direction:'next',proteinStage:null,proteinResizeHandler:null,nglScriptPromise:null},stage=document.getElementById('slide-stage'),counter=document.getElementById('slide-counter'),deckSection=document.getElementById('deck-section'),prevBtn=document.getElementById('prev-btn'),nextBtn=document.getElementById('next-btn'),diagramTitles={'base-substitution':'碱基替换到蛋白功能改变','dual-function':'点突变的受体结合与免疫逃逸双功能','convergence':'N501Y 趋同进化示意','immune-escape':'Omicron 免疫逃逸机制','host-factory':'免疫缺陷宿主体内进化工厂','epistasis':'突变组合的上位性效应','summary-map':'点突变核心地位总结图','viral-template-switch':'病毒 RNA 复制过程中的模板切换','eukaryotic-crossing':'真核生物同源染色体交换','prokaryotic-transfer':'原核生物基因流动','three-way-comparison':'三类重组机制对比','rdRp-switch-engine':'RdRp 换轨复制机制','xbb-genome':'XBB 重组基因组示意','frequency-landscape':'重组频率与断点分布','evolution-accelerator':'重组作为进化加速器'},diagrams={};
+function q(a,b){return'<svg class="mechanism-svg'+(b?' mechanism-svg-large':'')+'" viewBox="0 0 '+a+'" aria-hidden="true">'}
+function en(v){return String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;')}
+function ea(v){return en(v).replaceAll('`','&#096;')}
+/*──碱基替换──*/diagrams['base-substitution']=q('720 240')+'<defs><marker id="bs" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker></defs><text class="svg-kicker" x="42" y="32">single nucleotide substitution</text><rect x="48" y="68" width="52" height="40" rx="10" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><rect x="114" y="68" width="52" height="40" rx="10" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><rect class="is-hot" x="180" y="68" width="52" height="40" rx="10" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2"/><rect x="246" y="68" width="52" height="40" rx="10" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="74" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">A</text><text x="140" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">U</text><text x="206" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">C</text><text x="272" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">G</text><text x="206" y="136" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">C → U</text><path class="svg-arrow" marker-end="url(#bs)" d="M320 90C360 90 390 90 430 90"/><rect x="450" y="68" width="164" height="42" rx="20" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><circle cx="480" cy="89" r="11" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="1.5"/><circle class="is-hot" cx="530" cy="89" r="11" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2"/><circle cx="580" cy="89" r="11" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="1.5"/><text x="530" y="140" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">氨基酸改变</text><path class="effect-line" d="M204 164C276 214 462 214 532 164" fill="none" stroke="#3a8c6f" stroke-width="2.5" opacity="0.6"/><text x="370" y="216" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">单个碱基变化可能放大为功能差异</text></svg>';
+/*──双功能──*/diagrams['dual-function']=q('720 240')+'<defs><marker id="df" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><circle class="rbd-core" cx="140" cy="122" r="58" fill="rgba(58,140,111,0.1)" stroke="#3a8c6f" stroke-width="2.5"/><text x="140" y="115" fill="#1a3a4a" font-family="system-ui" font-size="18" font-weight="700" text-anchor="middle">RBD</text><text x="140" y="140" fill="#5a6a7a" font-family="system-ui" font-size="13" text-anchor="middle">点突变</text><path class="svg-arrow" marker-end="url(#df)" d="M206 100C280 52 350 54 428 74" stroke="#3a8c6f" stroke-width="2"/><path class="svg-arrow" marker-end="url(#df)" d="M206 144C280 192 350 190 428 170" stroke="#3a8c6f" stroke-width="2"/><rect x="446" y="36" width="172" height="66" rx="14" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="532" y="68" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">ACE2 结合增强</text><text x="532" y="90" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">入侵效率上升</text><rect x="446" y="138" width="172" height="66" rx="14" fill="rgba(193,127,59,0.08)" stroke="#c17f3b" stroke-width="1.5"/><text x="532" y="168" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">抗体识别下降</text><text x="532" y="190" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">免疫逃逸增强</text></svg>';
+/*──趋同──*/diagrams.convergence=q('720 240')+'<defs><marker id="cv" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker></defs><rect x="56" y="36" width="140" height="40" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="126" y="63" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">Alpha</text><rect x="56" y="94" width="140" height="40" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="126" y="121" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">Beta</text><rect x="56" y="152" width="140" height="40" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="126" y="179" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">Gamma</text><path class="svg-arrow" marker-end="url(#cv)" d="M216 58C298 62 354 86 424 108"/><path class="svg-arrow" marker-end="url(#cv)" d="M216 116H424"/><path class="svg-arrow" marker-end="url(#cv)" d="M216 174C298 170 354 146 424 132"/><circle class="selection-core" cx="516" cy="120" r="62" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2.5"/><text x="516" y="112" fill="#1a3a4a" font-family="system-ui" font-size="20" font-weight="700" text-anchor="middle">N501Y</text><text x="516" y="138" fill="#5a6a7a" font-family="system-ui" font-size="14" text-anchor="middle">趋同选择</text></svg>';
+/*──免疫逃逸──*/diagrams['immune-escape']=q('720 240')+'<defs><marker id="ie" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker></defs><path d="M268 60C330 20 420 42 446 108C472 174 390 208 314 180C252 156 222 92 268 60Z" fill="rgba(58,140,111,0.08)" stroke="#3a8c6f" stroke-width="2"/><text x="350" y="120" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">Omicron RBD</text><text x="250" y="50" fill="#c17f3b" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">K417N</text><text x="450" y="68" fill="#c17f3b" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">E484A</text><text x="434" y="196" fill="#c17f3b" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">Q493R</text><path d="M86 64L140 120L86 176M140 120L186 120" fill="none" stroke="#e2e6ea" stroke-width="8" stroke-linecap="round" opacity="0.6"/><text x="126" y="202" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">抗体识别下降</text><path class="svg-arrow" marker-end="url(#ie)" d="M456 120C492 120 516 120 556 120"/><rect x="564" y="80" width="56" height="80" rx="12" fill="rgba(193,127,59,0.1)" stroke="#c17f3b" stroke-width="2"/><text x="592" y="126" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">ACE2</text><text x="448" y="218" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">结合维持，逃逸增强</text></svg>';
+/*──进化工厂──*/diagrams['host-factory']=q('860 460',1)+'<defs><marker id="hf" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker></defs><circle cx="140" cy="220" r="68" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/><circle cx="140" cy="118" r="34" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/><text x="140" y="324" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">免疫缺陷宿主</text><path class="timeline" marker-end="url(#hf)" d="M248 220H680" fill="none" stroke="#e2e6ea" stroke-width="2"/><circle cx="320" cy="220" r="18" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2"/><text x="320" y="272" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">持续感染</text><circle cx="460" cy="220" r="18" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2"/><text x="460" y="272" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">突变积累</text><circle cx="600" cy="220" r="18" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2"/><text x="600" y="272" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">适应筛选</text><circle cx="310" cy="148" r="8" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><circle cx="366" cy="126" r="6" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><circle cx="428" cy="142" r="10" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><circle cx="498" cy="120" r="7" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><circle cx="568" cy="148" r="9" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><circle cx="640" cy="126" r="6" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><path class="svg-arrow spread-arrow" marker-end="url(#hf)" d="M636 184C694 148 726 114 762 68" fill="none" stroke="#3a8c6f" stroke-width="2.5"/><text x="648" y="60" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="end">外溢传播</text></svg>';
+/*──上位性──*/diagrams.epistasis=q('720 240')+'<defs><marker id="ep" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><rect x="76" y="48" width="152" height="56" rx="14" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="152" y="83" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">背景 A</text><rect x="76" y="136" width="152" height="56" rx="14" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="152" y="171" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">背景 B</text><rect class="epi-hot" x="460" y="76" width="170" height="82" rx="20" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2"/><text x="545" y="112" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="700" text-anchor="middle">突变组合</text><text x="545" y="138" fill="#3a8c6f" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">1 + 1 &gt; 2</text><path class="svg-arrow" marker-end="url(#ep)" d="M244 78C324 74 372 94 452 108"/><path class="svg-arrow" marker-end="url(#ep)" d="M244 166C324 170 372 146 452 130"/><text x="348" y="215" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">同一突变在不同遗传背景中效果不同</text></svg>';
+/*──总结──*/diagrams['summary-map']=q('860 460',1)+'<defs><marker id="sm" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><circle class="summary-core" cx="430" cy="230" r="70" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2.5"/><text x="430" y="220" fill="#1a3a4a" font-family="system-ui" font-size="22" font-weight="700" text-anchor="middle">点突变</text><text x="430" y="248" fill="#5a6a7a" font-family="system-ui" font-size="14" text-anchor="middle">基础引擎</text><rect x="84" y="80" width="174" height="52" rx="16" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="171" y="115" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">RBD 热点</text><rect x="602" y="80" width="174" height="52" rx="16" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="689" y="115" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">ACE2 亲和力</text><rect x="84" y="316" width="174" height="52" rx="16" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="171" y="351" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">免疫逃逸</text><rect x="602" y="316" width="174" height="52" rx="16" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="689" y="351" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">上位性</text><path class="summary-link" marker-end="url(#sm)" d="M360 184C298 148 260 130 258 118"/><path class="summary-link" marker-end="url(#sm)" d="M500 184C556 150 594 130 602 118"/><path class="summary-link" marker-end="url(#sm)" d="M360 276C298 314 260 332 258 342"/><path class="summary-link" marker-end="url(#sm)" d="M500 276C556 312 594 330 602 342"/></svg>';
+/*──模板切换──*/diagrams['viral-template-switch']=q('820 440',1)+'<defs><marker id="vt" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><text class="svg-kicker" x="70" y="48">copy-choice / template switching</text><text x="82" y="110" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600">亲本模板 A</text><path d="M80 140C136 104 192 180 248 140S360 140 416 140S528 104 584 140S696 140 752 126" fill="none" stroke="#1a3a4a" stroke-width="3.5" opacity="0.45"/><text x="82" y="260" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600">亲本模板 B</text><path d="M80 290C136 254 192 330 248 290S360 290 416 290S528 254 584 290S696 290 752 276" fill="none" stroke="#3a8c6f" stroke-width="3.5" opacity="0.6"/><path class="nascent-rna" d="M100 170C180 152 248 164 316 146C392 124 452 204 514 268C568 322 644 304 712 278" fill="none" stroke="#1a3a4a" stroke-width="2.5" opacity="0.5"/><circle cx="350" cy="148" r="38" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2.5"/><text x="350" y="156" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="700" text-anchor="middle">RdRp</text><path class="jump-arc" marker-end="url(#vt)" d="M378 172C440 192 462 232 504 268"/><text x="396" y="214" fill="#3a8c6f" font-family="system-ui" font-size="13" font-weight="600">模板跳跃</text><rect x="200" y="372" width="150" height="24" rx="12" fill="#8a7aaa" opacity="0.7"/><rect x="350" y="372" width="230" height="24" rx="12" fill="#7aaa8a" opacity="0.7"/><text x="368" y="424" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">嵌合基因组：A 片段 + B 片段</text></svg>';
+/*──真核──*/diagrams['eukaryotic-crossing']=q('820 440',1)+'<text class="svg-kicker" x="78" y="48">meiosis / homologous chromosome pairing</text><path d="M240 82C296 156 296 264 240 342" fill="none" stroke="#1a3a4a" stroke-width="7" opacity="0.4" stroke-linecap="round"/><path d="M292 82C236 156 236 264 292 342" fill="none" stroke="#1a3a4a" stroke-width="7" opacity="0.4" stroke-linecap="round"/><path d="M526 82C470 156 470 264 526 342" fill="none" stroke="#5a6a7a" stroke-width="7" opacity="0.3" stroke-linecap="round"/><path d="M474 82C530 156 530 264 474 342" fill="none" stroke="#5a6a7a" stroke-width="7" opacity="0.3" stroke-linecap="round"/><path class="crossover" d="M270 192C340 222 408 222 504 192" fill="none" stroke="#3a8c6f" stroke-width="4" opacity="0.7"/><path class="crossover" d="M504 240C418 214 348 214 270 240" fill="none" stroke="#3a8c6f" stroke-width="4" opacity="0.7"/><rect x="126" y="370" width="156" height="38" rx="18" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="204" y="395" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">结构化</text><rect x="326" y="370" width="156" height="38" rx="18" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="404" y="395" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">受控</text><rect x="526" y="370" width="156" height="38" rx="18" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="604" y="395" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">染色体交换</text></svg>';
+/*──原核──*/diagrams['prokaryotic-transfer']=q('820 440',1)+'<defs><marker id="pk" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker><marker id="pa" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><g class="bacterium bacterium-donor"><ellipse cx="198" cy="210" rx="100" ry="56" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/><text x="198" y="216" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">供体细胞</text><g class="plasmid-transfer" data-pt="conjugation" role="button" tabindex="0" aria-label="点击演示质粒经接合进入受体细胞"><circle cx="238" cy="178" r="20" fill="none" stroke="#3a8c6f" stroke-width="2.5"/><path d="M226 178C226 164 250 164 250 178S238 192 238 178" fill="none" stroke="#3a8c6f" stroke-width="2"/></g></g><g class="bacterium bacterium-recipient"><ellipse cx="614" cy="210" rx="114" ry="64" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/><text x="614" y="216" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">受体细胞</text></g><path class="transfer-bridge conjugation-arrow" marker-end="url(#pk)" d="M254 178C360 160 460 168 530 198" fill="none" stroke="#1a3a4a" stroke-width="2" opacity="0.6"/><text x="198" y="30" fill="#3a8c6f" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">转导</text><text x="398" y="148" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">接合</text><text x="354" y="326" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">转化</text><path class="transfer-bridge transformation-arrow" marker-end="url(#pk)" d="M334 310C416 300 488 268 536 228" fill="none" stroke="#5a6a7a" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/><g class="transformation-dna" data-pt="transformation" role="button" tabindex="0" aria-label="点击演示外源 DNA 通过转化进入受体细胞"><path class="external-dna" d="M238 310C270 290 306 330 340 310S410 290 446 310" fill="none" stroke="#3a8c6f" stroke-width="2.5"/><circle cx="238" cy="310" r="7" fill="#3a8c6f" stroke="#fff" stroke-width="1.5"/><circle cx="446" cy="310" r="7" fill="#3a8c6f" stroke="#fff" stroke-width="1.5"/></g><g class="phage-transfer" data-pt="transduction" role="button" tabindex="0" aria-label="点击演示噬菌体靠近受体细胞并注入遗传物质"><polygon points="170,24 194,8 218,24 218,50 194,66 170,50" fill="rgba(26,58,74,0.08)" stroke="#1a3a4a" stroke-width="2.5"/><line x1="194" y1="66" x2="194" y2="74" stroke="#1a3a4a" stroke-width="3" stroke-linecap="round"/><rect x="186" y="74" width="16" height="20" rx="5" fill="rgba(26,58,74,0.08)" stroke="#1a3a4a" stroke-width="2.5"/><line x1="194" y1="94" x2="194" y2="106" stroke="#1a3a4a" stroke-width="3" stroke-linecap="round"/><line x1="194" y1="106" x2="170" y2="118" stroke="#1a3a4a" stroke-width="2.5"/><line x1="194" y1="106" x2="194" y2="124" stroke="#1a3a4a" stroke-width="2.5"/><line x1="194" y1="106" x2="218" y2="118" stroke="#1a3a4a" stroke-width="2.5"/></g><path class="transfer-bridge phage-approach" marker-end="url(#pa)" d="M238 68C368 52 494 78 590 128" fill="none" stroke="#3a8c6f" stroke-width="2" stroke-dasharray="8 8" opacity="0.6"/><path class="phage-dna-injection" marker-end="url(#pa)" d="M614 136V206" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="6 6"/><text x="398" y="386" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">点击 DNA、质粒或噬菌体，分别演示三类原核重组路径</text></svg>';
+/*──对比──*/diagrams['three-way-comparison']=q('900 440',1)+'<defs><marker id="tw" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker></defs><rect x="36" y="54" width="256" height="300" rx="22" fill="rgba(26,58,74,0.03)" stroke="#e2e6ea" stroke-width="1.5"/><text x="164" y="96" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">真核生物</text><path d="M126 134C162 186 162 240 126 294" fill="none" stroke="#1a3a4a" stroke-width="5" opacity="0.4" stroke-linecap="round"/><path d="M202 134C166 186 166 240 202 294" fill="none" stroke="#5a6a7a" stroke-width="5" opacity="0.3" stroke-linecap="round"/><path class="crossover" d="M166 202C200 216 218 216 200 202" fill="none" stroke="#3a8c6f" stroke-width="3" opacity="0.7"/><text x="164" y="332" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">染色体片段交换</text><rect x="322" y="54" width="256" height="300" rx="22" fill="rgba(26,58,74,0.03)" stroke="#e2e6ea" stroke-width="1.5"/><text x="450" y="96" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">原核生物</text><ellipse cx="402" cy="210" rx="56" ry="34" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/><ellipse cx="498" cy="210" rx="56" ry="34" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/><path class="svg-arrow" marker-end="url(#tw)" d="M456 210H468"/><text x="450" y="332" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">细胞间基因流动</text><rect x="608" y="54" width="256" height="300" rx="22" fill="rgba(58,140,111,0.05)" stroke="#3a8c6f" stroke-width="1.5"/><text x="736" y="96" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">SARS-CoV-2</text><path d="M660 164C706 134 744 196 788 164" fill="none" stroke="#1a3a4a" stroke-width="3.5" opacity="0.45"/><path d="M660 246C706 216 744 278 788 246" fill="none" stroke="#3a8c6f" stroke-width="3.5" opacity="0.55"/><path class="jump-arc" marker-end="url(#tw)" d="M700 176C730 198 736 218 764 240"/><text x="736" y="332" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">复制瞬间模板跳跃</text></svg>';
+/*──RdRp──*/diagrams['rdRp-switch-engine']=q('860 440',1)+'<defs><marker id="rs" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker><marker id="r2" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><text class="svg-kicker" x="72" y="48">co-infection + homologous pairing + polymerase pausing</text><text x="134" y="108" fill="#5a6a7a" font-family="system-ui" font-size="13" font-weight="500">当前模板</text><path d="M80 136C144 94 214 180 280 136S424 136 488 136" fill="none" stroke="#1a3a4a" stroke-width="3" opacity="0.4"/><text x="146" y="200" fill="#5a6a7a" font-family="system-ui" font-size="13" font-weight="500">相似模板</text><path d="M102 224C166 182 236 268 302 224S446 224 510 224" fill="none" stroke="#3a8c6f" stroke-width="3" opacity="0.5"/><text x="156" y="280" fill="#5a6a7a" font-family="system-ui" font-size="13" font-weight="500">其他模板</text><path d="M134 302C198 260 268 346 334 302S478 302 542 302" fill="none" stroke="#c17f3b" stroke-width="3" opacity="0.35"/><circle cx="400" cy="162" r="42" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2.5"/><text x="400" y="170" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">RdRp</text><circle class="stall-ring" cx="400" cy="162" r="50" fill="none" stroke="rgba(58,140,111,0.2)" stroke-width="2.5" stroke-dasharray="6 6"/><text x="400" y="88" fill="#3a8c6f" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">暂停 / 脱离</text><path class="switch-arrow" marker-end="url(#r2)" d="M430 188C470 196 496 208 518 224"/><text x="578" y="200" fill="#3a8c6f" font-family="system-ui" font-size="13" font-weight="600">切换到相似模板</text><rect x="614" y="64" width="168" height="48" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="698" y="96" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">结合松动</text><rect x="614" y="136" width="168" height="48" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="698" y="168" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">相似模板</text><rect x="614" y="208" width="168" height="48" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="698" y="240" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">二级结构</text><text x="320" y="398" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">暂停 → 重新配对 → 继续复制</text></svg>';
+/*──XBB──*/diagrams['xbb-genome']=q('720 220')+'<defs><marker id="xb" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1a3a4a"/></marker></defs><text class="svg-kicker" x="46" y="28">XBB recombinant mosaic</text><text x="58" y="70" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="end">BJ.1</text><rect x="118" y="52" width="380" height="24" rx="12" fill="#8a7aaa" opacity="0.7"/><text x="58" y="112" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="end">BM.1.1.1</text><rect x="118" y="94" width="470" height="24" rx="12" fill="#7aaa8a" opacity="0.7"/><text x="58" y="160" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="end">XBB</text><rect x="118" y="142" width="280" height="28" rx="14" fill="#8a7aaa" opacity="0.7"/><rect x="394" y="142" width="194" height="28" rx="14" fill="#7aaa8a" opacity="0.7"/><line class="breakpoint" x1="394" y1="42" x2="394" y2="184"/><text x="394" y="202" fill="#c17f3b" font-family="system-ui" font-size="12" font-weight="500" text-anchor="middle">Spike RBD breakpoint</text><path class="svg-arrow" marker-end="url(#xb)" d="M282 86C304 108 330 130 362 146"/></svg>';
+/*──频率──*/diagrams['frequency-landscape']=q('720 220')+'<text class="svg-kicker" x="46" y="28">pandemic-scale recombination landscape</text><circle cx="126" cy="118" r="56" fill="rgba(58,140,111,0.1)" stroke="#3a8c6f" stroke-width="2.5"/><text x="126" y="108" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="24" font-weight="700" text-anchor="middle">589</text><text x="126" y="138" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">events</text><circle cx="302" cy="118" r="56" fill="rgba(58,140,111,0.1)" stroke="#3a8c6f" stroke-width="2.5"/><text x="302" y="108" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="24" font-weight="700" text-anchor="middle">2.7%</text><text x="302" y="138" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">detectable ancestry</text><rect x="456" y="104" width="176" height="26" rx="12" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><rect class="spike-peak" x="580" y="104" width="38" height="26" rx="12" fill="rgba(58,140,111,0.2)" stroke="#3a8c6f" stroke-width="1.5"/><path class="peak-curve" d="M456 92C500 74 536 96 570 56C604 16 638 68 632 92" fill="none" stroke="#3a8c6f" stroke-width="2.5"/><text x="548" y="162" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">3\' end / Spike peak</text></svg>';
+/*──加速器──*/diagrams['evolution-accelerator']=q('860 440',1)+'<defs><marker id="ea" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3a8c6f"/></marker></defs><text class="svg-kicker" x="72" y="48">recombination as an evolutionary accelerator</text><rect x="84" y="128" width="140" height="60" rx="16" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="154" y="165" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">亲本 A</text><rect x="84" y="232" width="140" height="60" rx="16" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/><text x="154" y="269" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">亲本 B</text><path class="svg-arrow" marker-end="url(#ea)" d="M242 160C328 162 366 180 444 206"/><path class="svg-arrow" marker-end="url(#ea)" d="M242 268C328 264 366 238 444 212"/><rect class="evo-core" x="462" y="160" width="136" height="84" rx="22" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2.5"/><text x="530" y="196" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">重组</text><text x="530" y="222" fill="#5a6a7a" font-family="system-ui" font-size="13" text-anchor="middle">一次组合</text><path class="svg-arrow" marker-end="url(#ea)" d="M616 202H714"/><circle class="advantage-node" cx="748" cy="202" r="50" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2.5"/><text x="748" y="190" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="700" text-anchor="middle">逃逸</text><text x="748" y="214" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="700" text-anchor="middle">传播</text><text x="430" y="370" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">逐步突变之外，重组能快速整合既有有利片段</text></svg>';
+var CD={"deckTitle":"SARS-CoV-2 分子进化：点突变与重组","section":"Point Mutation → Recombination","slides":[{"label":"点突 01","title":"什么是点突变？","subtitle":"病毒 RNA 复制中的单个核苷酸替换，可能成为适应性进化的起点。","points":["单个核苷酸替换，可能改变编码氨基酸","蛋白功能变化会影响入侵、传播或免疫识别","SARS-CoV-2 的 RBD 区域承受强正选择压力"],"image":"public/img/1-1.png","alt":"点突变概念示意图","caption":"点突变：从单个碱基变化到蛋白功能改变","diagram":"base-substitution","layout":"image-focus"},{"label":"点突 02","title":"点突变的两大核心功能","subtitle":"点突变直接影响病毒能否更有效传播，以及能否突破既有免疫屏障。","points":["优化 ACE2 亲和力，提高细胞入侵效率","改变抗原表位，降低中和抗体识别","传播优势与免疫突破共同推动变异株扩张"],"image":"public/img/1-2.png","alt":"ACE2 亲和力与免疫逃逸示意图","caption":"RBD 突变同时作用于受体结合与抗体识别","diagram":"dual-function","layout":"split-visual"},{"label":"点突 03","title":"N501Y：趋同进化的典型证据","subtitle":"同一个有利突变在不同谱系中反复出现，说明它被自然选择稳定保留。","points":["Alpha、Beta、Gamma 独立获得 N501Y","RBD-ACE2 亲和力提升约 2.1-3.5 倍","有利突变会在不同病毒背景中被反复选择"],"image":"public/img/1-3.png","alt":"N501Y 趋同进化图","caption":"N501Y 在多个谱系中独立出现，增强受体结合","diagram":"convergence","layout":"image-focus"},{"label":"点突 04","title":"Omicron：从更强结合转向更强逃逸","subtitle":"Omicron 的关键策略是在维持受体结合的同时，优先获得免疫逃逸优势。","points":["不再单纯追求更高 ACE2 亲和力","K417N、E484A、Q493R 改变抗原表位","亲和力被维持，抗体识别显著下降"],"image":"public/img/1-4.png","alt":"Omicron BA.1 突变亲和力缓冲图","caption":"Omicron 多突变组合显示亲和力缓冲效应","diagram":"immune-escape","layout":"image-focus"},{"label":"点突 05","title":"免疫缺陷宿主：体内进化工厂","subtitle":"长期感染为病毒提供持续复制和突变积累的时间窗口。","points":["免疫低下患者可发生数月持续感染","体内进化速率高，突变积累更充分","新突变可能外溢进入人群，形成变异株来源"],"diagram":"host-factory","layout":"diagram-focus"},{"label":"点突 06","title":"上位性效应：突变不是单打独斗","subtitle":"一个突变的效果取决于已有遗传背景，组合效应可能超过简单相加。","points":["突变效果依赖其他突变构成的背景","Q493E 在 Omicron 背景下更利于免疫逃逸","N501Y / Beta 背景可缓冲多突变带来的亲和力下降"],"image":"public/img/1-5.png","alt":"双突变循环与上位性效应图","caption":"双突变循环揭示突变组合的非加性效应","diagram":"epistasis","layout":"split-visual"},{"label":"点突 07","title":"总结：点突变的核心地位","subtitle":"点突变提供原始变异，上位性和选择压力决定哪些突变最终扩张。","points":["点突变是新冠进化的基础引擎","RBD 同时影响入侵能力与免疫逃逸","N501Y 体现趋同进化，Omicron 体现突变组合优势","免疫缺陷宿主加速突变产生，上位性提高进化灵活性"],"diagram":"summary-map","layout":"summary"},{"label":"重组 01","title":"什么是病毒重组","subtitle":"SARS-CoV-2 是一种 RNA 病毒，它的重组并不是我们在真核生物中熟悉的染色体重组，而是一种发生在复制过程中的模板切换。","points":["两个不同病毒谱系共感染同一个宿主细胞","RNA 依赖 RNA 聚合酶在复制中从一个模板跳到另一个模板","最终形成由不同来源片段拼接而成的嵌合基因组"],"diagram":"viral-template-switch","layout":"hero-mechanism"},{"label":"重组 02","title":"与真核生物不同","subtitle":"在真核生物中，重组通常发生在减数分裂过程中，涉及同源染色体的配对和片段交换，是一种结构化、受控的遗传过程。","points":["发生场景：减数分裂","核心对象：同源染色体","结果形式：染色体片段交换"],"diagram":"eukaryotic-crossing","layout":"diagram-focus"},{"label":"重组 03","title":"与原核生物不同","subtitle":"在原核生物中，比如细菌，重组通常通过转化、接合或转导实现，本质上是细胞之间的基因流动，依赖外源 DNA 或质粒。","points":["转化：摄取环境中的外源 DNA","接合：通过质粒完成细胞间转移","转导：噬菌体介导遗传物质转移"],"diagram":"prokaryotic-transfer","layout":"hero-mechanism"},{"label":"重组 04","title":"对比总结","subtitle":"SARS-CoV-2 的重组既不依赖染色体配对，也不依赖外源 DNA 摄取，而是发生在病毒 RNA 复制瞬间的一次“模板跳跃”。","points":["真核重组：染色体层面的遗传重排","原核重组：细胞之间的基因流动","SARS-CoV-2 重组：复制过程中的换轨复制"],"diagram":"three-way-comparison","layout":"wide-diagram"},{"label":"重组 05","title":"机制：为什么模板切换高效发生","subtitle":"RdRp 与 RNA 结合相对不稳定，共感染条件下存在大量相似模板，序列同源性与 RNA 二级结构为重新配对提供条件。","points":["RdRp 复制复合体可能短暂停顿或松动","相似 RNA 模板提高重新配对概率","冠状病毒跳跃式转录机制让换轨复制更可行"],"diagram":"rdRp-switch-engine","layout":"hero-mechanism"},{"label":"重组 06","title":"Omicron 例子：XBB","subtitle":"XBB 由共流行 BA.2 系谱 BJ.1 与 BM.1.1.1 重组产生，断点位于 Spike RBD 区域；不同片段共同增强免疫逃逸和细胞融合能力。","points":["上方展示基因组来源，下方展示 Spike 蛋白突变分布","RBD 断点让两个亲本片段在关键功能区拼接","右侧 3D 窗口映射 XBB spike 突变位点，V213E 以绿色强调"],"image":"public/img/2-1.png","alt":"XBB 重组来源与 Spike 突变蛋白图","caption":"XBB 来源与 Spike 突变分布；图中绿色标记代表关键突变位点。","diagram":"xbb-genome","proteinViewer":{"pdbId":"8V0R","modelUrl":"https://files.rcsb.org/download/8V0R.cif","description":"RCSB PDB 8V0R：SARS-CoV-2 Omicron XBB.1.5 Spike 三聚体，用于映射 XBB spike 标注位点。","proteinColor":"#d86fa6","mutationColor":"#2f8f5b","highlightResidues":"209,339,346,368,445,486,490"},"layout":"protein-focus"},{"label":"重组 07","title":"为什么重组频繁出现","subtitle":"Omicron 时代，重组、抗原漂移、趋同进化共同推动 SARS-CoV-2 改变抗原性。","points":["160 万条序列中识别出 589 个重组事件","约 2.7% 测序基因组具有可检测重组祖先","断点并非随机分布，Spike 附近存在频率峰值"],"image":"public/img/2-2.png","alt":"SARS-CoV-2 重组断点分布图","caption":"大规模系统发育分析显示，重组断点在 3′ 端与 Spike 区域更集中。","diagram":"frequency-landscape","layout":"image-focus"},{"label":"重组 08","title":"重组对于病毒进化的重要性","subtitle":"重组能在一次事件中整合多个已经存在的有利突变，使 Omicron 亚型快速获得免疫逃逸和传播优势。","points":["突变通常逐步积累，重组可以一次性组合多个片段","功能叠加让病毒更快适应宿主免疫压力","SARS-CoV-2 重组的本质，是复制过程中的模板切换"],"diagram":"evolution-accelerator","layout":"summary"}]};
+function init(){
+  try{
+    st.slides=CD.slides||[];document.getElementById('deck-title').textContent=CD.deckTitle||'';
+    if(deckSection)deckSection.textContent=CD.section||'';
+    render();show(getHash());bind();
+  }catch(e){
+    stage.innerHTML='<section class="slide is-active slide--error" data-layout="summary"><div class="slide-content"><p class="slide-eyebrow">Data Error</p><h2 class="slide-title">加载失败</h2><p class="slide-subtitle">' + (e && e.message ? en(e.message) : '请确认文件完整。') + '</p><p class="slide-subtitle" style="font-family:var(--font-mono);font-size:var(--slide-caption);color:var(--meta);margin-top:1em">' + (e && e.stack ? en(e.stack.split('\n')[0]) : '—') + '</p></div></section>';
+    console.error(e);
+  }
+}
+function render(){stage.innerHTML=st.slides.map(function(s,i){return mkSlide(s,i)}).join('')}
+function mkSlide(s,i){
+  var pts=(s.points||[]).map(function(p){return'<li>'+en(p)+'</li>'}).join('');
+  var lb=s.label||'Slide '+String(i+1).padStart(2,'0');
+  var ly=s.layout||'hero-mechanism';
+  return'<section class="slide" data-slide-index="'+i+'" data-layout="'+ea(ly)+'"><div class="slide-content"><p class="slide-eyebrow">'+en(lb)+'</p><h2 class="slide-title">'+en(s.title||'')+'</h2>'+(s.subtitle?'<p class="slide-subtitle">'+en(s.subtitle)+'</p>':'')+(pts?'<ul class="bullet-list">'+pts+'</ul>':'')+'</div>'+vis(s)+'</section>';
+}
+function vis(s){
+  var a='';
+  if(s.image)a+='<figure class="media-frame"><img src="'+ea(s.image)+'" alt="'+ea(s.alt||s.title||'')+'" loading="lazy" />'+(s.caption?'<figcaption class="image-caption">'+en(s.caption)+'</figcaption>':'')+'</figure>';
+  if(s.diagram){var sv=diagrams[s.diagram];if(sv)a+='<div class="diagram-card diagram-'+ea(s.diagram)+'" role="img" aria-label="'+ea(diagramTitles[s.diagram]||'')+'">'+sv+'</div>'}
+  if(s.proteinViewer){var p=s.proteinViewer;a+='<section class="protein-panel" aria-label="3D viewer" data-pv data-pdb="'+ea(p.pdbId)+'" data-url="'+ea(p.modelUrl)+'" data-pc="'+ea(p.proteinColor)+'" data-mc="'+ea(p.mutationColor)+'" data-res="'+ea(p.highlightResidues)+'"><div class="protein-panel__topline"><span>Protein Structure</span><strong>'+en(p.pdbId)+'</strong></div><div class="protein-viewer" data-ps><div class="protein-fallback"><span class="protein-fallback__spinner"></span><p>正在加载结构...</p></div></div><div class="protein-legend"><span><i style="background:'+ea(p.proteinColor)+'"></i>Spike 表面</span><span><i style="background:'+ea(p.mutationColor)+'"></i>突变位点/V213E</span></div><p class="protein-source">'+en(p.description)+'</p></section>'}
+  return a?'<div class="slide-visual">'+a+'</div>':'';
+}
+function bind(){
+  nextBtn.addEventListener('click',function(){go(st.currentIndex+1,'next')});
+  prevBtn.addEventListener('click',function(){go(st.currentIndex-1,'prev')});
+  window.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(st.currentIndex+1,'next')}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(st.currentIndex-1,'prev')}
+  });
+  window.addEventListener('hashchange',function(){var h=getHash();if(h!==st.currentIndex)go(h,h>st.currentIndex?'next':'prev')});
+}
+function go(idx,dir){
+  if(idx<0||idx>=st.slides.length||idx===st.currentIndex)return;
+  st.direction=dir||(idx>st.currentIndex?'next':'prev');show(idx);
+}
+function show(idx){
+  var all=Array.from(document.querySelectorAll('.slide')),prev=all[st.currentIndex],next=all[idx];
+  if(!next)return;
+  all.forEach(function(s){s.classList.remove('is-active','is-exiting-left','is-exiting-right')});
+  if(prev&&prev!==next)prev.classList.add(st.direction==='next'?'is-exiting-left':'is-exiting-right');
+  next.classList.add('is-active');st.currentIndex=idx;nav();
+  // activate effects
+  next.querySelectorAll('.diagram-card').forEach(function(c){c.classList.remove('is-animated','is-transforming','is-conjugating','is-transducing');void c.offsetWidth;c.classList.add('is-animated')});
+  // prokaryotic transfer
+  var dia=next.querySelector('.diagram-prokaryotic-transfer');
+  if(dia&&dia.dataset.bound!=='true'){dia.dataset.bound='true';var cm={transformation:'is-transforming',conjugation:'is-conjugating',transduction:'is-transducing'};dia.querySelectorAll('[data-pt]').forEach(function(el){var fn=function(){var c=cm[el.dataset.pt];if(!c)return;dia.classList.remove(c);void dia.offsetWidth;dia.classList.add(c)};el.addEventListener('click',fn);el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();fn()}})})}
+  // protein viewer
+  (function(slide){
+    var pnl=slide.querySelector('[data-pv]');
+    if(!pnl){if(st.proteinStage){st.proteinStage.dispose();st.proteinStage=null}if(st.proteinResizeHandler){window.removeEventListener('resize',st.proteinResizeHandler);st.proteinResizeHandler=null}return}
+    if(pnl.dataset.ready==='true'){requestAnimationFrame(function(){if(st.proteinStage)st.proteinStage.handleResize()});return}
+    if(st.proteinStage){st.proteinStage.dispose();st.proteinStage=null}
+    if(st.proteinResizeHandler){window.removeEventListener('resize',st.proteinResizeHandler);st.proteinResizeHandler=null}
+    var cont=pnl.querySelector('[data-ps]'),url=pnl.dataset.url,pc=pnl.dataset.pc||'#d86fa6',mc=pnl.dataset.mc||'#2f8f5b',res=pnl.dataset.res||'209,339,346,368,445,486,490';
+    (function loadNgl(){
+      if(window.NGL)return Promise.resolve(window.NGL);
+      if(st.nglScriptPromise)return st.nglScriptPromise;
+      st.nglScriptPromise=new Promise(function(resolve,reject){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/ngl@0.10.4/dist/ngl.js';s.async=true;s.onload=function(){resolve(window.NGL)};s.onerror=function(){reject(new Error('NGL load failed'))};document.head.append(s)});
+      return st.nglScriptPromise;
+    })().then(function(NGL){
+      cont.innerHTML='';var ng=new NGL.Stage(cont,{backgroundColor:'#F7F8FA',clipNear:0,fogNear:80,fogFar:100});
+      var rh=function(){ng.handleResize()};window.addEventListener('resize',rh,{passive:true});
+      return ng.loadFile(url,{ext:'cif'}).then(function(cmp){
+        var chains=':A or :B or :C';
+        var sel=res.split(',').map(function(s){return s.trim()}).filter(Boolean).join(' or ');
+        var mut='(209:A or 209:B or 209:C or 339:A or 346:A or 368:A or 445:A or 486:A or 490:A)';
+        cmp.addRepresentation('surface',{sele:chains,color:pc,opacity:0.42,surfaceType:'ms',useWorker:false});
+        cmp.addRepresentation('cartoon',{sele:chains,color:pc,opacity:0.38});
+        cmp.addRepresentation('ball+stick',{sele:'('+chains+') and ('+sel+')',color:mc,scale:3.2,aspectRatio:1.4});
+        cmp.addRepresentation('surface',{sele:mut,color:mc,opacity:1,surfaceType:'ms',useWorker:false});
+        cmp.addRepresentation('spacefill',{sele:'(209:A or 209:B or 209:C)',color:mc,scale:5.6,opacity:1});
+        cmp.addRepresentation('label',{sele:':A and 209',labelType:'text',labelText:'V213E',color:'#1f5f3e',backgroundColor:'#F7F8FA',backgroundOpacity:0.86,zOffset:2.6,size:2.1});
+        cmp.autoView(mut,900);ng.viewerControls.zoom(-0.42);
+        st.proteinStage=ng;st.proteinResizeHandler=rh;pnl.dataset.ready='true';
+        requestAnimationFrame(function(){ng.handleResize();setTimeout(function(){ng.handleResize()},350)});
+      });
+    }).catch(function(err){
+      cont.innerHTML='<div class="protein-fallback protein-fallback--error"><strong>3D 结构加载失败</strong><p>来源：RCSB '+en(pnl.dataset.pdb)+'。请检查网络。</p><small>'+en(err.message)+'</small></div>';
+    });
+  })(next);
+}
+function nav(){
+  var t=st.slides.length||1;
+  counter.textContent=String(st.currentIndex+1).padStart(2,'0')+' / '+String(t).padStart(2,'0');
+  prevBtn.disabled=st.currentIndex===0;nextBtn.disabled=st.currentIndex===t-1;
+  try{window.history.replaceState(null,'','#slide-'+(st.currentIndex+1))}catch(e){} /* sandboxed env */
+  if(deckSection)deckSection.textContent=st.currentIndex<7?'Point Mutation':'Recombination';
+}
+function getHash(){var m=location.hash.match(/slide-(\d+)/i);if(!m)return 0;var i=Number(m[1])-1;return Number.isNaN(i)?0:Math.min(Math.max(i,0),Math.max(st.slides.length-1,0))}
+document.addEventListener('DOMContentLoaded',function(){try{init()}catch(e){var m=e&&e.message?en(e.message):'unknown';stage.innerHTML='<section class="slide is-active slide--error" data-layout="summary"><div class="slide-content"><p class="slide-eyebrow">Data Error</p><h2 class="slide-title">加载失败</h2><p class="slide-subtitle">'+m+'</p><p class="slide-subtitle" style="font:12px/1.4 monospace;color:var(--meta);margin-top:1em">'+en(e&&e.stack?e.stack.split('\n')[0]:'—')+'</p></div></section>';console.error('init error',e)}});
+</script>
+</body>
+</html>

@@ -1,57 +1,65 @@
-# SARS-CoV-2 分子进化交互式演示
+# SARS-CoV-2 Molecular Evolution Presentation v2
 
-这是一个 16:9 大屏放映网页项目，用于替代传统 PPT 展示。当前版本先展示“点突”部分 7 页，再展示“重组”部分 8 页。
+This directory contains the interactive academic presentation redesign.
+The stable legacy implementation is preserved under `legacy-reference/` as
+read-only reference material.
 
-## 启动方式
+## Start Here
 
-页面通过 `fetch()` 读取 `data/content.json`，请使用本地服务器访问：
+Run the presentation from a local static server:
 
 ```powershell
-cd E:\Microbiology\presentation
-python -m http.server 8080
+cd E:\Microbiology\presentation-v2
+python -m http.server 8092
 ```
 
-浏览器打开：
+Then open:
 
 ```text
-http://127.0.0.1:8080/
+http://127.0.0.1:8092/
 ```
 
-## 当前结构
+The runtime requires HTTP because it loads `data/content.json` with `fetch`.
+
+Read these files before making changes:
+
+1. `HANDOFF.md` - content, interaction, scientific, and acceptance requirements.
+2. `source-materials/README.md` - source asset inventory.
+3. `START_HERE.md` - historical redesign prompt.
+
+## Workspace Layout
 
 ```text
-presentation/
-  index.html
-  css/
-    main.css
-    slides.css
-    animations.css
-  js/
-    main.js
-    effects.js
-  img/
-    1-1.png ... 1-5.png
-    2-1.png
-    2-2.png
+presentation-v2/
+  HANDOFF.md
+  START_HERE.md
+  legacy-reference/        # archived v1 implementation; reference only
+  source-materials/        # original images, documents, and legacy JSON
+  public/
+    img/                   # images ready for use by the v2 app
+    docs/
+    vendor/                # pinned NGL runtime and local 8IOS XBB.1 structure
   data/
-    content.json
-  docx/
-    点突部分.pdf
-    重组.pdf
-    重组.docx
+    content.json           # single runtime content source for all 22 slides
+  src/
+    data/
+    diagrams/
+    interactions/
+    slides/
+    styles/
+    viewers/
+  tests/
 ```
 
-## 设计与实现
+The browser entry points are `index.html`, `style.css`, and `script.js`.
 
-- 主题基于 Arctic Frost，并将 `Ice Blue`、`Steel Blue`、`Silver` 整体加深；`#FAFAFA` 保持不变。
-- 每页通过 `diagram` 字段绑定动态 SVG 机制图，点突与重组共用同一个渲染器。
-- 重组 Slide 6 接入 NGL Viewer，加载 RCSB `8V0R` 作为 XBB.1.5 Spike 三聚体结构窗口；粉色表示 Spike 表面，绿色表示映射的 XBB 关键突变位点，其中 V213E 在结构中按结构可见区域高亮。
-- 重组 Slide 7 使用 `img/2-2.png` 展示重组断点分布，并配合动态图示突出 Spike 区域峰值。
+## Safety Note
 
-## 资料依据
+This folder was copied from the original Git repository and still points to:
 
-- `docx/点突部分.pdf`：点突 PPT1-PPT7 展示文案与图片映射来源。
-- `docx/重组.pdf`：重组 Slide1-Slide8 展示文案来源。
-- RCSB PDB `8V0R`：SARS-CoV-2 Omicron XBB.1.5 Spike trimer 结构，用于蛋白质可视化窗口。
-- Nature Communications 2023 XBB 研究：XBB 来源于 BJ.1 与 BM.1.1.1 重组，断点位于 Spike RBD 区域。
-- Nature 2022 pandemic-scale recombination landscape：160 万样本中识别 589 个重组事件，约 2.7% 序列具有可检测重组祖先。
+```text
+https://github.com/DeeJ6126/MicroPre.git
+```
+
+Do not push redesign work to that remote until the new version has been
+reviewed and an explicit deployment decision has been made.

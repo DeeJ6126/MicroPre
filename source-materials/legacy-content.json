@@ -1,0 +1,216 @@
+{
+  "deckTitle": "SARS-CoV-2 分子进化：点突变与重组",
+  "section": "Point Mutation -> Recombination",
+  "slides": [
+    {
+      "label": "点突 PPT 01",
+      "title": "什么是点突变？",
+      "subtitle": "病毒 RNA 复制中的单个核苷酸替换，可能成为适应性进化的起点。",
+      "points": [
+        "单个核苷酸替换，可能改变编码氨基酸",
+        "蛋白功能变化会影响入侵、传播或免疫识别",
+        "SARS-CoV-2 的 RBD 区域承受强正选择压力"
+      ],
+      "image": "img/1-1.png",
+      "alt": "点突变概念示意图",
+      "caption": "点突变：从单个碱基变化到蛋白功能改变",
+      "diagram": "base-substitution",
+      "layout": "image-focus"
+    },
+    {
+      "label": "点突 PPT 02",
+      "title": "点突变的两大核心功能",
+      "subtitle": "点突变直接影响病毒能否更有效传播，以及能否突破既有免疫屏障。",
+      "points": [
+        "优化 ACE2 亲和力，提高细胞入侵效率",
+        "改变抗原表位，降低中和抗体识别",
+        "传播优势与免疫突破共同推动变异株扩张"
+      ],
+      "image": "img/1-2.png",
+      "alt": "ACE2 亲和力与免疫逃逸示意图",
+      "caption": "RBD 突变同时作用于受体结合与抗体识别",
+      "diagram": "dual-function",
+      "layout": "split-visual"
+    },
+    {
+      "label": "点突 PPT 03",
+      "title": "N501Y：趋同进化的典型证据",
+      "subtitle": "同一个有利突变在不同谱系中反复出现，说明它被自然选择稳定保留。",
+      "points": [
+        "Alpha、Beta、Gamma 独立获得 N501Y",
+        "RBD-ACE2 亲和力提升约 2.1-3.5 倍",
+        "有利突变会在不同病毒背景中被反复选择"
+      ],
+      "image": "img/1-3.png",
+      "alt": "N501Y 趋同进化图",
+      "caption": "N501Y 在多个谱系中独立出现，增强受体结合",
+      "diagram": "convergence",
+      "layout": "image-focus"
+    },
+    {
+      "label": "点突 PPT 04",
+      "title": "Omicron：从更强结合转向更强逃逸",
+      "subtitle": "Omicron 的关键策略是在维持受体结合的同时，优先获得免疫逃逸优势。",
+      "points": [
+        "不再单纯追求更高 ACE2 亲和力",
+        "K417N、E484A、Q493R 改变抗原表位",
+        "亲和力被维持，抗体识别显著下降"
+      ],
+      "image": "img/1-4.png",
+      "alt": "Omicron BA.1 突变亲和力缓冲图",
+      "caption": "Omicron 多突变组合显示亲和力缓冲效应",
+      "diagram": "immune-escape",
+      "layout": "image-focus"
+    },
+    {
+      "label": "点突 PPT 05",
+      "title": "免疫缺陷宿主：体内进化工厂",
+      "subtitle": "长期感染为病毒提供持续复制和突变积累的时间窗口。",
+      "points": [
+        "免疫低下患者可发生数月持续感染",
+        "体内进化速率高，突变积累更充分",
+        "新突变可能外溢进入人群，形成变异株来源"
+      ],
+      "diagram": "host-factory",
+      "layout": "diagram-focus"
+    },
+    {
+      "label": "点突 PPT 06",
+      "title": "上位性效应：突变不是单打独斗",
+      "subtitle": "一个突变的效果取决于已有遗传背景，组合效应可能超过简单相加。",
+      "points": [
+        "突变效果依赖其他突变构成的背景",
+        "Q493E 在 Omicron 背景下更利于免疫逃逸",
+        "N501Y / Beta 背景可缓冲多突变带来的亲和力下降"
+      ],
+      "image": "img/1-5.png",
+      "alt": "双突变循环与上位性效应图",
+      "caption": "双突变循环揭示突变组合的非加性效应",
+      "diagram": "epistasis",
+      "layout": "split-visual"
+    },
+    {
+      "label": "点突 PPT 07",
+      "title": "总结：点突变的核心地位",
+      "subtitle": "点突变提供原始变异，上位性和选择压力决定哪些突变最终扩张。",
+      "points": [
+        "点突变是新冠进化的基础引擎",
+        "RBD 同时影响入侵能力与免疫逃逸",
+        "N501Y 体现趋同进化，Omicron 体现突变组合优势",
+        "免疫缺陷宿主加速突变产生，上位性提高进化灵活性"
+      ],
+      "diagram": "summary-map",
+      "layout": "summary"
+    },
+    {
+      "label": "重组 Slide 01",
+      "title": "什么是病毒重组",
+      "subtitle": "SARS-CoV-2 是一种 RNA 病毒，它的重组并不是我们在真核生物中熟悉的染色体重组，而是一种发生在复制过程中的模板切换。",
+      "points": [
+        "两个不同病毒谱系共感染同一个宿主细胞",
+        "RNA 依赖 RNA 聚合酶在复制中从一个模板跳到另一个模板",
+        "最终形成由不同来源片段拼接而成的嵌合基因组"
+      ],
+      "diagram": "viral-template-switch",
+      "layout": "hero-mechanism"
+    },
+    {
+      "label": "重组 Slide 02",
+      "title": "与真核生物不同",
+      "subtitle": "在真核生物中，重组通常发生在减数分裂过程中，涉及同源染色体的配对和片段交换，是一种结构化、受控的遗传过程。",
+      "points": [
+        "发生场景：减数分裂",
+        "核心对象：同源染色体",
+        "结果形式：染色体片段交换"
+      ],
+      "diagram": "eukaryotic-crossing",
+      "layout": "diagram-focus"
+    },
+    {
+      "label": "重组 Slide 03",
+      "title": "与原核生物不同",
+      "subtitle": "在原核生物中，比如细菌，重组通常通过转化、接合或转导实现，本质上是细胞之间的基因流动，依赖外源 DNA 或质粒。",
+      "points": [
+        "转化：摄取环境中的外源 DNA",
+        "接合：通过质粒完成细胞间转移",
+        "转导：噬菌体介导遗传物质转移"
+      ],
+      "diagram": "prokaryotic-transfer",
+      "layout": "diagram-focus"
+    },
+    {
+      "label": "重组 Slide 04",
+      "title": "对比总结",
+      "subtitle": "SARS-CoV-2 的重组既不依赖染色体配对，也不依赖外源 DNA 摄取，而是发生在病毒 RNA 复制瞬间的一次“模板跳跃”。",
+      "points": [
+        "真核重组：染色体层面的遗传重排",
+        "原核重组：细胞之间的基因流动",
+        "SARS-CoV-2 重组：复制过程中的换轨复制"
+      ],
+      "diagram": "three-way-comparison",
+      "layout": "wide-diagram"
+    },
+    {
+      "label": "重组 Slide 05",
+      "title": "机制：为什么模板切换高效发生",
+      "subtitle": "RdRp 与 RNA 结合相对不稳定，共感染条件下存在大量相似模板，序列同源性与 RNA 二级结构为重新配对提供条件。",
+      "points": [
+        "RdRp 复制复合体可能短暂停顿或松动",
+        "相似 RNA 模板提高重新配对概率",
+        "冠状病毒跳跃式转录机制让换轨复制更可行"
+      ],
+      "diagram": "rdRp-switch-engine",
+      "layout": "hero-mechanism"
+    },
+    {
+      "label": "重组 Slide 06",
+      "title": "Omicron 例子：XBB",
+      "subtitle": "XBB 由共流行 BA.2 系谱 BJ.1 与 BM.1.1.1 重组产生，断点位于 Spike RBD 区域；不同片段共同增强免疫逃逸和细胞融合能力。",
+      "points": [
+        "上方展示基因组来源，下方展示 Spike 蛋白突变分布",
+        "RBD 断点让两个亲本片段在关键功能区拼接",
+        "右侧 3D 窗口映射 XBB spike 突变位点，V213E 以绿色强调"
+      ],
+      "image": "img/2-1.png",
+      "alt": "XBB 重组来源与 Spike 突变蛋白图",
+      "caption": "XBB 来源与 Spike 突变分布；图中绿色标记代表关键突变位点。",
+      "diagram": "xbb-genome",
+      "proteinViewer": {
+        "pdbId": "8V0R",
+        "modelUrl": "https://files.rcsb.org/download/8V0R.cif",
+        "description": "RCSB PDB 8V0R：SARS-CoV-2 Omicron XBB.1.5 Spike 三聚体，用于映射 XBB spike 标注位点。",
+        "proteinColor": "#d86fa6",
+        "mutationColor": "#2f8f5b",
+        "highlightResidues": "209,339,346,368,445,486,490"
+      },
+      "layout": "protein-focus"
+    },
+    {
+      "label": "重组 Slide 07",
+      "title": "为什么重组频繁出现",
+      "subtitle": "Omicron 时代，重组、抗原漂移、趋同进化共同推动 SARS-CoV-2 改变抗原性。",
+      "points": [
+        "160 万条序列中识别出 589 个重组事件",
+        "约 2.7% 测序基因组具有可检测重组祖先",
+        "断点并非随机分布，Spike 附近存在频率峰值"
+      ],
+      "image": "img/2-2.png",
+      "alt": "SARS-CoV-2 重组断点分布图",
+      "caption": "大规模系统发育分析显示，重组断点在 3' 端与 Spike 区域更集中。",
+      "diagram": "frequency-landscape",
+      "layout": "image-focus"
+    },
+    {
+      "label": "重组 Slide 08",
+      "title": "重组对于病毒进化的重要性",
+      "subtitle": "重组能在一次事件中整合多个已经存在的有利突变，使 Omicron 亚型快速获得免疫逃逸和传播优势。",
+      "points": [
+        "突变通常逐步积累，重组可以一次性组合多个片段",
+        "功能叠加让病毒更快适应宿主免疫压力",
+        "SARS-CoV-2 重组的本质，是复制过程中的模板切换"
+      ],
+      "diagram": "evolution-accelerator",
+      "layout": "summary"
+    }
+  ]
+}

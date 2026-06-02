@@ -1,0 +1,4540 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        72,
+                        223,
+                        85
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                73,
+                                224,
+                                84
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        73,
+                                        224,
+                                        84
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT1：引入：什么是点突变？",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        88,
+                        505,
+                        116
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                88,
+                                505,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        88,
+                                        505,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "同学们好，今天我们来讲新冠病毒进化最基础、最核心的机制 ——点突变驱动的适应性进",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                88,
+                                101,
+                                108,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        101,
+                                        108,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "化。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        119,
+                        505,
+                        163
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                118,
+                                505,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        118,
+                                        505,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "点突变，就是病毒 RNA 在复制时，单个核苷酸发生替换，最终导致编码的氨基酸改变。它",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                136,
+                                505,
+                                148
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        136,
+                                        505,
+                                        148
+                                    ],
+                                    "type": "text",
+                                    "content": "是 SARS-CoV-2 进化的基础驱动力，尤其集中在刺突蛋白受体结合域 RBD，这里承受着最",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                151,
+                                168,
+                                163
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        151,
+                                        168,
+                                        163
+                                    ],
+                                    "type": "text",
+                                    "content": "强的正选择压力。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        94,
+                        173,
+                        361,
+                        369
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                94,
+                                173,
+                                361,
+                                369
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        173,
+                                        361,
+                                        369
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                173,
+                                                361,
+                                                369
+                                            ],
+                                            "type": "image",
+                                            "content": "```mermaid\ngraph TD\n    A[\"Codon\"] --> B[\"DNA: 5' AAG 3' TTC 5'\"]\n    B --> C[\"AAA TTT TAG ATC AGG TCC ACG TGC\"]\n    B --> D[\"AAA UAG AGG ACG\"]\n    E[\"Protein\"] --> F[\"Lys: NH2-CH2-NH-C(=O)\"]\n    F --> G[\"Lys: NH2-CH2-NH-C(=O)\"]\n    G --> H[\"STOP: [■\"]]\n    H --> I[\"Arg: [HN-CH2-NH2-CH2-NH-C(=O)\"]\n    I --> J[\"basic\"]\n    J --> K[\"Thr: [HO-CH2-NH-C(=O)\"]\n    K --> L[\"polar\"]]\n    M[\"Synonymous / Silent\"] --> N[\"Nonsense\"]\n    M --> O[\"Missense\"]\n    P[\"Conservative\"] --> Q[\"Non-conservative\"]\n```",
+                                            "image_path": "fedf0474a7afbee0feee81f6c6a3ab0423355f0e40266d0d370b999e5cfb034e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 3,
+                    "sub_type": "flowchart"
+                },
+                {
+                    "bbox": [
+                        86,
+                        399,
+                        249,
+                        412
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                400,
+                                249,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        400,
+                                        249,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT2：一、点突变的两大核心功能",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        415,
+                        398,
+                        428
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                416,
+                                398,
+                                428
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        416,
+                                        398,
+                                        428
+                                    ],
+                                    "type": "text",
+                                    "content": "点突变主要做两件事，直接决定病毒能不能传播、能不能逃避免疫：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        104,
+                        431,
+                        505,
+                        491
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 8,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                104,
+                                431,
+                                505,
+                                475
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        431,
+                                        504,
+                                        444
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                431,
+                                                504,
+                                                444
+                                            ],
+                                            "type": "text",
+                                            "content": "1. 优化 ACE2 亲和力：让病毒更容易结合人体细胞受体。ACE2（血管紧张素转换酶 2）",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        126,
+                                        448,
+                                        505,
+                                        459
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                126,
+                                                448,
+                                                505,
+                                                459
+                                            ],
+                                            "type": "text",
+                                            "content": "是一种广泛存在于人体细胞表面的跨膜蛋白，也是 SARS-CoV-2（新冠病毒）入侵",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        124,
+                                        463,
+                                        220,
+                                        474
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                124,
+                                                463,
+                                                220,
+                                                474
+                                            ],
+                                            "type": "text",
+                                            "content": "人体细胞的关键受体",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                104,
+                                477,
+                                398,
+                                491
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 7,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        105,
+                                        478,
+                                        399,
+                                        491
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                105,
+                                                478,
+                                                399,
+                                                491
+                                            ],
+                                            "type": "text",
+                                            "content": "2. 实现免疫逃逸：让抗体认不出来，突破疫苗与既往感染免疫",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        91,
+                        497,
+                        411,
+                        687
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                91,
+                                497,
+                                411,
+                                687
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        497,
+                                        411,
+                                        687
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                497,
+                                                411,
+                                                687
+                                            ],
+                                            "type": "chart",
+                                            "content": "| RBD site | Wuhan-Hu-1 | Alpha (N501Y) | Beta (K417N+E484K+N501Y) | Delta (L452R+T478K) | Eta (E484K) |\n| -------- | ---------- | ------------- | ------------------------ | ------------------- | ----------- |\n| 331      | -          | -             | -                        | -                   | -           |\n| 340      | -          | -             | -                        | -                   | -           |\n| 345      | -          | -             | -                        | -                   | -           |\n| 350      | -          | -             | -                        | -                   | -           |\n| 355      | -          | -             | -                        | -                   | -           |\n| 360      | -          | -             | -                        | -                   | -           |\n| 365      | -          | -             | -                        | -                   | -           |\n| 370      | -          | -             | -                        | -                   | -           |\n| 375      | -          | -             | -                        | -                   | -           |\n| 380      | -          | -             | -                        | -                   | -           |\n| 385      | -          | -             | -                        | -                   | -           |\n| 390      | -          | -             | -                        | -                   | -           |\n| 395      | -          | -             | -                        | -                   | -           |\n| 400      | -          | -             | -                        | -                   | -           |\n| 405      | -          | -             | -                        | -                   | -           |\n| 410      | -          | -             | -                        | -                   | -           |\n| 415      | -          | -             | -                        | -                   | -           |\n| 420      | -          | -             | -                        | -                   | -           |\n| 425      | -          | -             | -                        | -                   | -           |\n| 430      | -          | -             | -                        | -                   | -           |\n| 435      | -          | -             | -                        | -                   | -           |\n| 440      | -          | -             | -                        | -                   | -           |\n| 445      | -          | -             | -                        | -                   | -           |\n| 450      | -          | -             | -                        | -                   | -           |\n| 455      | -          | -             | -                        | -                   | -           |\n| 460      | -          | -             | -                        | -                   | -           |\n| 465      | -          | -             | -                        | -                   | -           |\n| 470      | -          | -             | -                        | -                   | -           |\n| 475      | -          | -             | -                        | -                   | -           |\n| 480      | -          | -             | -                        | -                   | -           |\n| 485      | -          | -             | -                        | -                   | -           |\n| 490      | -          | -             | -                        | -                   | -           |\n| 495      | -          | -             | -                        | -                   | -           |\n| 500      | -          | -             | -                        | -                   | -           |\n| 505      | -          | -             | -                        | -                   | -           |\n| 510      | -          | -             | -                        | -                   | -           |\n| 515      | -          | -             | -                        | -                   | -           |\n| 520      | -          | -             | -                        | -                   | -           |\n| 525      | -          | -             | -                        | -                   | -           |\n| 530      | -          | -             | -                        | -                   | n.d.        |\n\nThe heatmap displays the Δlog₁₀(KD) values for different genetic variants (e.g., Alpha, Beta, Delta, Eta) across multiple RBD sites. The color scale ranges from n.d. to 2, indicating the magnitude of Δlog₁₀(KD). The color gradient from dark blue to dark red reflects the relative change in Δlog₁₀(KD).",
+                                            "image_path": "b63816fe933c6e0bd76294330364fabe8fe6d27fb31d342a1dd4ec511b235eb3.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                688,
+                                408,
+                                705
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 10,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        687,
+                                        409,
+                                        698
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                687,
+                                                409,
+                                                698
+                                            ],
+                                            "type": "text",
+                                            "content": "Fig.1.Deep mutational scanning maps of ACE2-binding affnity forall single-aminoacid mutations in five",
+                                            "score": 0.973
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        91,
+                                        696,
+                                        174,
+                                        706
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                696,
+                                                174,
+                                                706
+                                            ],
+                                            "type": "text",
+                                            "content": "SARS-CoV-2RBDvariants.",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                708,
+                                408,
+                                725
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 11,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        92,
+                                        708,
+                                        407,
+                                        717
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                92,
+                                                708,
+                                                407,
+                                                717
+                                            ],
+                                            "type": "text",
+                                            "content": "图1.五种SARS-CoV-2刺突蛋白受体结合域变体所有单氨基酸突变的血管紧张素转换酶2结合亲和力深度突变扫",
+                                            "score": 0.998
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        91,
+                                        716,
+                                        114,
+                                        725
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                716,
+                                                114,
+                                                725
+                                            ],
+                                            "type": "text",
+                                            "content": "描图谱",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "sub_type": "heatmap"
+                },
+                {
+                    "bbox": [
+                        87,
+                        742,
+                        285,
+                        756
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                743,
+                                284,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        743,
+                                        284,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT3：二、关键突变：N501Y 的趋同进化",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 0,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        72,
+                        223,
+                        85
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                73,
+                                224,
+                                84
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        73,
+                                        224,
+                                        84
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT1：引入：什么是点突变？",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        88,
+                        505,
+                        116
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                88,
+                                505,
+                                101
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        88,
+                                        505,
+                                        101
+                                    ],
+                                    "type": "text",
+                                    "content": "同学们好，今天我们来讲新冠病毒进化最基础、最核心的机制 ——点突变驱动的适应性进",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                88,
+                                101,
+                                108,
+                                119
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        101,
+                                        108,
+                                        119
+                                    ],
+                                    "type": "text",
+                                    "content": "化。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        119,
+                        505,
+                        163
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                118,
+                                505,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        118,
+                                        505,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "点突变，就是病毒 RNA 在复制时，单个核苷酸发生替换，最终导致编码的氨基酸改变。它",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                136,
+                                505,
+                                148
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        136,
+                                        505,
+                                        148
+                                    ],
+                                    "type": "text",
+                                    "content": "是 SARS-CoV-2 进化的基础驱动力，尤其集中在刺突蛋白受体结合域 RBD，这里承受着最",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                151,
+                                168,
+                                163
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        151,
+                                        168,
+                                        163
+                                    ],
+                                    "type": "text",
+                                    "content": "强的正选择压力。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        94,
+                        173,
+                        361,
+                        369
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                94,
+                                173,
+                                361,
+                                369
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        173,
+                                        361,
+                                        369
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                173,
+                                                361,
+                                                369
+                                            ],
+                                            "type": "image",
+                                            "content": "```mermaid\ngraph TD\n    A[\"Codon\"] --> B[\"DNA: 5' AAG 3' TTC 5'\"]\n    B --> C[\"AAA TTT TAG ATC AGG TCC ACG TGC\"]\n    B --> D[\"AAA UAG AGG ACG\"]\n    E[\"Protein\"] --> F[\"Lys: NH2-CH2-NH-C(=O)\"]\n    F --> G[\"Lys: NH2-CH2-NH-C(=O)\"]\n    G --> H[\"STOP: [■\"]]\n    H --> I[\"Arg: [HN-CH2-NH2-CH2-NH-C(=O)\"]\n    I --> J[\"basic\"]\n    J --> K[\"Thr: [HO-CH2-NH-C(=O)\"]\n    K --> L[\"polar\"]]\n    M[\"Synonymous / Silent\"] --> N[\"Nonsense\"]\n    M --> O[\"Missense\"]\n    P[\"Conservative\"] --> Q[\"Non-conservative\"]\n```",
+                                            "image_path": "fedf0474a7afbee0feee81f6c6a3ab0423355f0e40266d0d370b999e5cfb034e.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 3
+                        }
+                    ],
+                    "index": 3,
+                    "sub_type": "flowchart"
+                },
+                {
+                    "bbox": [
+                        86,
+                        399,
+                        249,
+                        412
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                400,
+                                249,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        400,
+                                        249,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT2：一、点突变的两大核心功能",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        87,
+                        415,
+                        398,
+                        428
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                416,
+                                398,
+                                428
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        416,
+                                        398,
+                                        428
+                                    ],
+                                    "type": "text",
+                                    "content": "点突变主要做两件事，直接决定病毒能不能传播、能不能逃避免疫：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        104,
+                        431,
+                        505,
+                        491
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 8,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                104,
+                                431,
+                                505,
+                                475
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        431,
+                                        504,
+                                        444
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                431,
+                                                504,
+                                                444
+                                            ],
+                                            "type": "text",
+                                            "content": "1. 优化 ACE2 亲和力：让病毒更容易结合人体细胞受体。ACE2（血管紧张素转换酶 2）",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        126,
+                                        448,
+                                        505,
+                                        459
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                126,
+                                                448,
+                                                505,
+                                                459
+                                            ],
+                                            "type": "text",
+                                            "content": "是一种广泛存在于人体细胞表面的跨膜蛋白，也是 SARS-CoV-2（新冠病毒）入侵",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        124,
+                                        463,
+                                        220,
+                                        474
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                124,
+                                                463,
+                                                220,
+                                                474
+                                            ],
+                                            "type": "text",
+                                            "content": "人体细胞的关键受体",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                104,
+                                477,
+                                398,
+                                491
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 7,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        105,
+                                        478,
+                                        399,
+                                        491
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                105,
+                                                478,
+                                                399,
+                                                491
+                                            ],
+                                            "type": "text",
+                                            "content": "2. 实现免疫逃逸：让抗体认不出来，突破疫苗与既往感染免疫",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        91,
+                        497,
+                        411,
+                        687
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                91,
+                                497,
+                                411,
+                                687
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        497,
+                                        411,
+                                        687
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                497,
+                                                411,
+                                                687
+                                            ],
+                                            "type": "chart",
+                                            "content": "| RBD site | Wuhan-Hu-1 | Alpha (N501Y) | Beta (K417N+E484K+N501Y) | Delta (L452R+T478K) | Eta (E484K) |\n| -------- | ---------- | ------------- | ------------------------ | ------------------- | ----------- |\n| 331      | -          | -             | -                        | -                   | -           |\n| 340      | -          | -             | -                        | -                   | -           |\n| 345      | -          | -             | -                        | -                   | -           |\n| 350      | -          | -             | -                        | -                   | -           |\n| 355      | -          | -             | -                        | -                   | -           |\n| 360      | -          | -             | -                        | -                   | -           |\n| 365      | -          | -             | -                        | -                   | -           |\n| 370      | -          | -             | -                        | -                   | -           |\n| 375      | -          | -             | -                        | -                   | -           |\n| 380      | -          | -             | -                        | -                   | -           |\n| 385      | -          | -             | -                        | -                   | -           |\n| 390      | -          | -             | -                        | -                   | -           |\n| 395      | -          | -             | -                        | -                   | -           |\n| 400      | -          | -             | -                        | -                   | -           |\n| 405      | -          | -             | -                        | -                   | -           |\n| 410      | -          | -             | -                        | -                   | -           |\n| 415      | -          | -             | -                        | -                   | -           |\n| 420      | -          | -             | -                        | -                   | -           |\n| 425      | -          | -             | -                        | -                   | -           |\n| 430      | -          | -             | -                        | -                   | -           |\n| 435      | -          | -             | -                        | -                   | -           |\n| 440      | -          | -             | -                        | -                   | -           |\n| 445      | -          | -             | -                        | -                   | -           |\n| 450      | -          | -             | -                        | -                   | -           |\n| 455      | -          | -             | -                        | -                   | -           |\n| 460      | -          | -             | -                        | -                   | -           |\n| 465      | -          | -             | -                        | -                   | -           |\n| 470      | -          | -             | -                        | -                   | -           |\n| 475      | -          | -             | -                        | -                   | -           |\n| 480      | -          | -             | -                        | -                   | -           |\n| 485      | -          | -             | -                        | -                   | -           |\n| 490      | -          | -             | -                        | -                   | -           |\n| 495      | -          | -             | -                        | -                   | -           |\n| 500      | -          | -             | -                        | -                   | -           |\n| 505      | -          | -             | -                        | -                   | -           |\n| 510      | -          | -             | -                        | -                   | -           |\n| 515      | -          | -             | -                        | -                   | -           |\n| 520      | -          | -             | -                        | -                   | -           |\n| 525      | -          | -             | -                        | -                   | -           |\n| 530      | -          | -             | -                        | -                   | n.d.        |\n\nThe heatmap displays the Δlog₁₀(KD) values for different genetic variants (e.g., Alpha, Beta, Delta, Eta) across multiple RBD sites. The color scale ranges from n.d. to 2, indicating the magnitude of Δlog₁₀(KD). The color gradient from dark blue to dark red reflects the relative change in Δlog₁₀(KD).",
+                                            "image_path": "b63816fe933c6e0bd76294330364fabe8fe6d27fb31d342a1dd4ec511b235eb3.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 9
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                688,
+                                408,
+                                705
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 10,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        91,
+                                        687,
+                                        409,
+                                        698
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                687,
+                                                409,
+                                                698
+                                            ],
+                                            "type": "text",
+                                            "content": "Fig.1.Deep mutational scanning maps of ACE2-binding affnity forall single-aminoacid mutations in five",
+                                            "score": 0.973
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        91,
+                                        696,
+                                        174,
+                                        706
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                696,
+                                                174,
+                                                706
+                                            ],
+                                            "type": "text",
+                                            "content": "SARS-CoV-2RBDvariants.",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                90,
+                                708,
+                                408,
+                                725
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 11,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        92,
+                                        708,
+                                        407,
+                                        717
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                92,
+                                                708,
+                                                407,
+                                                717
+                                            ],
+                                            "type": "text",
+                                            "content": "图1.五种SARS-CoV-2刺突蛋白受体结合域变体所有单氨基酸突变的血管紧张素转换酶2结合亲和力深度突变扫",
+                                            "score": 0.998
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        91,
+                                        716,
+                                        114,
+                                        725
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                91,
+                                                716,
+                                                114,
+                                                725
+                                            ],
+                                            "type": "text",
+                                            "content": "描图谱",
+                                            "score": 0.987
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9,
+                    "sub_type": "heatmap"
+                },
+                {
+                    "bbox": [
+                        87,
+                        742,
+                        285,
+                        756
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                743,
+                                284,
+                                756
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        743,
+                                        284,
+                                        756
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT3：二、关键突变：N501Y 的趋同进化",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        72,
+                        211,
+                        85
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                72,
+                                212,
+                                85
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        72,
+                                        212,
+                                        85
+                                    ],
+                                    "type": "text",
+                                    "content": "最经典的例子就是 N501Y。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        88,
+                        463,
+                        101
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                87,
+                                459,
+                                102
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        87,
+                                        459,
+                                        102
+                                    ],
+                                    "type": "text",
+                                    "content": "它在 Alpha、Beta、Gamma 三个不同谱系独立出现、反复发生，这叫趋同进化。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        103,
+                        464,
+                        117
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                104,
+                                465,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        104,
+                                        465,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "功能非常明确：把 RBD 与 ACE2 的亲和力提高 2.1–3.5 倍，显著增强入侵能力。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        119,
+                        399,
+                        132
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                120,
+                                399,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        120,
+                                        399,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "这就是自然选择最典型的证据：哪个突变有用，病毒就反复用哪个。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        94,
+                        140,
+                        352,
+                        311
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                94,
+                                140,
+                                352,
+                                311
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        140,
+                                        352,
+                                        311
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                140,
+                                                352,
+                                                311
+                                            ],
+                                            "type": "image",
+                                            "content": "T265I S1188L A1708D I2230T K3353R E1264D\nORF1a ORF1b S M N\nT1001I K1655K K1795Q del 3675-3677\ndel 3675-3677\ndel 3675-3677\nV1 (alpha, B.1.1.7 or 501Y.V1)\nV2 (beta, B.1.351 or 501Y.V2)\nV3 (gamma, P.1 or 501Y.V3)\nL18F L18F P28S D80A del 144 D213G K417N N501Y K417P N501Y H615Y A701V S982A D1118H Q57H S253P\nRBD S 3a E M 6 7 8 9b 14 N\nT20N del 69-70 D138Y R190S del 241-243 E484K A570D P681H T716I T1927I V1178F S171L P71L D3L T205I\nE484K",
+                                            "image_path": "2a40f3d55cacf7ef87e7fba53e1c565869cb3c2c7ce2cf7b4ce47bfb8f152703.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                92,
+                                325,
+                                499,
+                                346
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "index": 5,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        325,
+                                        499,
+                                        335
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                325,
+                                                499,
+                                                335
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure1SARs-Cov-2genomemapindicatingthe locationsandencodedaminoacidchanges ofwhatweconsideredhere tobe",
+                                            "score": 0.976
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        94,
+                                        337,
+                                        251,
+                                        347
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                337,
+                                                251,
+                                                347
+                                            ],
+                                            "type": "text",
+                                            "content": "signature mutations of V1,V2,and V3 sequences",
+                                            "score": 0.961
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                92,
+                                350,
+                                449,
+                                361
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        351,
+                                        449,
+                                        362
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                351,
+                                                449,
+                                                362
+                                            ],
+                                            "type": "text",
+                                            "content": "图1新冠病毒基因组图谱，标注了本研究中认定的V1、V2和V3序列特征突变的位置及其编码的氨基酸变化",
+                                            "score": 0.999
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "sub_type": "text_image"
+                },
+                {
+                    "bbox": [
+                        86,
+                        384,
+                        340,
+                        396
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                384,
+                                339,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        384,
+                                        339,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT4：三、Omicron：从 “更强结合” 转向 “更强逃逸”",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        86,
+                        400,
+                        285,
+                        412
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                400,
+                                286,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        400,
+                                        286,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "到了 Omicron，点突变策略发生关键转变：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        415,
+                        464,
+                        428
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                415,
+                                466,
+                                428
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        415,
+                                        466,
+                                        428
+                                    ],
+                                    "type": "text",
+                                    "content": "不再一味追求更高 ACE2 亲和力，而是在维持结合的同时，优先选免疫逃逸突变。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        431,
+                        115,
+                        443
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                430,
+                                117,
+                                445
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        430,
+                                        117,
+                                        445
+                                    ],
+                                    "type": "text",
+                                    "content": "比如：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        105,
+                        447,
+                        156,
+                        489
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 11,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                105,
+                                447,
+                                156,
+                                458
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 12,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        108,
+                                        446,
+                                        157,
+                                        460
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                108,
+                                                451,
+                                                112,
+                                                454
+                                            ],
+                                            "type": "text",
+                                            "content": ".",
+                                            "score": 0.548
+                                        },
+                                        {
+                                            "bbox": [
+                                                123,
+                                                446,
+                                                157,
+                                                460
+                                            ],
+                                            "type": "text",
+                                            "content": "K417N",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                105,
+                                463,
+                                155,
+                                474
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 13,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        108,
+                                        461,
+                                        156,
+                                        476
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                108,
+                                                467,
+                                                112,
+                                                470
+                                            ],
+                                            "type": "text",
+                                            "content": "",
+                                            "score": 0.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                123,
+                                                461,
+                                                156,
+                                                476
+                                            ],
+                                            "type": "text",
+                                            "content": "E484A",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                105,
+                                478,
+                                157,
+                                490
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        477,
+                                        158,
+                                        491
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                123,
+                                                477,
+                                                158,
+                                                491
+                                            ],
+                                            "type": "text",
+                                            "content": "Q493R",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        86,
+                        492,
+                        398,
+                        506
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                493,
+                                400,
+                                506
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        493,
+                                        400,
+                                        506
+                                    ],
+                                    "type": "text",
+                                    "content": "这些突变不显著降低亲和力，但大幅改变抗原表位，躲开中和抗体。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        102,
+                        537,
+                        490,
+                        732
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                104,
+                                528,
+                                117,
+                                542
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 16,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        103,
+                                        528,
+                                        119,
+                                        544
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                103,
+                                                528,
+                                                119,
+                                                544
+                                            ],
+                                            "type": "text",
+                                            "content": "B",
+                                            "score": 0.983
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                102,
+                                537,
+                                490,
+                                732
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        102,
+                                        537,
+                                        490,
+                                        732
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                102,
+                                                537,
+                                                490,
+                                                732
+                                            ],
+                                            "type": "chart",
+                                            "content": "Single mutation effects measured in Wuhan-Hu-1 and Single mutation effects measured in Beta.\n| Mutations ordered by effect on affinity | Wuhan-Hu-1 (Δlog₁₀(KD)) | Measured Omicron affinity (Δlog₁₀(KD)) |\n| :--- | :--- | :--- |\n| N501Y | 0.0 | 0.0 |\n| S477N | 1.2 | 0.0 |\n| G339D | 1.8 | 0.0 |\n| T478K | 2.0 | 0.0 |\n| N440K | 2.1 | 0.0 |\n| S373P | 2.2 | 0.0 |\n| Q498R | 1.6 | 0.0 |\n| E484A | 1.4 | 0.0 |\n| S371L | 1.2 | 0.0 |\n| Q493R | 0.8 | 0.0 |\n| G446S | -0.5 | 0.0 |\n| K417N | -1.0 | 0.0 |\n| G496S | -1.5 | 0.0 |\n| Y505H | -2.5 | 0.0 |\n| Measured Omicron affinity (left) vs. Measured Omicron affinity (right) (dashed red line).",
+                                            "image_path": "2568e09fdd035d76f86b755295e630c2398bb316fab6763df4637a8241084517.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 17
+                        },
+                        {
+                            "bbox": [
+                                93,
+                                742,
+                                504,
+                                756
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        95,
+                                        742,
+                                        503,
+                                        756
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                95,
+                                                742,
+                                                503,
+                                                756
+                                            ],
+                                            "type": "text",
+                                            "content": "（B）奥密克戎 BA.1 突变的亲和力缓冲效应。每个图展示了在武汉-Hu-1（左）或 Beta（右）",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "sub_type": "line"
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 1,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        72,
+                        211,
+                        85
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                72,
+                                212,
+                                85
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        72,
+                                        212,
+                                        85
+                                    ],
+                                    "type": "text",
+                                    "content": "最经典的例子就是 N501Y。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        88,
+                        463,
+                        101
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                87,
+                                459,
+                                102
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        87,
+                                        459,
+                                        102
+                                    ],
+                                    "type": "text",
+                                    "content": "它在 Alpha、Beta、Gamma 三个不同谱系独立出现、反复发生，这叫趋同进化。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        103,
+                        464,
+                        117
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                104,
+                                465,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        104,
+                                        465,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "功能非常明确：把 RBD 与 ACE2 的亲和力提高 2.1–3.5 倍，显著增强入侵能力。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        119,
+                        399,
+                        132
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                120,
+                                399,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        120,
+                                        399,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "这就是自然选择最典型的证据：哪个突变有用，病毒就反复用哪个。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        94,
+                        140,
+                        352,
+                        311
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                94,
+                                140,
+                                352,
+                                311
+                            ],
+                            "type": "image_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        140,
+                                        352,
+                                        311
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                140,
+                                                352,
+                                                311
+                                            ],
+                                            "type": "image",
+                                            "content": "T265I S1188L A1708D I2230T K3353R E1264D\nORF1a ORF1b S M N\nT1001I K1655K K1795Q del 3675-3677\ndel 3675-3677\ndel 3675-3677\nV1 (alpha, B.1.1.7 or 501Y.V1)\nV2 (beta, B.1.351 or 501Y.V2)\nV3 (gamma, P.1 or 501Y.V3)\nL18F L18F P28S D80A del 144 D213G K417N N501Y K417P N501Y H615Y A701V S982A D1118H Q57H S253P\nRBD S 3a E M 6 7 8 9b 14 N\nT20N del 69-70 D138Y R190S del 241-243 E484K A570D P681H T716I T1927I V1178F S171L P71L D3L T205I\nE484K",
+                                            "image_path": "2a40f3d55cacf7ef87e7fba53e1c565869cb3c2c7ce2cf7b4ce47bfb8f152703.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                92,
+                                325,
+                                499,
+                                346
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "index": 5,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        325,
+                                        499,
+                                        335
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                325,
+                                                499,
+                                                335
+                                            ],
+                                            "type": "text",
+                                            "content": "Figure1SARs-Cov-2genomemapindicatingthe locationsandencodedaminoacidchanges ofwhatweconsideredhere tobe",
+                                            "score": 0.976
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        94,
+                                        337,
+                                        251,
+                                        347
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                337,
+                                                251,
+                                                347
+                                            ],
+                                            "type": "text",
+                                            "content": "signature mutations of V1,V2,and V3 sequences",
+                                            "score": 0.961
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                92,
+                                350,
+                                449,
+                                361
+                            ],
+                            "type": "image_caption",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        94,
+                                        351,
+                                        449,
+                                        362
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                94,
+                                                351,
+                                                449,
+                                                362
+                                            ],
+                                            "type": "text",
+                                            "content": "图1新冠病毒基因组图谱，标注了本研究中认定的V1、V2和V3序列特征突变的位置及其编码的氨基酸变化",
+                                            "score": 0.999
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4,
+                    "sub_type": "text_image"
+                },
+                {
+                    "bbox": [
+                        86,
+                        384,
+                        340,
+                        396
+                    ],
+                    "type": "title",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                384,
+                                339,
+                                396
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        384,
+                                        339,
+                                        396
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT4：三、Omicron：从 “更强结合” 转向 “更强逃逸”",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bbox": [
+                        86,
+                        400,
+                        285,
+                        412
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                400,
+                                286,
+                                412
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        400,
+                                        286,
+                                        412
+                                    ],
+                                    "type": "text",
+                                    "content": "到了 Omicron，点突变策略发生关键转变：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        415,
+                        464,
+                        428
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                415,
+                                466,
+                                428
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        415,
+                                        466,
+                                        428
+                                    ],
+                                    "type": "text",
+                                    "content": "不再一味追求更高 ACE2 亲和力，而是在维持结合的同时，优先选免疫逃逸突变。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        431,
+                        115,
+                        443
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 10,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                430,
+                                117,
+                                445
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        430,
+                                        117,
+                                        445
+                                    ],
+                                    "type": "text",
+                                    "content": "比如：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        105,
+                        447,
+                        156,
+                        489
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 11,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                105,
+                                447,
+                                156,
+                                458
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 12,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        108,
+                                        446,
+                                        157,
+                                        460
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                108,
+                                                451,
+                                                112,
+                                                454
+                                            ],
+                                            "type": "text",
+                                            "content": ".",
+                                            "score": 0.548
+                                        },
+                                        {
+                                            "bbox": [
+                                                123,
+                                                446,
+                                                157,
+                                                460
+                                            ],
+                                            "type": "text",
+                                            "content": "K417N",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                105,
+                                463,
+                                155,
+                                474
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 13,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        108,
+                                        461,
+                                        156,
+                                        476
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                108,
+                                                467,
+                                                112,
+                                                470
+                                            ],
+                                            "type": "text",
+                                            "content": "",
+                                            "score": 0.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                123,
+                                                461,
+                                                156,
+                                                476
+                                            ],
+                                            "type": "text",
+                                            "content": "E484A",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                105,
+                                478,
+                                157,
+                                490
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        123,
+                                        477,
+                                        158,
+                                        491
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                123,
+                                                477,
+                                                158,
+                                                491
+                                            ],
+                                            "type": "text",
+                                            "content": "Q493R",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                },
+                {
+                    "bbox": [
+                        86,
+                        492,
+                        398,
+                        506
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                493,
+                                400,
+                                506
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        493,
+                                        400,
+                                        506
+                                    ],
+                                    "type": "text",
+                                    "content": "这些突变不显著降低亲和力，但大幅改变抗原表位，躲开中和抗体。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        102,
+                        537,
+                        490,
+                        732
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                104,
+                                528,
+                                117,
+                                542
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 16,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        103,
+                                        528,
+                                        119,
+                                        544
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                103,
+                                                528,
+                                                119,
+                                                544
+                                            ],
+                                            "type": "text",
+                                            "content": "B",
+                                            "score": 0.983
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                102,
+                                537,
+                                490,
+                                732
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        102,
+                                        537,
+                                        490,
+                                        732
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                102,
+                                                537,
+                                                490,
+                                                732
+                                            ],
+                                            "type": "chart",
+                                            "content": "Single mutation effects measured in Wuhan-Hu-1 and Single mutation effects measured in Beta.\n| Mutations ordered by effect on affinity | Wuhan-Hu-1 (Δlog₁₀(KD)) | Measured Omicron affinity (Δlog₁₀(KD)) |\n| :--- | :--- | :--- |\n| N501Y | 0.0 | 0.0 |\n| S477N | 1.2 | 0.0 |\n| G339D | 1.8 | 0.0 |\n| T478K | 2.0 | 0.0 |\n| N440K | 2.1 | 0.0 |\n| S373P | 2.2 | 0.0 |\n| Q498R | 1.6 | 0.0 |\n| E484A | 1.4 | 0.0 |\n| S371L | 1.2 | 0.0 |\n| Q493R | 0.8 | 0.0 |\n| G446S | -0.5 | 0.0 |\n| K417N | -1.0 | 0.0 |\n| G496S | -1.5 | 0.0 |\n| Y505H | -2.5 | 0.0 |\n| Measured Omicron affinity (left) vs. Measured Omicron affinity (right) (dashed red line).",
+                                            "image_path": "2568e09fdd035d76f86b755295e630c2398bb316fab6763df4637a8241084517.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 17
+                        },
+                        {
+                            "bbox": [
+                                93,
+                                742,
+                                504,
+                                756
+                            ],
+                            "type": "chart_caption",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        95,
+                                        742,
+                                        503,
+                                        756
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                95,
+                                                742,
+                                                503,
+                                                756
+                                            ],
+                                            "type": "text",
+                                            "content": "（B）奥密克戎 BA.1 突变的亲和力缓冲效应。每个图展示了在武汉-Hu-1（左）或 Beta（右）",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17,
+                    "sub_type": "line"
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        72,
+                        506,
+                        132
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                72,
+                                505,
+                                86
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        72,
+                                        505,
+                                        86
+                                    ],
+                                    "type": "text",
+                                    "content": "RBD 中测得的奥密克戎 BA.1 每个单 RBD 替换对 ACE2 结合亲和力[Δlog10(Kd)]的单独效应的",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                88,
+                                505,
+                                100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        88,
+                                        505,
+                                        100
+                                    ],
+                                    "type": "text",
+                                    "content": "累积叠加。即使背景中的参考状态不同，突变效应也按标注方向计算；例如，Beta 背景中",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                104,
+                                506,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        104,
+                                        506,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "的 N501Y 效应与测得的 Y501N 突变效应符号相反。红线表示武汉-Hu-1 的亲和力，星号表",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                119,
+                                337,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        119,
+                                        337,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "示奥密克戎 BA.1 RBD 相对于武汉-Hu-1 的实际亲和力",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        150,
+                        315,
+                        163
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                150,
+                                315,
+                                163
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        150,
+                                        315,
+                                        163
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT5：四、免疫缺陷宿主：点突变的 “进化工厂”",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        165,
+                        347,
+                        179
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                166,
+                                348,
+                                179
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        166,
+                                        348,
+                                        179
+                                    ],
+                                    "type": "text",
+                                    "content": "综述里特别强调：免疫低下人群是病毒突变的重要来源。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        181,
+                        504,
+                        210
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                181,
+                                505,
+                                195
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        181,
+                                        505,
+                                        195
+                                    ],
+                                    "type": "text",
+                                    "content": "比如 HIV 共感染、长期使用免疫抑制剂的患者，病毒可以在体内持续存活数月，进化速率",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                198,
+                                253,
+                                210
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        198,
+                                        253,
+                                        210
+                                    ],
+                                    "type": "text",
+                                    "content": "比普通感染快得多，积累大量突变。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        212,
+                        504,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                212,
+                                505,
+                                225
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        212,
+                                        505,
+                                        225
+                                    ],
+                                    "type": "text",
+                                    "content": "这些人相当于病毒的体内进化温床，源源不断产生新突变，最终扩散到人群，形成新变异株。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        243,
+                        291,
+                        257
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                244,
+                                291,
+                                257
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        244,
+                                        291,
+                                        257
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT6：五、上位性效应：突变不是单打独斗",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        259,
+                        305,
+                        272
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                259,
+                                306,
+                                274
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        259,
+                                        306,
+                                        274
+                                    ],
+                                    "type": "text",
+                                    "content": "点突变还有一个高级玩法：上位性（epistasis）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        275,
+                        315,
+                        288
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                275,
+                                316,
+                                288
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        275,
+                                        316,
+                                        288
+                                    ],
+                                    "type": "text",
+                                    "content": "意思是：一个突变的效果，依赖其他突变的背景。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        290,
+                        504,
+                        318
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                290,
+                                505,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        290,
+                                        505,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "比如 Q493E 这个突变，在早期毒株里作用很小，但在 Omicron 背景下，能大幅增强免疫",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                86,
+                                304,
+                                119,
+                                321
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        304,
+                                        119,
+                                        321
+                                    ],
+                                    "type": "text",
+                                    "content": "逃逸。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        322,
+                        453,
+                        335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                320,
+                                453,
+                                336
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        320,
+                                        453,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "多个突变组合起来，实现 1+1>2 的效果，这是 Omicron 如此成功的关键之一。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        89,
+                        339,
+                        282,
+                        559
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                89,
+                                339,
+                                282,
+                                559
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        339,
+                                        282,
+                                        559
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                89,
+                                                339,
+                                                282,
+                                                559
+                                            ],
+                                            "type": "chart",
+                                            "content": "| Number mutations | Binding affinity (-log₁₀(KD)) |\n| ---------------- | ----------------------------- |\n| Wuhan-Hu-1       | 8.5                           |\n| N501Y            | 9.8                           |\n| Q498R            | 8.2                           |\n| N501Y+Q498R      | 11.5                          |",
+                                            "image_path": "3a96fa1b0913ee7272407c5bcab06d09215fa6ea7ed66b1ab5ba0c1c8c98d2e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 10
+                        },
+                        {
+                            "bbox": [
+                                293,
+                                555,
+                                505,
+                                568
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "index": 11,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        294,
+                                        555,
+                                        505,
+                                        570
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                294,
+                                                555,
+                                                505,
+                                                570
+                                            ],
+                                            "type": "text",
+                                            "content": "（A）双突变循环图，展示 N501Y 与 Q498R 之",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "sub_type": "line"
+                },
+                {
+                    "bbox": [
+                        86,
+                        571,
+                        426,
+                        584
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                570,
+                                426,
+                                585
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        570,
+                                        426,
+                                        585
+                                    ],
+                                    "type": "text",
+                                    "content": "间的正上位相互作用。星号表示假设加性效应时预期的双突变结合亲和力",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        602,
+                        506,
+                        631
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                602,
+                                505,
+                                615
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        602,
+                                        505,
+                                        615
+                                    ],
+                                    "type": "text",
+                                    "content": "回到 PPT4，Omicron 这么多突变加起来，在原始株背景下亲和力会掉到很低，但在有 N501Y",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                618,
+                                447,
+                                631
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        618,
+                                        447,
+                                        631
+                                    ],
+                                    "type": "text",
+                                    "content": "的 Beta 背景下就能维持正常亲和力，这就是上位性效应带来的 “亲和力缓冲”",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        664,
+                        239,
+                        677
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                665,
+                                239,
+                                677
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        665,
+                                        239,
+                                        677
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT7：总结：点突变的核心地位",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        680,
+                        157,
+                        692
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                680,
+                                158,
+                                692
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        680,
+                                        158,
+                                        692
+                                    ],
+                                    "type": "text",
+                                    "content": "最后做个小结：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        104,
+                        696,
+                        295,
+                        756
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 16,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                104,
+                                696,
+                                262,
+                                708
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 17,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        697,
+                                        262,
+                                        708
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                697,
+                                                262,
+                                                708
+                                            ],
+                                            "type": "text",
+                                            "content": "1. 点突变是新冠进化的基础引擎",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                104,
+                                711,
+                                294,
+                                724
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        105,
+                                        711,
+                                        294,
+                                        724
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                105,
+                                                711,
+                                                294,
+                                                724
+                                            ],
+                                            "type": "text",
+                                            "content": "2. RBD 是热点区域，负责入侵 + 逃逸",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                105,
+                                727,
+                                235,
+                                739
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 19,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        105,
+                                        727,
+                                        235,
+                                        740
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                105,
+                                                727,
+                                                235,
+                                                740
+                                            ],
+                                            "type": "text",
+                                            "content": "3. N501Y 是趋同进化典范",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                104,
+                                743,
+                                285,
+                                755
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 20,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        106,
+                                        743,
+                                        286,
+                                        756
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                743,
+                                                286,
+                                                756
+                                            ],
+                                            "type": "text",
+                                            "content": "4. Omicron 靠突变组合实现高效逃逸",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 2,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        86,
+                        72,
+                        506,
+                        132
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                72,
+                                505,
+                                86
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        72,
+                                        505,
+                                        86
+                                    ],
+                                    "type": "text",
+                                    "content": "RBD 中测得的奥密克戎 BA.1 每个单 RBD 替换对 ACE2 结合亲和力[Δlog10(Kd)]的单独效应的",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                88,
+                                505,
+                                100
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        88,
+                                        505,
+                                        100
+                                    ],
+                                    "type": "text",
+                                    "content": "累积叠加。即使背景中的参考状态不同，突变效应也按标注方向计算；例如，Beta 背景中",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                104,
+                                506,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        104,
+                                        506,
+                                        116
+                                    ],
+                                    "type": "text",
+                                    "content": "的 N501Y 效应与测得的 Y501N 突变效应符号相反。红线表示武汉-Hu-1 的亲和力，星号表",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                119,
+                                337,
+                                132
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        119,
+                                        337,
+                                        132
+                                    ],
+                                    "type": "text",
+                                    "content": "示奥密克戎 BA.1 RBD 相对于武汉-Hu-1 的实际亲和力",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        150,
+                        315,
+                        163
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 1,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                150,
+                                315,
+                                163
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        150,
+                                        315,
+                                        163
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT5：四、免疫缺陷宿主：点突变的 “进化工厂”",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        165,
+                        347,
+                        179
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 2,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                166,
+                                348,
+                                179
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        166,
+                                        348,
+                                        179
+                                    ],
+                                    "type": "text",
+                                    "content": "综述里特别强调：免疫低下人群是病毒突变的重要来源。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        181,
+                        504,
+                        210
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 3,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                181,
+                                505,
+                                195
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        181,
+                                        505,
+                                        195
+                                    ],
+                                    "type": "text",
+                                    "content": "比如 HIV 共感染、长期使用免疫抑制剂的患者，病毒可以在体内持续存活数月，进化速率",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                198,
+                                253,
+                                210
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        198,
+                                        253,
+                                        210
+                                    ],
+                                    "type": "text",
+                                    "content": "比普通感染快得多，积累大量突变。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        212,
+                        504,
+                        226
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 4,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                212,
+                                505,
+                                225
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        212,
+                                        505,
+                                        225
+                                    ],
+                                    "type": "text",
+                                    "content": "这些人相当于病毒的体内进化温床，源源不断产生新突变，最终扩散到人群，形成新变异株。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        243,
+                        291,
+                        257
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                244,
+                                291,
+                                257
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        244,
+                                        291,
+                                        257
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT6：五、上位性效应：突变不是单打独斗",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        259,
+                        305,
+                        272
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 6,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                259,
+                                306,
+                                274
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        259,
+                                        306,
+                                        274
+                                    ],
+                                    "type": "text",
+                                    "content": "点突变还有一个高级玩法：上位性（epistasis）。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        275,
+                        315,
+                        288
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 7,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                275,
+                                316,
+                                288
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        275,
+                                        316,
+                                        288
+                                    ],
+                                    "type": "text",
+                                    "content": "意思是：一个突变的效果，依赖其他突变的背景。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        290,
+                        504,
+                        318
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 8,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                290,
+                                505,
+                                304
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        290,
+                                        505,
+                                        304
+                                    ],
+                                    "type": "text",
+                                    "content": "比如 Q493E 这个突变，在早期毒株里作用很小，但在 Omicron 背景下，能大幅增强免疫",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                86,
+                                304,
+                                119,
+                                321
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        86,
+                                        304,
+                                        119,
+                                        321
+                                    ],
+                                    "type": "text",
+                                    "content": "逃逸。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        322,
+                        453,
+                        335
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 9,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                320,
+                                453,
+                                336
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        320,
+                                        453,
+                                        336
+                                    ],
+                                    "type": "text",
+                                    "content": "多个突变组合起来，实现 1+1>2 的效果，这是 Omicron 如此成功的关键之一。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "chart",
+                    "bbox": [
+                        89,
+                        339,
+                        282,
+                        559
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                89,
+                                339,
+                                282,
+                                559
+                            ],
+                            "type": "chart_body",
+                            "angle": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        339,
+                                        282,
+                                        559
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                89,
+                                                339,
+                                                282,
+                                                559
+                                            ],
+                                            "type": "chart",
+                                            "content": "| Number mutations | Binding affinity (-log₁₀(KD)) |\n| ---------------- | ----------------------------- |\n| Wuhan-Hu-1       | 8.5                           |\n| N501Y            | 9.8                           |\n| Q498R            | 8.2                           |\n| N501Y+Q498R      | 11.5                          |",
+                                            "image_path": "3a96fa1b0913ee7272407c5bcab06d09215fa6ea7ed66b1ab5ba0c1c8c98d2e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 10
+                        },
+                        {
+                            "bbox": [
+                                293,
+                                555,
+                                505,
+                                568
+                            ],
+                            "type": "chart_footnote",
+                            "angle": 0,
+                            "index": 11,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        294,
+                                        555,
+                                        505,
+                                        570
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                294,
+                                                555,
+                                                505,
+                                                570
+                                            ],
+                                            "type": "text",
+                                            "content": "（A）双突变循环图，展示 N501Y 与 Q498R 之",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10,
+                    "sub_type": "line"
+                },
+                {
+                    "bbox": [
+                        86,
+                        571,
+                        426,
+                        584
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 12,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                570,
+                                426,
+                                585
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        570,
+                                        426,
+                                        585
+                                    ],
+                                    "type": "text",
+                                    "content": "间的正上位相互作用。星号表示假设加性效应时预期的双突变结合亲和力",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        602,
+                        506,
+                        631
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                602,
+                                505,
+                                615
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        602,
+                                        505,
+                                        615
+                                    ],
+                                    "type": "text",
+                                    "content": "回到 PPT4，Omicron 这么多突变加起来，在原始株背景下亲和力会掉到很低，但在有 N501Y",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                89,
+                                618,
+                                447,
+                                631
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        618,
+                                        447,
+                                        631
+                                    ],
+                                    "type": "text",
+                                    "content": "的 Beta 背景下就能维持正常亲和力，这就是上位性效应带来的 “亲和力缓冲”",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        86,
+                        664,
+                        239,
+                        677
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 14,
+                    "lines": [
+                        {
+                            "bbox": [
+                                88,
+                                665,
+                                239,
+                                677
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        88,
+                                        665,
+                                        239,
+                                        677
+                                    ],
+                                    "type": "text",
+                                    "content": "PPT7：总结：点突变的核心地位",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        87,
+                        680,
+                        157,
+                        692
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                89,
+                                680,
+                                158,
+                                692
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        89,
+                                        680,
+                                        158,
+                                        692
+                                    ],
+                                    "type": "text",
+                                    "content": "最后做个小结：",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        104,
+                        696,
+                        295,
+                        756
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 16,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                104,
+                                696,
+                                262,
+                                708
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 17,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        697,
+                                        262,
+                                        708
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                697,
+                                                262,
+                                                708
+                                            ],
+                                            "type": "text",
+                                            "content": "1. 点突变是新冠进化的基础引擎",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                104,
+                                711,
+                                294,
+                                724
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 18,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        105,
+                                        711,
+                                        294,
+                                        724
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                105,
+                                                711,
+                                                294,
+                                                724
+                                            ],
+                                            "type": "text",
+                                            "content": "2. RBD 是热点区域，负责入侵 + 逃逸",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                105,
+                                727,
+                                235,
+                                739
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 19,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        105,
+                                        727,
+                                        235,
+                                        740
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                105,
+                                                727,
+                                                235,
+                                                740
+                                            ],
+                                            "type": "text",
+                                            "content": "3. N501Y 是趋同进化典范",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                104,
+                                743,
+                                285,
+                                755
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 20,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        106,
+                                        743,
+                                        286,
+                                        756
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                106,
+                                                743,
+                                                286,
+                                                756
+                                            ],
+                                            "type": "text",
+                                            "content": "4. Omicron 靠突变组合实现高效逃逸",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "bbox": [
+                        105,
+                        72,
+                        252,
+                        100
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 2,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                105,
+                                72,
+                                252,
+                                85
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        74,
+                                        251,
+                                        84
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                74,
+                                                251,
+                                                84
+                                            ],
+                                            "type": "text",
+                                            "content": "5. 免疫缺陷宿主加速突变产生",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                106,
+                                88,
+                                242,
+                                100
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 1,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        89,
+                                        241,
+                                        100
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                89,
+                                                241,
+                                                100
+                                            ],
+                                            "type": "text",
+                                            "content": "6. 上位性让病毒进化更灵活",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ],
+            "discarded_blocks": [],
+            "page_size": [
+                595,
+                841
+            ],
+            "page_idx": 3,
+            "para_blocks": [
+                {
+                    "bbox": [
+                        105,
+                        72,
+                        252,
+                        100
+                    ],
+                    "type": "list",
+                    "angle": 0,
+                    "index": 2,
+                    "blocks": [
+                        {
+                            "bbox": [
+                                105,
+                                72,
+                                252,
+                                85
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 0,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        74,
+                                        251,
+                                        84
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                74,
+                                                251,
+                                                84
+                                            ],
+                                            "type": "text",
+                                            "content": "5. 免疫缺陷宿主加速突变产生",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        },
+                        {
+                            "bbox": [
+                                106,
+                                88,
+                                242,
+                                100
+                            ],
+                            "type": "text",
+                            "angle": 0,
+                            "index": 1,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        107,
+                                        89,
+                                        241,
+                                        100
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                107,
+                                                89,
+                                                241,
+                                                100
+                                            ],
+                                            "type": "text",
+                                            "content": "6. 上位性让病毒进化更灵活",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "merge_prev": false
+                        }
+                    ],
+                    "sub_type": "text"
+                }
+            ]
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": false,
+    "_vlm_ocr_enable": false,
+    "_version_name": "3.1.8"
+}
