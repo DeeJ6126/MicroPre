@@ -38,13 +38,28 @@ assert.strictEqual(content.slides[1].points.length, 2, 'slide 2 must keep only t
 assert.strictEqual(content.slides[6].points.length, 6, 'slide 7 must expose the six PDF summary items');
 assert.strictEqual(content.slides[7].points, undefined, 'slide 8 must not add explanatory bullets');
 assert.strictEqual(content.slides[8].points, undefined, 'slide 9 must not add explanatory bullets');
-assert.strictEqual(content.slides[7].diagram, 'rdRp-switch-engine', 'slide 8 must keep the concept-level switch diagram');
-assert.strictEqual(content.slides[11].diagram, 'viral-template-switch', 'slide 12 must keep the detailed mechanism diagram');
+assert.strictEqual(content.slides[7].diagram, 'viral-template-switch', 'slide 8 must use the detailed template-switch animation');
+assert.strictEqual(content.slides[11].diagram, 'rdRp-switch-engine', 'slide 12 must use the concept-level switch diagram');
 assert.match(script, /class="comparison-card comparison-card--euk"/, 'slide 11 must render a neutral eukaryotic comparison card');
 assert.match(script, /同源染色体配对/, 'slide 11 first card must be renamed to homologous chromosome pairing');
 assert.match(script, /外源 DNA 摄取/, 'slide 11 second card must be renamed to extracellular DNA uptake');
 assert.match(script, /模板跳跃/, 'slide 11 third card must be renamed to template jumping');
 assert.match(style, /diagram-three-way-comparison\[data-compare="virus"\] \.comparison-card--virus/, 'slide 11 SARS-CoV-2 card must only highlight after click');
+assert.match(script, /mini-chain-a/, 'slide 11 template jumping must include a nascent chain on template A');
+assert.match(script, /mini-chain-jump/, 'slide 11 template jumping must include nascent chain jumping');
+assert.match(script, /mini-chain-b/, 'slide 11 template jumping must include continued nascent chain on template B');
+assert.doesNotMatch(script, /C→U/, 'slide 1 must not show the old C to U text label');
+assert.match(script, /openFigureOverlay/, 'images must open a figure overlay with caption text');
+assert.match(script, /bindIndelMechanisms\(slide\)/, 'slide 17 indel mechanisms must register dedicated click interactions');
+assert.match(script, /class="indel-card indel-card--slippage"/, 'slide 17 must render a slippage card');
+assert.match(script, /class="indel-card indel-card--switch"/, 'slide 17 must render a template-switch card');
+assert.match(script, /class="indel-card indel-card--hairpin"/, 'slide 17 must render a hairpin card');
+assert.match(script, /slip-rna-template/, 'slide 17 slippage animation must show RNA');
+assert.match(script, /slip-unpaired-bulge/, 'slide 17 slippage animation must show an unpaired bulge at the error site');
+assert.doesNotMatch(script, /class="slip-loop"/, 'slide 17 slippage animation must not use the old dashed loop');
+assert.match(script, /indel-chain-b/, 'slide 17 template switching must show nascent chain on the new template');
+assert.match(script, /hairpin-stem-left/, 'slide 17 hairpin diagram must use a clear stem-loop structure');
+assert.strictEqual(content.slides[16].text, undefined, 'slide 17 hairpin explanation must live inside the diagram, not outside it');
 
 const proteinSlides = content.slides
   .map((slide, index) => slide.proteinViewer ? index + 1 : null)

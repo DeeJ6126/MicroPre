@@ -32,6 +32,7 @@
       ],
       "image": "public/img/1-1.png",
       "alt": "点突变概念示意图",
+      "figureCaption": "点突变：从单个碱基变化到蛋白功能改变。",
       "caption": "点突变：从单个碱基变化到蛋白功能改变",
       "diagram": "base-substitution",
       "layout": "image-focus"
@@ -46,6 +47,7 @@
       ],
       "image": "public/img/1-2.png",
       "alt": "ACE2 亲和力与免疫逃逸示意图",
+      "figureCaption": "图1：五种 SARS-CoV-2 刺突蛋白受体结合域变体所有单氨基酸突变的 ACE2 结合亲和力深度突变扫描图谱。",
       "caption": "RBD 突变同时作用于受体结合与抗体识别",
       "diagram": "dual-function",
       "layout": "split-visual"
@@ -61,6 +63,7 @@
       ],
       "image": "public/img/1-3.png",
       "alt": "N501Y 趋同进化图",
+      "figureCaption": "图1：新冠病毒基因组图谱，标注了本研究中认定的 V1、V2 和 V3 序列特征突变的位置及其编码的氨基酸变化。",
       "caption": "N501Y 在多个谱系中独立出现，增强受体结合",
       "diagram": "convergence",
       "layout": "image-focus"
@@ -77,6 +80,7 @@
       ],
       "image": "public/img/1-4.png",
       "alt": "Omicron BA.1 突变亲和力缓冲图",
+      "figureCaption": "奥密克戎 BA.1 突变的亲和力缓冲效应。每个图展示了在武汉-Hu-1（左）或 Beta（右）RBD 中测得的奥密克戎 BA.1 每个单 RBD 替换对 ACE2 结合亲和力[Δlog10(Kd)]的单独效应的累积叠加。即使背景中的参考状态不同，突变效应也按标注方向计算；例如，Beta 背景中的 N501Y 效应与测得的 Y501N 突变效应符号相反。红线表示武汉-Hu-1 的亲和力，星号表示奥密克戎 BA.1 RBD 相对于武汉-Hu-1 的实际亲和力",
       "caption": "Omicron 多突变组合显示亲和力缓冲效应",
       "diagram": "immune-escape",
       "layout": "image-focus"
@@ -104,6 +108,7 @@
       ],
       "image": "public/img/1-5.png",
       "alt": "双突变循环与上位性效应图",
+      "figureCaption": "双突变循环图，展示 N501Y 与 Q498R 之间的正上位相互作用。星号表示假设加性效应时预期的双突变结合亲和力回到 PPT4，Omicron 这么多突变加起来，在原始株背景下亲和力会掉到很低，但在有 N501Y的 Beta 背景下就能维持正常亲和力，这就是上位性效应带来的 “亲和力缓冲”",
       "caption": "双突变循环揭示突变组合的非加性效应",
       "diagram": "epistasis",
       "layout": "split-visual"
@@ -127,7 +132,7 @@
       "label": "重组 01",
       "title": "什么是病毒重组",
       "subtitle": "SARS-CoV-2 是一种 RNA 病毒，它的重组并不是我们在真核生物中熟悉的染色体重组，而是一种发生在复制过程中的模板切换。",
-      "diagram": "rdRp-switch-engine",
+      "diagram": "viral-template-switch",
       "layout": "hero-mechanism"
     },
     {
@@ -155,7 +160,7 @@
       "label": "重组 05",
       "title": "机制",
       "subtitle": "RdRp 与 RNA 结合相对不稳定；共感染条件下存在大量相似模板，RNA 的序列同源性和二级结构为重新配对提供条件。冠状病毒本身的跳跃式转录机制，使“换轨复制”高效发生。",
-      "diagram": "viral-template-switch",
+      "diagram": "rdRp-switch-engine",
       "layout": "hero-mechanism"
     },
     {
@@ -167,6 +172,7 @@
       ],
       "image": "public/img/2-1.png",
       "alt": "XBB 重组来源与 Spike 突变蛋白图",
+      "figureCaption": "XBB 是由两个共流行的 BA.2 系谱 BJ.1 和 BM.1.1.1 重组产生，断点位于 Spike RBD 区域；图中同时展示 XBB 基因组来源与 XBB Spike 上标注的氨基酸残基。",
       "caption": "XBB 来源与 Spike 突变分布；图中绿色标记代表关键突变位点。",
       "diagram": "xbb-genome",
       "proteinViewer": {
@@ -194,6 +200,7 @@
       ],
       "image": "public/img/2-2.png",
       "alt": "SARS-CoV-2 重组断点分布图",
+      "figureCaption": "Omicron 时代，重组、抗原漂移、趋同进化共同推动 SARS-CoV-2 改变抗原性。大规模系统发育研究在 160 万条序列中识别出 589 个重组事件，约 2.7% 测序基因组有可检测重组祖先，且刺突基因区域存在重组频率峰值。",
       "caption": "大规模系统发育分析显示，重组断点在 3’ 端与 Spike 区域更集中。",
       "diagram": "frequency-landscape",
       "layout": "image-focus"
@@ -222,11 +229,11 @@
       "subtitle": "RdRp 的校正功能主要针对碱基错配，对插入/缺失几乎无效，这为 indel 的积累留下空间。其产生主要来自两条途径：",
       "points": [
         "聚合酶滑移：复制重复或高同源序列时，聚合酶“打滑”，重复或跳过若干碱基。",
-        "模板切换：聚合酶脱离再错位结合，留下小段插入/缺失（与重组共享底层机制）。"
+        "模板切换：聚合酶脱离再错位结合，留下小段插入/缺失（与重组共享底层机制）。",
+        "RNA 二级结构的发夹区会让聚合酶停顿、出错，进一步提高发生率。"
       ],
       "diagram": "indel-mechanisms",
-      "layout": "hero-mechanism",
-      "text": "RNA 二级结构的发夹区会让聚合酶停顿、出错，进一步提高发生率。"
+      "layout": "hero-mechanism"
     },
     {
       "label": "Indel 03",
@@ -237,19 +244,22 @@
         "NTD 含免疫显性的“超级位点”，是中和抗体的重要靶点；改动它即可重塑抗体识别表面，实现免疫逃逸。"
       ],
       "diagram": "ntd-hotspot",
-      "layout": "diagram-focus",
-      "text": "“扛得住改动 + 改动后收益大”——NTD 成为 indel 高发热点。"
+      "layout": "diagram-focus"
     },
     {
       "label": "Indel 04",
       "title": "典型缺失案例",
-      "subtitle": "S:ΔH69/V70：在至少 28 个谱系中反复独立涌现（如 Alpha/B.1.1.7）；本身不降低血清中和、不直接免疫逃逸，但能提升刺突感染性、增加被切割刺突整合进病毒颗粒，被视为“许可型”突变；并在 TaqPath 三靶标检测中造成著名的“S 基因脱靶（SGTF）”，被用作 Alpha 的筛查代理指标。",
+      "subtitle": "",
+      "points":[
+        "S:ΔH69/V70：在至少 28 个谱系中反复独立涌现（如 Alpha/B.1.1.7）；本身不降低血清中和、不直接免疫逃逸，但能提升刺突感染性、增加被切割刺突整合进病毒颗粒，被视为“许可型”突变；并在 TaqPath 三靶标检测中造成著名的“S 基因脱靶（SGTF）”，被用作 Alpha 的筛查代理指标。",
+        "趋同进化：Alpha 的 ΔY144、Delta 的 ΔE156/F157、BA.1 的 ΔV143/Y145，出现在不同谱系却落在 NTD 同一表面——反复瞄准同一抗体表位，是强烈正选择的信号。"
+      ],
       "image": "public/img/3.png",
       "alt": "缺失案例示意图",
+      "figureCaption": "（A） 开放构象中刺尖同三位体的表面表示，每种单体以不同深浅的灰度表示。右侧单体显示的 69–77 残基环为青色，中和抗体（4A8）结合的 NTD 表位为品红色。\n（B）由于 His69 和 Val70 残基缺失，预测刺突 NTD 的构象变化。预缺失结构以青色表示，残基 69 和 70 除外，残基为红色。预测的缺失后结构以绿色显示。预缺失结构的残基 66–77 以棒状表示并按原子颜色（氮为蓝色，氧为珊瑚）。黄色线连接缺失前和后缺失结构的比对残基 66–77，并在缺失前后构象中，Thr73α碳比对的 6 Å间距被标记。",
       "caption": "ΔH69/V70 缺失与 NTD loop 构象变化示意。",
       "diagram": "deletion-cases",
-      "layout": "split-visual",
-      "text": "趋同进化：Alpha 的 ΔY144、Delta 的 ΔE156/F157、BA.1 的 ΔV143/Y145，出现在不同谱系却落在 NTD 同一表面——反复瞄准同一抗体表位，是强烈正选择的信号。"
+      "layout": "split-visual"
     },
     {
       "label": "Indel 05",
@@ -262,17 +272,23 @@
       "label": "Indel 06",
       "title": "慢性感染中的 Indel",
       "subtitle": "慢性感染是 indel 进化意义最清晰的舞台。",
+      "points":[
+        "VIPERA（Álvarez-Herrera 等）：分析慢性感染体内进化的工具，可区分 SNV 与 indel；案例中检测到与免疫逃逸相关的突变（如 S:V143D + ΔY144），并揭示进化轨迹改变与临床干预存在时间对应。",
+        "521 天病例（Schmidt 等）：对异基因造血干细胞移植的免疫缺陷患者做 521 天纵向全基因组测序，病毒累积 34 个替换 + 8 个缺失，RBD 区替换富集达随机预期约 15 倍——强烈正选择的直接证据；缺失与大量替换并存，是病毒持续逃逸抗体压力的适应性变异。"
+      ],
       "diagram": "chronic-indel",
-      "layout": "diagram-focus",
-      "text": "VIPERA（Álvarez-Herrera 等）：分析慢性感染体内进化的工具，可区分 SNV 与 indel；案例中检测到与免疫逃逸相关的突变（如 S:V143D + ΔY144），并揭示进化轨迹改变与临床干预存在时间对应。\n521 天病例（Schmidt 等）：对异基因造血干细胞移植的免疫缺陷患者做 521 天纵向全基因组测序，病毒累积 34 个替换 + 8 个缺失，RBD 区替换富集达随机预期约 15 倍——强烈正选择的直接证据；缺失与大量替换并存，是病毒持续逃逸抗体压力的适应性变异。"
+      "layout": "diagram-focus"
     },
     {
       "label": "Indel 07",
       "title": "Indel 对病毒进化的重要性",
-      "subtitle": "点突变是单个碱基的改写，重组是大段片段的拼接，而插入与缺失是在 NTD 等关键抗原区域上对蛋白结构的“精准微整形”。",
+      "subtitle": "",
+      "points":[
+        "点突变是单个碱基的改写，重组是大段片段的拼接，而插入与缺失是在 NTD 等关键抗原区域上对蛋白结构的“精准微整形”。",
+        "其独特之处：RdRp 校正系统对它几乎无效；高度集中于免疫显性的 NTD 超级位点；通过趋同进化与慢性感染中的逐步积累，成为病毒重塑抗原表面、逃逸抗体压力的高效而隐蔽的进化策略。"
+      ],
       "diagram": "summary-map",
-      "layout": "summary",
-      "text": "其独特之处：RdRp 校正系统对它几乎无效；高度集中于免疫显性的 NTD 超级位点；通过趋同进化与慢性感染中的逐步积累，成为病毒重塑抗原表面、逃逸抗体压力的高效而隐蔽的进化策略。"
+      "layout": "summary"
     }
   ]
 }

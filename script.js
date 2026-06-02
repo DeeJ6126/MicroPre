@@ -593,7 +593,7 @@ const diagrams = {
 	      <circle cx="410" cy="126" r="5" fill="#3a8c6f"/>
 	      <text x="466" y="138" fill="#3a8c6f" font-family="system-ui" font-size="13" font-weight="600">超级位点</text>
 	      <path d="M 466 146 C 466 160, 322 152, 322 131" fill="none" stroke="#3a8c6f" stroke-width="1.5" stroke-dasharray="3 3"/>
-	      <text x="360" y="216" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">NTD 暴露的表面 loop 区域对缺失/插入容忍度较高，形成重组热点</text>
+	      <text x="360" y="216" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="500" text-anchor="middle">“扛得住改动 + 改动后收益大”——NTD 成为 indel 高发热点。</text>
 	    </svg>
 	  `,
 
@@ -731,10 +731,147 @@ diagrams['three-way-comparison'] = `
       <line x1="766" y1="154" x2="786" y2="154" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
       <line x1="766" y1="194" x2="786" y2="194" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
       <line x1="766" y1="234" x2="786" y2="234" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
+      <path class="mini-chain mini-chain-a" d="M 700 126 V 160" fill="none" stroke="#1a3a4a" stroke-width="3" stroke-linecap="round" opacity="0"/>
+      <path class="mini-chain mini-chain-jump" d="M 700 160 C 718 178, 744 190, 776 206" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5" opacity="0"/>
+      <path class="mini-chain mini-chain-b" d="M 776 206 V 264" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-linecap="round" opacity="0"/>
       <circle class="mini-rdrp" cx="700" cy="162" r="21" fill="rgba(26,58,74,0.08)" stroke="#5a6a7a" stroke-width="2.5"/>
       <text class="mini-rdrp-label" x="700" y="167" fill="#1a3a4a" font-family="system-ui" font-size="10" font-weight="700" text-anchor="middle">RdRp</text>
       <path class="mini-jump" marker-end="url(#tw-arrow-accent)" d="M 706 220 C 720 230, 750 230, 770 206" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="5 5" opacity="0"/>
       <text x="736" y="332" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">模板跳跃</text>
+    </g>
+  </svg>
+`;
+
+diagrams['base-substitution'] = `
+  <svg class="mechanism-svg" viewBox="0 0 720 240" aria-hidden="true">
+    <defs>
+      <marker id="bs-arrow-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a3a4a"/>
+      </marker>
+    </defs>
+    <text class="svg-kicker" x="42" y="32">single nucleotide substitution</text>
+    <rect x="48" y="68" width="52" height="40" rx="10" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <rect x="114" y="68" width="52" height="40" rx="10" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <rect class="base-target" x="180" y="68" width="52" height="40" rx="10" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2"/>
+    <rect x="246" y="68" width="52" height="40" rx="10" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <text x="74" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">A</text>
+    <text x="140" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">U</text>
+    <text class="original-base" x="206" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">C</text>
+    <text class="replacement-base" x="206" y="95" fill="#c84b4b" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">U</text>
+    <text x="272" y="95" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="600" text-anchor="middle">G</text>
+    <path class="svg-arrow" marker-end="url(#bs-arrow-red)" d="M 320 90 C 360 90, 390 90, 430 90"/>
+    <rect x="450" y="68" width="164" height="42" rx="20" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <circle cx="480" cy="89" r="11" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <circle class="changed-aa" cx="530" cy="89" r="11" fill="rgba(58,140,111,0.15)" stroke="#3a8c6f" stroke-width="2"/>
+    <circle cx="580" cy="89" r="11" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <text class="aa-label" x="530" y="140" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">氨基酸改变</text>
+    <path class="effect-line" d="M 204 164 C 276 214, 462 214, 532 164" fill="none" stroke="#3a8c6f" stroke-width="2.5" opacity="0.55"/>
+    <text x="370" y="216" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">单个碱基变化可能放大为功能差异</text>
+  </svg>
+`;
+
+diagrams['host-factory'] = `
+  <svg class="mechanism-svg" viewBox="0 0 720 240" aria-hidden="true">
+    <defs>
+      <marker id="hf-arrow-new" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a8c6f"/>
+      </marker>
+    </defs>
+    <text class="svg-kicker" x="42" y="32">persistent infection creates a mutation reservoir</text>
+    <g class="host-body" transform="translate(96 70)">
+      <circle cx="54" cy="30" r="24" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="2"/>
+      <path d="M 18 110 C 24 66, 86 66, 92 110 Z" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/>
+      <text x="54" y="142" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">免疫缺陷宿主</text>
+    </g>
+    <rect class="infection-window" x="242" y="78" width="236" height="72" rx="16" fill="rgba(26,58,74,0.04)" stroke="#e2e6ea" stroke-width="1.5"/>
+    <text x="360" y="104" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700" text-anchor="middle">长期持续感染</text>
+    <text x="360" y="128" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">数月复制压力下持续产生突变</text>
+    <g class="mutation-burst">
+      <circle cx="292" cy="176" r="5" fill="#3a8c6f"/>
+      <circle cx="322" cy="164" r="5" fill="#3a8c6f"/>
+      <circle cx="352" cy="184" r="5" fill="#c17f3b"/>
+      <circle cx="382" cy="160" r="5" fill="#3a8c6f"/>
+      <circle cx="414" cy="180" r="5" fill="#c84b4b"/>
+      <circle cx="444" cy="166" r="5" fill="#3a8c6f"/>
+    </g>
+    <path class="spread-arrow" marker-end="url(#hf-arrow-new)" d="M 480 118 C 534 102, 574 108, 620 126" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-dasharray="8 8"/>
+    <g class="population-cloud">
+      <circle cx="634" cy="112" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <circle cx="662" cy="132" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <circle cx="614" cy="150" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <text x="638" y="194" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">进入人群</text>
+    </g>
+    <text x="360" y="224" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">点击推进：持续感染 → 突变积累 → 外溢传播</text>
+  </svg>
+`;
+
+diagrams['indel-mechanisms'] = `
+  <svg class="mechanism-svg mechanism-svg-large" viewBox="0 0 860 440" aria-hidden="true">
+    <defs>
+      <marker id="im-neutral" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#5a6a7a"/>
+      </marker>
+      <marker id="im-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a8c6f"/>
+      </marker>
+    </defs>
+    <text class="svg-kicker" x="72" y="44">polymerase slippage · template switching · hairpin stalling</text>
+
+    <g class="indel-card indel-card--slippage">
+      <rect x="44" y="70" width="244" height="318" rx="18" fill="rgba(26,58,74,.03)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <text x="166" y="104" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700" text-anchor="middle">聚合酶滑移</text>
+      <path class="slip-rna slip-rna-template" d="M 78 146 H 242" fill="none" stroke="#5a6a7a" stroke-width="3" stroke-linecap="round"/>
+      <g class="slip-repeat">
+        <rect x="122" y="136" width="18" height="20" rx="4" fill="rgba(26,58,74,.06)" stroke="#e2e6ea"/>
+        <rect x="144" y="136" width="18" height="20" rx="4" fill="rgba(26,58,74,.06)" stroke="#e2e6ea"/>
+        <rect x="166" y="136" width="18" height="20" rx="4" fill="rgba(26,58,74,.06)" stroke="#e2e6ea"/>
+        <text x="131" y="151" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" text-anchor="middle">A</text>
+        <text x="153" y="151" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" text-anchor="middle">A</text>
+        <text x="175" y="151" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" text-anchor="middle">A</text>
+      </g>
+      <path class="slip-rna slip-new-chain" d="M 86 186 H 146 C 154 186, 154 216, 162 216 C 170 216, 170 186, 178 186 H 232" fill="none" stroke="#5a6a7a" stroke-width="3" stroke-linecap="round"/>
+      <path class="slip-unpaired-bulge" d="M 146 186 C 154 186, 154 216, 162 216 C 170 216, 170 186, 178 186" fill="none" stroke="#c84b4b" stroke-width="3.5" stroke-linecap="round" opacity="0"/>
+      <circle class="slip-pol" cx="96" cy="146" r="18" fill="rgba(26,58,74,.08)" stroke="#5a6a7a" stroke-width="2"/>
+      <text class="slip-pol-label" x="96" y="151" fill="#1a3a4a" font-family="system-ui" font-size="10" font-weight="700" text-anchor="middle">RdRp</text>
+      <text x="166" y="282" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">RNA 重复序列处错位</text>
+      <text x="166" y="302" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">产生跳过或重复碱基</text>
+      <text x="166" y="350" fill="#1a3a4a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">缺失 / 插入</text>
+    </g>
+
+    <g class="indel-card indel-card--switch">
+      <rect x="308" y="70" width="244" height="318" rx="18" fill="rgba(26,58,74,.03)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <text x="430" y="104" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700" text-anchor="middle">模板切换</text>
+      <line class="indel-template-a" x1="370" y1="142" x2="498" y2="142" stroke="#5a6a7a" stroke-width="3" stroke-linecap="round"/>
+      <line class="indel-template-b" x1="370" y1="204" x2="498" y2="204" stroke="#5a6a7a" stroke-width="3" stroke-linecap="round"/>
+      <path class="indel-chain-a" d="M 382 166 H 430" fill="none" stroke="#1a3a4a" stroke-width="3" stroke-linecap="round" opacity="0"/>
+      <path class="indel-chain-jump" d="M 430 166 C 412 182, 416 208, 430 224" fill="none" stroke="#3a8c6f" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="4 4" opacity="0"/>
+      <path class="indel-chain-b" d="M 430 224 H 500" fill="none" stroke="#3a8c6f" stroke-width="4" stroke-linecap="round" opacity="0"/>
+      <circle class="indel-switch-pol" cx="430" cy="142" r="16" fill="rgba(26,58,74,.08)" stroke="#5a6a7a" stroke-width="2"/>
+      <text class="indel-switch-pol-label" x="430" y="147" fill="#1a3a4a" font-family="system-ui" font-size="10" font-weight="700" text-anchor="middle">RdRp</text>
+      <path class="indel-switch-arc" marker-end="url(#im-accent)" d="M 448 158 C 478 168, 480 188, 448 202" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="5 5" opacity="0"/>
+      <text x="430" y="282" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">短程模板跳跃</text>
+      <text x="430" y="302" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">新生链随 RdRp 重配对</text>
+      <text x="430" y="350" fill="#1a3a4a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">小段插入 / 缺失</text>
+    </g>
+
+    <g class="indel-card indel-card--hairpin">
+      <rect x="572" y="70" width="244" height="318" rx="18" fill="rgba(26,58,74,.03)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <text x="694" y="104" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700" text-anchor="middle">RNA 二级结构</text>
+      <path class="hairpin-extended-rna" d="M 604 214 H 670 M 724 214 H 792" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <path class="hairpin-stem-left" d="M 670 214 V 158" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <path class="hairpin-loop" d="M 670 158 C 670 120, 724 120, 724 158" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <path class="hairpin-stem-right" d="M 724 158 V 214" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <g class="hairpin-pairs" opacity=".45">
+        <line x1="670" y1="172" x2="724" y2="172" stroke="#5a6a7a" stroke-width="1.6"/>
+        <line x1="670" y1="188" x2="724" y2="188" stroke="#5a6a7a" stroke-width="1.6"/>
+        <line x1="670" y1="204" x2="724" y2="204" stroke="#5a6a7a" stroke-width="1.6"/>
+      </g>
+      <circle class="hairpin-pol" cx="610" cy="214" r="15" fill="rgba(26,58,74,.08)" stroke="#5a6a7a" stroke-width="2"/>
+      <text class="hairpin-pol-label" x="610" y="219" fill="#1a3a4a" font-family="system-ui" font-size="9" font-weight="700" text-anchor="middle">RdRp</text>
+      <path class="hairpin-stall" d="M 650 218 C 640 238, 666 244, 676 222" fill="none" stroke="#c84b4b" stroke-width="2.5" stroke-dasharray="4 4" opacity="0"/>
+      <text x="696" y="282" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">发夹区让聚合酶停顿、出错</text>
+      <text x="696" y="302" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">进一步提高 indel 发生率</text>
+      <text x="694" y="350" fill="#1a3a4a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">停顿 → 错位 → 缺失</text>
     </g>
   </svg>
 `;
@@ -772,6 +909,61 @@ async function initDeck() {
     console.error('Deck init error:', error);
   }
 }
+
+diagrams['ntd-hotspot'] = `
+  <svg class="mechanism-svg mechanism-svg-large" viewBox="0 0 860 440" aria-hidden="true">
+    <defs>
+      <marker id="ntd-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a8c6f"/>
+      </marker>
+    </defs>
+    <text class="svg-kicker" x="72" y="44">NTD hotspot: non-random distribution · flexible loops · antibody supersite</text>
+
+    <g class="ntd-stage ntd-stage--axis">
+      <text x="96" y="88" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700">1. 非随机分布</text>
+      <rect x="90" y="116" width="690" height="18" rx="9" fill="rgba(26,58,74,.06)"/>
+      <rect x="90" y="116" width="188" height="18" rx="9" fill="rgba(58,140,111,.10)" stroke="#3a8c6f" stroke-width="1.5"/>
+      <rect x="328" y="116" width="172" height="18" rx="9" fill="rgba(26,58,74,.06)" stroke="#d7dde3"/>
+      <rect x="594" y="116" width="186" height="18" rx="9" fill="rgba(26,58,74,.06)" stroke="#d7dde3"/>
+      <text x="184" y="110" fill="#3a8c6f" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">NTD</text>
+      <text x="414" y="110" fill="#5a6a7a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">RBD</text>
+      <text x="686" y="110" fill="#5a6a7a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">S2</text>
+      <circle class="ntd-indel-dot ntd-dot-1" cx="610" cy="125" r="5"/>
+      <circle class="ntd-indel-dot ntd-dot-2" cx="438" cy="125" r="5"/>
+      <circle class="ntd-indel-dot ntd-dot-3" cx="702" cy="125" r="5"/>
+      <circle class="ntd-indel-dot ntd-dot-4" cx="362" cy="125" r="5"/>
+      <circle class="ntd-indel-dot ntd-dot-5" cx="540" cy="125" r="5"/>
+      <text x="430" y="164" fill="#5a6a7a" font-family="system-ui" font-size="13" text-anchor="middle">点击推进：indel 标记向 NTD 收束，表示热点集中</text>
+    </g>
+
+    <g class="ntd-stage ntd-stage--loop">
+      <text x="96" y="208" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700">2. 柔性 loop 扛得住长度变化</text>
+      <rect x="90" y="232" width="326" height="116" rx="18" fill="rgba(26,58,74,.03)" stroke="#d7dde3" stroke-width="1.4"/>
+      <path class="ntd-domain-shell" d="M 132 292 C 158 246, 242 244, 290 268 C 336 292, 340 328, 292 334 C 224 342, 154 332, 132 292 Z" fill="rgba(58,140,111,.055)" stroke="#5a6a7a" stroke-width="2"/>
+      <path class="ntd-flex-loop ntd-loop-a" d="M 196 258 C 212 230, 246 230, 262 258" fill="none" stroke="#3a8c6f" stroke-width="4" stroke-linecap="round"/>
+      <path class="ntd-flex-loop ntd-loop-b" d="M 278 282 C 306 262, 330 280, 314 306" fill="none" stroke="#3a8c6f" stroke-width="4" stroke-linecap="round"/>
+      <circle class="ntd-insert-node" cx="232" cy="238" r="7" fill="#c84b4b" opacity="0"/>
+      <text x="253" y="372" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">loop 变长/变短，但整体 NTD 轮廓保持</text>
+    </g>
+
+    <g class="ntd-stage ntd-stage--supersite">
+      <text x="486" y="208" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700">3. 超级位点改造抗体识别表面</text>
+      <rect x="478" y="232" width="302" height="116" rx="18" fill="rgba(26,58,74,.03)" stroke="#d7dde3" stroke-width="1.4"/>
+      <path class="ntd-supersite-surface" d="M 528 304 C 558 258, 650 258, 704 300 C 670 336, 574 344, 528 304 Z" fill="rgba(58,140,111,.09)" stroke="#3a8c6f" stroke-width="2.2"/>
+      <path class="ntd-supersite-patch" d="M 578 294 C 596 276, 642 278, 664 298 C 642 312, 604 316, 578 294 Z" fill="rgba(58,140,111,.24)" stroke="#3a8c6f" stroke-width="2"/>
+      <g class="ntd-antibody">
+        <path d="M 650 250 L 688 214" fill="none" stroke="#c84b4b" stroke-width="8" stroke-linecap="round"/>
+        <path d="M 688 214 L 718 196" fill="none" stroke="#c84b4b" stroke-width="8" stroke-linecap="round"/>
+        <path d="M 688 214 L 682 178" fill="none" stroke="#c84b4b" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="650" cy="250" r="9" fill="#c84b4b"/>
+      </g>
+      <path class="ntd-mismatch" d="M 632 282 C 650 270, 666 270, 682 282" fill="none" stroke="#c84b4b" stroke-width="3" stroke-dasharray="5 5" opacity="0"/>
+      <text x="629" y="372" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">超级位点是一片抗体集中识别区域，不是单个氨基酸点</text>
+    </g>
+
+    <text x="430" y="414" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="700" text-anchor="middle">“扛得住改动 + 改动后收益大”——NTD 成为 indel 高发热点</text>
+  </svg>
+`;
 
 /* ═══════════════════════════════════════════════════════════════
  * Rendering
@@ -865,6 +1057,7 @@ function createProteinViewerMarkup(viewer) {
 function bindEvents() {
   nextBtn.addEventListener('click', () => goToSlide(deckState.currentIndex + 1, 'next'));
   prevBtn.addEventListener('click', () => goToSlide(deckState.currentIndex - 1, 'prev'));
+  stage.addEventListener('click', handleStageClick);
   window.addEventListener('keydown', handleKeyboard);
   window.addEventListener('hashchange', () => {
     const idx = getInitialSlideIndex();
@@ -872,7 +1065,48 @@ function bindEvents() {
   });
 }
 
+function handleStageClick(event) {
+  const img = event.target.closest('.media-frame img, .slide-media img, img[data-slide-image]');
+  if (!img || !stage.contains(img)) return;
+  const slide = deckState.slides[deckState.currentIndex];
+  if (!slide || !slide.image) return;
+  openFigureOverlay(slide);
+}
+
+function openFigureOverlay(slide) {
+  closeFigureOverlay();
+  const captionText = slide.figureCaption || slide.caption || slide.alt || '该图未提供图注。';
+  const overlay = document.createElement('div');
+  overlay.className = 'figure-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.innerHTML = `
+    <button class="figure-overlay__close" type="button" aria-label="关闭放大图">×</button>
+    <div class="figure-overlay__image-wrap">
+      <img src="${escapeAttr(slide.image)}" alt="${escapeAttr(slide.alt || slide.title || '放大图')}" />
+    </div>
+    <div class="figure-overlay__caption">
+      <strong>${escapeHtml(slide.title || '图注')}</strong>
+      <p>${escapeHtml(captionText)}</p>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  overlay.querySelector('.figure-overlay__close').focus();
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay || event.target.closest('.figure-overlay__close')) closeFigureOverlay();
+  });
+}
+
+function closeFigureOverlay() {
+  document.querySelector('.figure-overlay')?.remove();
+}
+
 function handleKeyboard(e) {
+  if (e.key === 'Escape' && document.querySelector('.figure-overlay')) {
+    closeFigureOverlay();
+    e.preventDefault();
+    return;
+  }
   if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
     e.preventDefault();
     goToSlide(deckState.currentIndex + 1, 'next');
@@ -936,6 +1170,7 @@ function getInitialSlideIndex() {
 function activateSlideEffects(slide) {
   restartDiagramMotion(slide);
   bindNarrativeInteraction(slide);
+  bindIndelMechanisms(slide);
   bindTemplateSwitch(slide);
   bindProkaryoticTransfer(slide);
   mountProteinViewer(slide);
@@ -970,6 +1205,7 @@ function bindNarrativeInteraction(slide) {
     'diagram-immune-escape': 4,
     'diagram-host-factory': 3,
     'diagram-epistasis': 4,
+    'diagram-ntd-hotspot': 3,
     'diagram-rdRp-switch-engine': 3,
     'diagram-eukaryotic-crossing': 3,
     'diagram-three-way-comparison': 3,
@@ -1016,6 +1252,34 @@ function bindProkaryoticTransfer(slide) {
     el.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); run(); }
     });
+  });
+}
+
+function bindIndelMechanisms(slide) {
+  const diagram = slide.querySelector('.diagram-indel-mechanisms');
+  if (!diagram || diagram.dataset.indelBound === 'true') return;
+
+  diagram.dataset.indelBound = 'true';
+  diagram.tabIndex = 0;
+  diagram.setAttribute('role', 'button');
+  const activate = (mode) => {
+    diagram.dataset.indel = mode;
+    diagram.classList.remove('is-focused');
+    void diagram.offsetWidth;
+    diagram.classList.add('is-focused');
+  };
+  diagram.addEventListener('click', (event) => {
+    const svg = diagram.querySelector('svg');
+    const box = svg.getBoundingClientRect();
+    const x = (event.clientX - box.left) / box.width;
+    activate(x < 0.34 ? 'slippage' : (x < 0.67 ? 'switch' : 'hairpin'));
+  });
+  diagram.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    const order = ['slippage', 'switch', 'hairpin'];
+    const current = order.indexOf(diagram.dataset.indel);
+    activate(order[(current + 1) % order.length]);
   });
 }
 
