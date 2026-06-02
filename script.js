@@ -965,6 +965,137 @@ diagrams['ntd-hotspot'] = `
   </svg>
 `;
 
+diagrams['deletion-cases'] = `
+  <svg class="mechanism-svg mechanism-svg-large" viewBox="0 0 860 440" aria-hidden="true">
+    <defs>
+      <marker id="del-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a8c6f"/>
+      </marker>
+    </defs>
+    <text class="svg-kicker" x="72" y="44">recurrent NTD deletions across independent lineages</text>
+
+    <g class="del-lineage del-lineage--alpha">
+      <rect x="70" y="78" width="168" height="42" rx="12" fill="rgba(26,58,74,.04)" stroke="#d7dde3"/>
+      <text x="154" y="104" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">Alpha · ΔY144</text>
+      <path class="del-loop del-loop-a" d="M 292 100 C 316 74, 350 74, 374 100 S 426 126, 452 100" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <path class="del-segment del-segment-a" d="M 340 78 C 354 74, 364 78, 374 100" fill="none" stroke="#c84b4b" stroke-width="5" stroke-linecap="round"/>
+      <path class="del-converge del-converge-a" d="M 464 100 C 548 96, 594 132, 642 184" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#del-arrow)" opacity="0"/>
+    </g>
+
+    <g class="del-lineage del-lineage--delta">
+      <rect x="70" y="168" width="168" height="42" rx="12" fill="rgba(26,58,74,.04)" stroke="#d7dde3"/>
+      <text x="154" y="194" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">Delta · ΔE156/F157</text>
+      <path class="del-loop del-loop-b" d="M 292 190 C 318 160, 358 164, 384 190 S 426 216, 452 190" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <path class="del-segment del-segment-b" d="M 348 164 C 366 166, 376 174, 384 190" fill="none" stroke="#c84b4b" stroke-width="5" stroke-linecap="round"/>
+      <path class="del-converge del-converge-b" d="M 464 190 C 538 190, 596 192, 642 206" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#del-arrow)" opacity="0"/>
+    </g>
+
+    <g class="del-lineage del-lineage--ba1">
+      <rect x="70" y="258" width="168" height="42" rx="12" fill="rgba(26,58,74,.04)" stroke="#d7dde3"/>
+      <text x="154" y="284" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">BA.1 · ΔV143/Y145</text>
+      <path class="del-loop del-loop-c" d="M 292 280 C 318 252, 356 254, 378 280 S 424 306, 452 280" fill="none" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
+      <path class="del-segment del-segment-c" d="M 342 255 C 360 254, 370 262, 378 280" fill="none" stroke="#c84b4b" stroke-width="5" stroke-linecap="round"/>
+      <path class="del-converge del-converge-c" d="M 464 280 C 548 276, 594 246, 642 222" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#del-arrow)" opacity="0"/>
+    </g>
+
+    <g class="del-supersite">
+      <path d="M 638 212 C 658 168, 738 164, 778 206 C 752 252, 680 262, 638 212 Z" fill="rgba(58,140,111,.08)" stroke="#3a8c6f" stroke-width="2"/>
+      <path class="del-supersite-patch" d="M 672 210 C 694 184, 734 188, 750 210 C 730 230, 694 234, 672 210 Z" fill="rgba(58,140,111,.20)" stroke="#3a8c6f" stroke-width="2"/>
+      <text x="716" y="154" fill="#3a8c6f" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">NTD 同一抗体表位</text>
+      <text x="716" y="288" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">不同谱系反复命中相近表面</text>
+    </g>
+
+    <text x="430" y="398" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">缺失片段消失 → loop 收拢 → 多谱系汇聚：趋同进化与正选择信号</text>
+  </svg>
+`;
+
+diagrams['ins214epe'] = `
+  <svg class="mechanism-svg mechanism-svg-large" viewBox="0 0 860 440" aria-hidden="true">
+    <defs>
+      <marker id="ins-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a8c6f"/>
+      </marker>
+    </defs>
+    <text class="svg-kicker" x="72" y="44">ins214EPE in BA.1 NTD — local insertion reshapes a surface loop</text>
+
+    <g class="ins-loop-stage">
+      <text x="116" y="92" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700">NTD surface loop</text>
+      <path class="ins-loop-backbone" d="M 126 218 C 184 148, 292 150, 354 218 S 512 288, 610 218" fill="none" stroke="#5a6a7a" stroke-width="5" stroke-linecap="round"/>
+      <circle class="ins-site" cx="354" cy="218" r="18" fill="rgba(58,140,111,.08)" stroke="#3a8c6f" stroke-width="2.4" stroke-dasharray="6 5"/>
+      <text x="354" y="224" fill="#3a8c6f" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">214</text>
+      <path class="ins-loop-expanded" d="M 126 218 C 184 148, 284 152, 326 204 C 350 154, 416 154, 440 204 C 492 284, 560 254, 610 218" fill="none" stroke="#3a8c6f" stroke-width="5" stroke-linecap="round" opacity="0"/>
+    </g>
+
+    <g class="ins-peptide">
+      <rect x="668" y="122" width="42" height="34" rx="10" fill="rgba(58,140,111,.12)" stroke="#3a8c6f" stroke-width="1.5"/>
+      <rect x="716" y="122" width="42" height="34" rx="10" fill="rgba(58,140,111,.12)" stroke="#3a8c6f" stroke-width="1.5"/>
+      <rect x="764" y="122" width="42" height="34" rx="10" fill="rgba(58,140,111,.12)" stroke="#3a8c6f" stroke-width="1.5"/>
+      <text x="689" y="144" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="15" font-weight="800" text-anchor="middle">E</text>
+      <text x="737" y="144" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="15" font-weight="800" text-anchor="middle">P</text>
+      <text x="785" y="144" fill="#1a3a4a" font-family="JetBrains Mono,monospace" font-size="15" font-weight="800" text-anchor="middle">E</text>
+    </g>
+    <path class="ins-route" d="M 668 166 C 596 174, 486 188, 386 210" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#ins-arrow)" opacity="0"/>
+
+    <g class="ins-origin-note">
+      <rect x="122" y="318" width="616" height="48" rx="14" fill="rgba(26,58,74,.035)" stroke="#d7dde3"/>
+      <text x="430" y="338" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">可能来源：模板切换 / 局部重复 / 聚合酶滑移</text>
+      <text x="430" y="358" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">动画只表示“插入发生并改变局部表面”，不把来源画成定论</text>
+    </g>
+
+    <text x="430" y="404" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">E-P-E 插入 214 位 → loop 局部撑开 → NTD 表面被微整形</text>
+  </svg>
+`;
+
+diagrams['chronic-indel'] = `
+  <svg class="mechanism-svg mechanism-svg-large" viewBox="0 0 860 440" aria-hidden="true">
+    <text class="svg-kicker" x="72" y="44">chronic infection — longitudinal accumulation of substitutions and deletions</text>
+
+    <g class="chronic-timeline">
+      <line x1="100" y1="104" x2="760" y2="104" stroke="#d7dde3" stroke-width="3" stroke-linecap="round"/>
+      <line class="chronic-progress" x1="100" y1="104" x2="760" y2="104" stroke="#3a8c6f" stroke-width="4" stroke-linecap="round" stroke-dasharray="660" stroke-dashoffset="660"/>
+      <text x="100" y="82" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">Day 0</text>
+      <text x="760" y="82" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">Day 521</text>
+      <circle class="chronic-sample sample-1" cx="160" cy="104" r="7"/>
+      <circle class="chronic-sample sample-2" cx="320" cy="104" r="7"/>
+      <circle class="chronic-sample sample-3" cx="480" cy="104" r="7"/>
+      <circle class="chronic-sample sample-4" cx="640" cy="104" r="7"/>
+      <circle class="chronic-sample sample-5" cx="760" cy="104" r="7"/>
+      <text x="160" y="130" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">D30</text>
+      <text x="320" y="130" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">D150</text>
+      <text x="480" y="130" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">D300</text>
+      <text x="640" y="130" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">D420</text>
+    </g>
+
+    <g class="chronic-spike-map">
+      <text x="112" y="190" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700">Spike 区域选择压力</text>
+      <rect x="100" y="214" width="560" height="26" rx="13" fill="rgba(26,58,74,.05)" stroke="#d7dde3"/>
+      <rect class="chronic-zone chronic-zone-ntd" x="112" y="216" width="128" height="22" rx="11" fill="rgba(58,140,111,.08)" stroke="#d7dde3"/>
+      <rect class="chronic-zone chronic-zone-rbd" x="282" y="216" width="132" height="22" rx="11" fill="rgba(58,140,111,.08)" stroke="#d7dde3"/>
+      <text x="176" y="208" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">NTD</text>
+      <text x="348" y="208" fill="#5a6a7a" font-family="system-ui" font-size="11" text-anchor="middle">RBD</text>
+      <g class="chronic-mutations">
+        <circle class="snv snv-1" cx="132" cy="227" r="4"/><circle class="snv snv-2" cx="318" cy="227" r="4"/>
+        <circle class="snv snv-3" cx="366" cy="227" r="4"/><circle class="snv snv-4" cx="456" cy="227" r="4"/>
+        <circle class="snv snv-5" cx="536" cy="227" r="4"/><circle class="snv snv-6" cx="620" cy="227" r="4"/>
+        <path class="del-mark del-1" d="M 166 218 L 188 236 M 188 218 L 166 236" stroke="#c84b4b" stroke-width="3" stroke-linecap="round"/>
+        <path class="del-mark del-2" d="M 216 218 L 238 236 M 238 218 L 216 236" stroke="#c84b4b" stroke-width="3" stroke-linecap="round"/>
+        <path class="del-mark del-3" d="M 388 218 L 410 236 M 410 218 L 388 236" stroke="#c84b4b" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <g class="chronic-counts">
+      <rect x="120" y="286" width="248" height="68" rx="16" fill="rgba(26,58,74,.035)" stroke="#d7dde3"/>
+      <rect x="492" y="286" width="248" height="68" rx="16" fill="rgba(26,58,74,.035)" stroke="#d7dde3"/>
+      <text x="244" y="314" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">Substitutions</text>
+      <text class="chronic-count chronic-count-snv" x="244" y="338" fill="#3a8c6f" font-family="JetBrains Mono,monospace" font-size="22" font-weight="800" text-anchor="middle">34</text>
+      <text x="616" y="314" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">Deletions</text>
+      <text class="chronic-count chronic-count-del" x="616" y="338" fill="#c84b4b" font-family="JetBrains Mono,monospace" font-size="22" font-weight="800" text-anchor="middle">8</text>
+    </g>
+
+    <text x="430" y="404" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">长期复制窗口中，SNV 与 deletion 共同积累，并在免疫压力相关区域富集</text>
+  </svg>
+`;
+
 /* ═══════════════════════════════════════════════════════════════
  * Rendering
  * ═══════════════════════════════════════════════════════════════ */
@@ -1206,6 +1337,9 @@ function bindNarrativeInteraction(slide) {
     'diagram-host-factory': 3,
     'diagram-epistasis': 4,
     'diagram-ntd-hotspot': 3,
+    'diagram-deletion-cases': 1,
+    'diagram-ins214epe': 1,
+    'diagram-chronic-indel': 1,
     'diagram-rdRp-switch-engine': 3,
     'diagram-eukaryotic-crossing': 3,
     'diagram-three-way-comparison': 3,

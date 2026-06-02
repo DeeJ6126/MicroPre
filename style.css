@@ -1858,6 +1858,130 @@ body {
 .diagram-ntd-hotspot[data-step="3"] .ntd-mismatch {
   animation: ntdMismatchShow 1.35s ease both, dashFlow 1s linear infinite;
 }
+.diagram-deletion-cases .del-segment,
+.diagram-deletion-cases .del-converge,
+.diagram-ins214epe .ins-route,
+.diagram-ins214epe .ins-loop-expanded,
+.diagram-chronic-indel .chronic-sample,
+.diagram-chronic-indel .snv,
+.diagram-chronic-indel .del-mark,
+.diagram-chronic-indel .chronic-count {
+  opacity: 0;
+}
+.diagram-deletion-cases .del-lineage > rect,
+.diagram-ins214epe .ins-site,
+.diagram-chronic-indel .chronic-zone,
+.diagram-chronic-indel .chronic-counts rect {
+  transition: stroke 220ms ease, fill 220ms ease, filter 220ms ease;
+}
+.diagram-deletion-cases .del-segment,
+.diagram-deletion-cases .del-loop,
+.diagram-deletion-cases .del-supersite-patch,
+.diagram-ins214epe .ins-loop-backbone,
+.diagram-ins214epe .ins-loop-expanded,
+.diagram-ins214epe .ins-origin-note,
+.diagram-chronic-indel .chronic-sample,
+.diagram-chronic-indel .snv,
+.diagram-chronic-indel .del-mark,
+.diagram-chronic-indel .chronic-count {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.diagram-deletion-cases[data-step="1"] .del-lineage > rect,
+.diagram-ins214epe[data-step="1"] .ins-site,
+.diagram-chronic-indel[data-step="1"] .chronic-counts rect {
+  stroke: var(--accent);
+  fill: rgba(58, 140, 111, 0.055);
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+.diagram-deletion-cases[data-step="1"] .del-segment-a {
+  animation: deletionSegmentOut 1.35s ease both;
+}
+.diagram-deletion-cases[data-step="1"] .del-segment-b {
+  animation: deletionSegmentOut 1.35s ease 0.18s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-segment-c {
+  animation: deletionSegmentOut 1.35s ease 0.36s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-loop-a {
+  animation: deletionLoopCloseA 1.35s var(--ease-emphasis) both;
+}
+.diagram-deletion-cases[data-step="1"] .del-loop-b {
+  animation: deletionLoopCloseB 1.35s var(--ease-emphasis) 0.18s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-loop-c {
+  animation: deletionLoopCloseC 1.35s var(--ease-emphasis) 0.36s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-converge-a {
+  animation: deletionConverge 1.1s linear 0.95s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-converge-b {
+  animation: deletionConverge 1.1s linear 1.12s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-converge-c {
+  animation: deletionConverge 1.1s linear 1.28s both;
+}
+.diagram-deletion-cases[data-step="1"] .del-supersite-patch {
+  animation: deletionSupersitePulse 1.1s ease 1.55s both;
+}
+.diagram-ins214epe .ins-peptide {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.diagram-ins214epe[data-step="1"] .ins-peptide {
+  animation: insertPeptide214 1.45s var(--ease-emphasis) both;
+}
+.diagram-ins214epe[data-step="1"] .ins-route {
+  animation: insertRouteDraw 1.05s linear both;
+}
+.diagram-ins214epe[data-step="1"] .ins-loop-backbone {
+  animation: insertLoopFade 1.45s ease both;
+}
+.diagram-ins214epe[data-step="1"] .ins-loop-expanded {
+  animation: insertLoopExpanded 1.45s var(--ease-emphasis) both;
+}
+.diagram-ins214epe[data-step="1"] .ins-origin-note {
+  animation: insertNotePulse 1.15s ease 1.05s both;
+}
+.diagram-chronic-indel[data-step="1"] .chronic-progress {
+  animation: chronicProgress 2.4s linear both;
+}
+.diagram-chronic-indel[data-step="1"] .chronic-sample {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 2;
+  animation: chronicSamplePop 0.38s ease both;
+}
+.diagram-chronic-indel[data-step="1"] .sample-1 { animation-delay: 0.25s; }
+.diagram-chronic-indel[data-step="1"] .sample-2 { animation-delay: 0.65s; }
+.diagram-chronic-indel[data-step="1"] .sample-3 { animation-delay: 1.05s; }
+.diagram-chronic-indel[data-step="1"] .sample-4 { animation-delay: 1.55s; }
+.diagram-chronic-indel[data-step="1"] .sample-5 { animation-delay: 2.05s; }
+.diagram-chronic-indel[data-step="1"] .snv {
+  fill: var(--accent);
+  animation: chronicMutationPop 0.34s ease both;
+}
+.diagram-chronic-indel[data-step="1"] .del-mark {
+  opacity: 0;
+  animation: chronicDeletionPop 0.38s ease both;
+}
+.diagram-chronic-indel[data-step="1"] .snv-1 { animation-delay: 0.45s; }
+.diagram-chronic-indel[data-step="1"] .snv-2 { animation-delay: 0.75s; }
+.diagram-chronic-indel[data-step="1"] .snv-3 { animation-delay: 1.1s; }
+.diagram-chronic-indel[data-step="1"] .snv-4 { animation-delay: 1.45s; }
+.diagram-chronic-indel[data-step="1"] .snv-5 { animation-delay: 1.85s; }
+.diagram-chronic-indel[data-step="1"] .snv-6 { animation-delay: 2.15s; }
+.diagram-chronic-indel[data-step="1"] .del-1 { animation-delay: 0.95s; }
+.diagram-chronic-indel[data-step="1"] .del-2 { animation-delay: 1.55s; }
+.diagram-chronic-indel[data-step="1"] .del-3 { animation-delay: 2s; }
+.diagram-chronic-indel[data-step="1"] .chronic-zone-ntd,
+.diagram-chronic-indel[data-step="1"] .chronic-zone-rbd {
+  animation: chronicZoneGlow 1.2s ease 1.45s both;
+}
+.diagram-chronic-indel[data-step="1"] .chronic-count-snv,
+.diagram-chronic-indel[data-step="1"] .chronic-count-del {
+  animation: chronicCountShow 0.55s ease 2.25s both;
+}
 .slide[data-layout="protein-focus"] .slide-visual {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
@@ -2001,4 +2125,76 @@ body {
 @keyframes ntdMismatchShow {
   0%, 40% { opacity: 0; stroke-dashoffset: 42; }
   100% { opacity: 1; stroke-dashoffset: 0; }
+}
+@keyframes deletionSegmentOut {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  45% { opacity: 1; transform: translate(0, -8px) scale(1.05); }
+  100% { opacity: 0; transform: translate(0, -22px) scale(0.55); }
+}
+@keyframes deletionLoopCloseA {
+  0% { transform: translateX(0); stroke: #5a6a7a; }
+  100% { transform: translateX(-10px); stroke: var(--accent); }
+}
+@keyframes deletionLoopCloseB {
+  0% { transform: translateX(0); stroke: #5a6a7a; }
+  100% { transform: translateX(-8px); stroke: var(--accent); }
+}
+@keyframes deletionLoopCloseC {
+  0% { transform: translateX(0); stroke: #5a6a7a; }
+  100% { transform: translateX(-9px); stroke: var(--accent); }
+}
+@keyframes deletionConverge {
+  0% { opacity: 0; stroke-dashoffset: 80; }
+  22% { opacity: 1; }
+  100% { opacity: 1; stroke-dashoffset: 0; }
+}
+@keyframes deletionSupersitePulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
+  55% { transform: scale(1.05); filter: drop-shadow(0 0 12px var(--accent-glow)); }
+}
+@keyframes insertPeptide214 {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  72% { transform: translate(-330px, 78px) scale(0.92); opacity: 1; }
+  100% { transform: translate(-354px, 92px) scale(0.86); opacity: 1; }
+}
+@keyframes insertRouteDraw {
+  0% { opacity: 0; stroke-dasharray: 180; stroke-dashoffset: 180; }
+  20% { opacity: 1; }
+  100% { opacity: 1; stroke-dasharray: 180; stroke-dashoffset: 0; }
+}
+@keyframes insertLoopFade {
+  0%, 48% { opacity: 1; }
+  100% { opacity: 0.18; }
+}
+@keyframes insertLoopExpanded {
+  0%, 48% { opacity: 0; stroke-dasharray: 720; stroke-dashoffset: 720; }
+  100% { opacity: 1; stroke-dasharray: 720; stroke-dashoffset: 0; }
+}
+@keyframes insertNotePulse {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50% { filter: drop-shadow(0 0 10px rgba(58, 140, 111, 0.2)); }
+}
+@keyframes chronicProgress {
+  from { stroke-dashoffset: 660; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes chronicSamplePop {
+  0% { opacity: 0; transform: scale(0.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes chronicMutationPop {
+  0% { opacity: 0; transform: translateY(8px) scale(0.4); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes chronicDeletionPop {
+  0% { opacity: 0; transform: scale(0.4) rotate(-12deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes chronicZoneGlow {
+  0% { stroke: #d7dde3; fill: rgba(58,140,111,.08); }
+  100% { stroke: var(--accent); fill: rgba(58,140,111,.18); filter: drop-shadow(0 0 8px var(--accent-glow)); }
+}
+@keyframes chronicCountShow {
+  0% { opacity: 0; transform: translateY(8px) scale(0.82); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
