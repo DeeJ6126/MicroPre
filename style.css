@@ -481,6 +481,89 @@ body {
   grid-column: 1 / 2;
 }
 
+/* Visual left: mirror the default direction without touching slide internals */
+.slide[data-layout="visual-left"] {
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+}
+.slide[data-layout="visual-left"] .slide-visual {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  grid-template-rows: minmax(0, 1fr);
+}
+.slide[data-layout="visual-left"] .slide-content {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+.slide[data-layout="visual-left"] .diagram-card,
+.slide[data-layout="visual-left"] .media-frame {
+  min-height: 100%;
+}
+
+/* Diagram stage: mechanism first, text as a compact reading band */
+.slide[data-layout="diagram-stage"] {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 2.5%;
+}
+.slide[data-layout="diagram-stage"] .slide-visual {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  grid-template-rows: minmax(0, 1fr);
+}
+.slide[data-layout="diagram-stage"] .slide-content {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  align-self: center;
+}
+.slide[data-layout="diagram-stage"] .diagram-card {
+  min-height: 100%;
+}
+
+/* Image led: let empirical figures dominate while text becomes commentary */
+.slide[data-layout="image-led"] {
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+}
+.slide[data-layout="image-led"] .slide-visual {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  grid-template-rows: minmax(0, 1fr) minmax(118px, 0.28fr);
+}
+.slide[data-layout="image-led"] .slide-content {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  align-self: center;
+}
+.slide[data-layout="image-led"] .media-frame {
+  min-height: 100%;
+}
+
+/* Center summary: central concept map with compact text below */
+.slide[data-layout="center-summary"] {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 2.5%;
+}
+.slide[data-layout="center-summary"] .slide-content {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  align-self: center;
+}
+.slide[data-layout="center-summary"] .slide-visual {
+  grid-column: 2 / 3;
+  grid-row: 1;
+  grid-template-rows: minmax(0, 1fr);
+}
+.slide[data-layout="center-summary"] .diagram-card {
+  min-height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .slide[data-layout="visual-left"],
+  .slide[data-layout="image-led"],
+  .slide[data-layout="diagram-stage"],
+  .slide[data-layout="center-summary"] {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
  * Media frames (images)
  * ═══════════════════════════════════════════════════════════════ */

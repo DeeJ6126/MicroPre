@@ -35,7 +35,7 @@
       "figureCaption": "点突变：从单个碱基变化到蛋白功能改变。",
       "caption": "点突变：从单个碱基变化到蛋白功能改变",
       "diagram": "base-substitution",
-      "layout": "image-focus"
+      "layout": "image-led"
     },
     {
       "label": "点突 02",
@@ -66,7 +66,7 @@
       "figureCaption": "图1：新冠病毒基因组图谱，标注了本研究中认定的 V1、V2 和 V3 序列特征突变的位置及其编码的氨基酸变化。",
       "caption": "N501Y 在多个谱系中独立出现，增强受体结合",
       "diagram": "convergence",
-      "layout": "image-focus"
+      "layout": "visual-left"
     },
     {
       "label": "点突 04",
@@ -83,7 +83,7 @@
       "figureCaption": "奥密克戎 BA.1 突变的亲和力缓冲效应。每个图展示了在武汉-Hu-1（左）或 Beta（右）RBD 中测得的奥密克戎 BA.1 每个单 RBD 替换对 ACE2 结合亲和力[Δlog10(Kd)]的单独效应的累积叠加。即使背景中的参考状态不同，突变效应也按标注方向计算；例如，Beta 背景中的 N501Y 效应与测得的 Y501N 突变效应符号相反。红线表示武汉-Hu-1 的亲和力，星号表示奥密克戎 BA.1 RBD 相对于武汉-Hu-1 的实际亲和力",
       "caption": "Omicron 多突变组合显示亲和力缓冲效应",
       "diagram": "immune-escape",
-      "layout": "image-focus"
+      "layout": "image-led"
     },
     {
       "label": "点突 05",
@@ -95,7 +95,7 @@
         "积累大量突变，最终扩散到人群"
       ],
       "diagram": "host-factory",
-      "layout": "diagram-focus"
+      "layout": "diagram-stage"
     },
     {
       "label": "点突 06",
@@ -126,21 +126,21 @@
         "上位性让病毒进化更灵活"
       ],
       "diagram": "summary-map",
-      "layout": "summary"
+      "layout": "center-summary"
     },
     {
       "label": "重组 01",
       "title": "什么是病毒重组",
       "subtitle": "SARS-CoV-2 是一种 RNA 病毒，它的重组并不是我们在真核生物中熟悉的染色体重组，而是一种发生在复制过程中的模板切换。",
       "diagram": "viral-template-switch",
-      "layout": "hero-mechanism"
+      "layout": "diagram-stage"
     },
     {
       "label": "重组 02",
       "title": "与真核生物不同",
       "subtitle": "在真核生物中，重组通常发生在减数分裂过程中，涉及同源染色体的配对和片段交换，是一种结构化、受控的遗传过程。",
       "diagram": "eukaryotic-crossing",
-      "layout": "diagram-focus"
+      "layout": "visual-left"
     },
     {
       "label": "重组 03",
@@ -161,7 +161,7 @@
       "title": "机制",
       "subtitle": "RdRp 与 RNA 结合相对不稳定；共感染条件下存在大量相似模板，RNA 的序列同源性和二级结构为重新配对提供条件。冠状病毒本身的跳跃式转录机制，使“换轨复制”高效发生。",
       "diagram": "rdRp-switch-engine",
-      "layout": "hero-mechanism"
+      "layout": "diagram-stage"
     },
     {
       "label": "重组 06",
@@ -203,7 +203,7 @@
       "figureCaption": "Omicron 时代，重组、抗原漂移、趋同进化共同推动 SARS-CoV-2 改变抗原性。大规模系统发育研究在 160 万条序列中识别出 589 个重组事件，约 2.7% 测序基因组有可检测重组祖先，且刺突基因区域存在重组频率峰值。",
       "caption": "大规模系统发育分析显示，重组断点在 3’ 端与 Spike 区域更集中。",
       "diagram": "frequency-landscape",
-      "layout": "image-focus"
+      "layout": "image-led"
     },
     {
       "label": "重组 08",
@@ -214,14 +214,14 @@
         "使 Omicron 亚型快速获得免疫逃逸和传播优势"
       ],
       "diagram": "evolution-accelerator",
-      "layout": "summary"
+      "layout": "center-summary"
     },
     {
       "label": "Indel 01",
       "title": "什么是插入与缺失",
       "subtitle": "插入与缺失，简称 indel，是在基因组中增加或删去一小段连续核苷酸的突变。它介于点突变与重组之间：改变的长度通常不大，但后果常常是结构性的。",
       "diagram": "indel-spectrum",
-      "layout": "diagram-focus"
+      "layout": "diagram-stage"
     },
     {
       "label": "Indel 02",
@@ -244,7 +244,7 @@
         "NTD 含免疫显性的“超级位点”，是中和抗体的重要靶点；改动它即可重塑抗体识别表面，实现免疫逃逸。"
       ],
       "diagram": "ntd-hotspot",
-      "layout": "diagram-focus"
+      "layout": "diagram-stage"
     },
     {
       "label": "Indel 04",
@@ -266,7 +266,7 @@
       "title": "典型插入案例",
       "subtitle": "Omicron BA.1 刺突蛋白独有的 ins214EPE：在 214 位插入三个氨基酸，此前所有谱系中从未出现。推测最可能来自模板切换，也可能来自局部重复或聚合酶滑移。",
       "diagram": "ins214epe",
-      "layout": "diagram-focus"
+      "layout": "diagram-stage"
     },
     {
       "label": "Indel 06",
@@ -277,7 +277,7 @@
         "521 天病例（Schmidt 等）：对异基因造血干细胞移植的免疫缺陷患者做 521 天纵向全基因组测序，病毒累积 34 个替换 + 8 个缺失，RBD 区替换富集达随机预期约 15 倍——强烈正选择的直接证据；缺失与大量替换并存，是病毒持续逃逸抗体压力的适应性变异。"
       ],
       "diagram": "chronic-indel",
-      "layout": "diagram-focus"
+      "layout": "diagram-stage"
     },
     {
       "label": "Indel 07",
@@ -288,7 +288,7 @@
         "其独特之处：RdRp 校正系统对它几乎无效；高度集中于免疫显性的 NTD 超级位点；通过趋同进化与慢性感染中的逐步积累，成为病毒重塑抗原表面、逃逸抗体压力的高效而隐蔽的进化策略。"
       ],
       "diagram": "summary-map",
-      "layout": "summary"
+      "layout": "center-summary"
     }
   ]
 }
