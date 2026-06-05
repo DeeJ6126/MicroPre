@@ -16,7 +16,8 @@ const deckState = {
   direction: 'next',
   proteinStage: null,
   proteinResizeHandler: null,
-  nglScriptPromise: null
+  nglScriptPromise: null,
+  templateSwitchTimers: []
 };
 
 /* ─── DOM refs ──────────────────────────────────────────────── */
@@ -299,11 +300,24 @@ const diagrams = {
       </g>
 
       <!-- ═══ Bottom controls ═══ -->
-      <rect x="140" y="365" width="420" height="36" rx="8" fill="rgba(247,248,250,0.95)" stroke="#e2e6ea" stroke-width="1"/>
-      <text class="ts-step-text" x="350" y="390" fill="#1a3a4a" font-family="system-ui" font-size="15" font-weight="600" text-anchor="middle">点击 RdRp 启动模板切换 ▶</text>
-      <g class="ts-reset" transform="translate(576,370)" style="cursor:pointer">
+      <rect x="82" y="362" width="666" height="40" rx="9" fill="rgba(247,248,250,0.95)" stroke="#e2e6ea" stroke-width="1"/>
+      <text class="ts-step-text" x="420" y="389" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">点击播放，自动演示模板切换 ▶</text>
+      <g class="ts-play" transform="translate(616,370)" style="cursor:pointer">
+        <rect x="0" y="0" width="58" height="26" rx="6" fill="#3a8c6f" stroke="#2f745d" stroke-width="1"/>
+        <text x="29" y="18" fill="#ffffff" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">▶ 播放</text>
+      </g>
+      <g class="ts-reset" transform="translate(684,370)" style="cursor:pointer">
         <rect x="0" y="0" width="64" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
         <text x="32" y="18" fill="#42627a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">⟳ 重置</text>
+      </g>
+      <g class="ts-speed-down" transform="translate(96,370)" style="cursor:pointer">
+        <rect x="0" y="0" width="30" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+        <text x="15" y="18" fill="#42627a" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">−</text>
+      </g>
+      <text class="ts-speed-label" x="164" y="388" fill="#42627a" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">速度 0.75x</text>
+      <g class="ts-speed-up" transform="translate(210,370)" style="cursor:pointer">
+        <rect x="0" y="0" width="30" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+        <text x="15" y="18" fill="#42627a" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">＋</text>
       </g>
     </svg>
   `,
@@ -723,20 +737,27 @@ diagrams['three-way-comparison'] = `
     <g class="comparison-card comparison-card--virus">
       <rect x="608" y="54" width="256" height="300" rx="22" fill="rgba(26,58,74,0.03)" stroke="#e2e6ea" stroke-width="1.5"/>
       <text x="736" y="96" fill="#1a3a4a" font-family="system-ui" font-size="16" font-weight="700" text-anchor="middle">SARS-CoV-2</text>
-      <line class="mini-template template-a" x1="700" y1="126" x2="700" y2="276" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
-      <line class="mini-template template-b" x1="776" y1="126" x2="776" y2="276" stroke="#5a6a7a" stroke-width="4" stroke-linecap="round"/>
-      <line x1="690" y1="154" x2="710" y2="154" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
-      <line x1="690" y1="194" x2="710" y2="194" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
-      <line x1="690" y1="234" x2="710" y2="234" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
-      <line x1="766" y1="154" x2="786" y2="154" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
-      <line x1="766" y1="194" x2="786" y2="194" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
-      <line x1="766" y1="234" x2="786" y2="234" stroke="#5a6a7a" stroke-width="1.5" opacity="0.22"/>
-      <path class="mini-chain mini-chain-a" d="M 700 126 V 160" fill="none" stroke="#1a3a4a" stroke-width="3" stroke-linecap="round" opacity="0"/>
-      <path class="mini-chain mini-chain-jump" d="M 700 160 C 718 178, 744 190, 776 206" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5" opacity="0"/>
-      <path class="mini-chain mini-chain-b" d="M 776 206 V 264" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-linecap="round" opacity="0"/>
-      <circle class="mini-rdrp" cx="700" cy="162" r="21" fill="rgba(26,58,74,0.08)" stroke="#5a6a7a" stroke-width="2.5"/>
-      <text class="mini-rdrp-label" x="700" y="167" fill="#1a3a4a" font-family="system-ui" font-size="10" font-weight="700" text-anchor="middle">RdRp</text>
-      <path class="mini-jump" marker-end="url(#tw-arrow-accent)" d="M 706 220 C 720 230, 750 230, 770 206" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="5 5" opacity="0"/>
+      <text x="640" y="130" fill="#5a6a7a" font-family="system-ui" font-size="11" font-weight="600">母链 A</text>
+      <line class="mini-template template-a" x1="654" y1="148" x2="826" y2="148" stroke="#5a6a7a" stroke-width="3" stroke-linecap="round"/>
+      <text x="640" y="196" fill="#5a6a7a" font-family="system-ui" font-size="11" font-weight="600">母链 B</text>
+      <line class="mini-template template-b" x1="654" y1="214" x2="826" y2="214" stroke="#5a6a7a" stroke-width="3" stroke-linecap="round"/>
+      <g class="mini-template-ticks" opacity=".28">
+        <line x1="684" y1="140" x2="684" y2="156" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="724" y1="140" x2="724" y2="156" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="764" y1="140" x2="764" y2="156" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="804" y1="140" x2="804" y2="156" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="684" y1="206" x2="684" y2="222" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="724" y1="206" x2="724" y2="222" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="764" y1="206" x2="764" y2="222" stroke="#5a6a7a" stroke-width="1.2"/>
+        <line x1="804" y1="206" x2="804" y2="222" stroke="#5a6a7a" stroke-width="1.2"/>
+      </g>
+      <path class="mini-chain mini-chain-a" d="M 666 172 H 714" fill="none" stroke="#1a3a4a" stroke-width="3" stroke-linecap="round" opacity="0"/>
+      <path class="mini-chain mini-chain-jump" d="M 714 172 C 696 188, 700 218, 714 234" fill="none" stroke="#3a8c6f" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="4 4" opacity="0"/>
+      <path class="mini-chain mini-chain-b" d="M 714 234 H 784" fill="none" stroke="#3a8c6f" stroke-width="4" stroke-linecap="round" opacity="0"/>
+      <circle class="mini-rdrp" cx="714" cy="148" r="16" fill="rgba(26,58,74,.08)" stroke="#5a6a7a" stroke-width="2"/>
+      <text class="mini-rdrp-label" x="714" y="153" fill="#1a3a4a" font-family="system-ui" font-size="9" font-weight="700" text-anchor="middle">RdRp</text>
+      <path class="mini-jump" marker-end="url(#tw-arrow-accent)" d="M 732 164 C 762 174, 764 198, 732 212" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="5 5" opacity="0"/>
+      <text x="736" y="292" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">子链随 RdRp 重配对</text>
       <text x="736" y="332" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">模板跳跃</text>
     </g>
   </svg>
@@ -866,8 +887,10 @@ diagrams['indel-mechanisms'] = `
         <line x1="670" y1="188" x2="724" y2="188" stroke="#5a6a7a" stroke-width="1.6"/>
         <line x1="670" y1="204" x2="724" y2="204" stroke="#5a6a7a" stroke-width="1.6"/>
       </g>
-      <circle class="hairpin-pol" cx="610" cy="214" r="15" fill="rgba(26,58,74,.08)" stroke="#5a6a7a" stroke-width="2"/>
-      <text class="hairpin-pol-label" x="610" y="219" fill="#1a3a4a" font-family="system-ui" font-size="9" font-weight="700" text-anchor="middle">RdRp</text>
+      <g class="hairpin-pol-group">
+        <circle class="hairpin-pol" cx="610" cy="214" r="15" fill="rgba(26,58,74,.08)" stroke="#5a6a7a" stroke-width="2"/>
+        <text class="hairpin-pol-label" x="610" y="219" fill="#1a3a4a" font-family="system-ui" font-size="9" font-weight="700" text-anchor="middle">RdRp</text>
+      </g>
       <path class="hairpin-stall" d="M 650 218 C 640 238, 666 244, 676 222" fill="none" stroke="#c84b4b" stroke-width="2.5" stroke-dasharray="4 4" opacity="0"/>
       <text x="696" y="282" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">发夹区让聚合酶停顿、出错</text>
       <text x="696" y="302" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">进一步提高 indel 发生率</text>
@@ -1299,6 +1322,7 @@ function getInitialSlideIndex() {
  * Slide effects — restart animations, bind interactions
  * ═══════════════════════════════════════════════════════════════ */
 function activateSlideEffects(slide) {
+  clearTemplateSwitchAuto();
   restartDiagramMotion(slide);
   bindNarrativeInteraction(slide);
   bindIndelMechanisms(slide);
@@ -1420,7 +1444,11 @@ function bindIndelMechanisms(slide) {
 /* ─── Slide 12: Detailed template-switch interaction ───────── */
 function bindTemplateSwitch(slide) {
   const diagram = slide.querySelector('.diagram-viral-template-switch');
-  if (!diagram || diagram.dataset.tsBound === 'true') return;
+  if (!diagram) return;
+  if (diagram.dataset.tsBound === 'true') {
+    runTemplateSwitchAuto(diagram);
+    return;
+  }
   diagram.dataset.tsBound = 'true';
 
   const svg = diagram.querySelector('svg');
@@ -1428,7 +1456,11 @@ function bindTemplateSwitch(slide) {
   const polRing = svg.querySelector('.ts-pol-ring');
   const polHint = svg.querySelector('.ts-pol-hint');
   const stepText = svg.querySelector('.ts-step-text');
+  const playBtn = svg.querySelector('.ts-play');
   const resetBtn = svg.querySelector('.ts-reset');
+  const speedDownBtn = svg.querySelector('.ts-speed-down');
+  const speedUpBtn = svg.querySelector('.ts-speed-up');
+  const speedLabel = svg.querySelector('.ts-speed-label');
 
   // Dynamic SVG elements
   const chainA = svg.querySelector('.ts-chain-a');
@@ -1458,6 +1490,14 @@ function bindTemplateSwitch(slide) {
 
   let step = 0;
   const totalSteps = 6;
+  const speedOptions = [
+    { label: '0.5x', delay: 1200 },
+    { label: '0.75x', delay: 900 },
+    { label: '1x', delay: 680 },
+    { label: '1.25x', delay: 540 },
+    { label: '1.5x', delay: 440 }
+  ];
+  let speedIndex = 1;
 
   function setD(el, d) {
     if (el) el.setAttribute('d', d);
@@ -1553,22 +1593,78 @@ function bindTemplateSwitch(slide) {
     }
   }
 
+  function updateSpeedLabel() {
+    if (speedLabel) speedLabel.textContent = '速度 ' + speedOptions[speedIndex].label;
+  }
+
+  diagram._templateSwitchUpdateView = updateView;
+  diagram._templateSwitchTotalSteps = totalSteps;
+  diagram._templateSwitchGetDelay = () => speedOptions[speedIndex].delay;
+
   // Initialize at step 0
   updateView(0);
+  updateSpeedLabel();
 
   // Click RdRp to advance
   pol.addEventListener('click', function () {
+    clearTemplateSwitchAuto();
     if (step < totalSteps) updateView(step + 1);
   });
   pol.addEventListener('keydown', function (e) {
     if ((e.key === 'Enter' || e.key === ' ') && step < totalSteps) {
       e.preventDefault();
+      clearTemplateSwitchAuto();
       updateView(step + 1);
     }
   });
 
   // Reset button
-  resetBtn.addEventListener('click', function () { updateView(0); });
+  playBtn?.addEventListener('click', function () {
+    runTemplateSwitchAuto(diagram);
+  });
+  playBtn?.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      runTemplateSwitchAuto(diagram);
+    }
+  });
+
+  resetBtn.addEventListener('click', function () {
+    clearTemplateSwitchAuto();
+    updateView(0);
+  });
+
+  speedDownBtn?.addEventListener('click', function () {
+    speedIndex = Math.max(0, speedIndex - 1);
+    updateSpeedLabel();
+  });
+  speedUpBtn?.addEventListener('click', function () {
+    speedIndex = Math.min(speedOptions.length - 1, speedIndex + 1);
+    updateSpeedLabel();
+  });
+}
+
+function clearTemplateSwitchAuto() {
+  deckState.templateSwitchTimers.forEach((timer) => window.clearTimeout(timer));
+  deckState.templateSwitchTimers = [];
+}
+
+function runTemplateSwitchAuto(diagram) {
+  clearTemplateSwitchAuto();
+  if (!diagram || typeof diagram._templateSwitchUpdateView !== 'function') return;
+
+  diagram._templateSwitchUpdateView(0);
+  const totalSteps = diagram._templateSwitchTotalSteps || 6;
+  const stepDelay = typeof diagram._templateSwitchGetDelay === 'function'
+    ? diagram._templateSwitchGetDelay()
+    : 900;
+  for (let nextStep = 1; nextStep <= totalSteps; nextStep += 1) {
+    const timer = window.setTimeout(() => {
+      if (!diagram.closest('.slide')?.classList.contains('is-active')) return;
+      diagram._templateSwitchUpdateView(nextStep);
+    }, stepDelay * nextStep);
+    deckState.templateSwitchTimers.push(timer);
+  }
 }
 
 /* ─── Slide 13: NGL protein viewer ─────────────────────────── */

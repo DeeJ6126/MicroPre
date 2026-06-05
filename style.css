@@ -363,6 +363,13 @@ body {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   overflow-wrap: anywhere;
+  transform-origin: left center;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    transform 180ms var(--ease-emphasis);
 }
 
 .bullet-list li::before {
@@ -375,6 +382,21 @@ body {
   background: var(--accent);
   border-radius: 50%;
   opacity: 0.7;
+}
+
+.bullet-list li:hover {
+  color: var(--ink);
+  background: rgba(58, 140, 111, 0.09);
+  border-color: rgba(58, 140, 111, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(58, 140, 111, 0.12),
+    0 10px 28px rgba(58, 140, 111, 0.12);
+  transform: scale(1.055);
+}
+
+.bullet-list li:hover::before {
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 /* ─── Slide visual (image + diagram area) ───────────────────── */
@@ -487,6 +509,19 @@ body {
   line-height: 1.35;
   background: var(--deep-blue-glass);
   border-top: 1px solid var(--border-soft);
+  transform-origin: bottom center;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms var(--ease-emphasis);
+}
+
+.image-caption:hover {
+  color: var(--ink);
+  background: rgba(58, 140, 111, 0.09);
+  box-shadow: inset 0 1px 0 rgba(58, 140, 111, 0.18);
+  transform: scale(1.04);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -522,6 +557,53 @@ body {
 .diagram-card > * {
   position: relative;
   z-index: 1;
+}
+
+.diagram-card svg text {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 180ms ease,
+    filter 180ms ease,
+    transform 180ms var(--ease-emphasis);
+}
+
+.diagram-card svg text:hover {
+  filter: drop-shadow(0 0 8px rgba(58, 140, 111, 0.32));
+  transform: scale(1.06);
+}
+
+.diagram-card svg .hairpin-pol-label:hover {
+  filter: none;
+  transform: none;
+}
+
+.diagram-card .comparison-card:hover > rect,
+.diagram-card .indel-card:hover > rect,
+.diagram-card .function-box:hover > rect,
+.diagram-card .factor-list:hover rect,
+.diagram-card .controlled-tags:hover rect,
+.diagram-card .protein-panel:hover,
+.diagram-card .ntd-stage:hover > rect,
+.diagram-card .del-lineage:hover > rect,
+.diagram-card .chronic-counts:hover rect,
+.diagram-card .ins-origin-note:hover rect {
+  stroke: var(--accent);
+  fill: rgba(58, 140, 111, 0.07);
+  filter: drop-shadow(0 0 10px var(--accent-glow));
+}
+
+.diagram-card .comparison-card:hover text,
+.diagram-card .indel-card:hover text,
+.diagram-card .function-box:hover text,
+.diagram-card .factor-list:hover text,
+.diagram-card .controlled-tags:hover text,
+.diagram-card .ntd-stage:hover text,
+.diagram-card .del-lineage:hover text,
+.diagram-card .chronic-counts:hover text,
+.diagram-card .ins-origin-note:hover text {
+  filter: drop-shadow(0 0 8px rgba(58, 140, 111, 0.28));
+  transform: scale(1.04);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1628,24 +1710,38 @@ body {
   stroke: var(--accent);
 }
 .diagram-three-way-comparison[data-compare="virus"] .mini-rdrp {
-  animation: miniTemplateJump 1.65s var(--ease-emphasis) both;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: indelSwitchPol 1.65s var(--ease-emphasis) both;
   stroke: var(--accent);
 }
 .diagram-three-way-comparison[data-compare="virus"] .mini-rdrp-label {
-  animation: miniTemplateJumpLabel 1.65s var(--ease-emphasis) both;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: indelSwitchPol 1.65s var(--ease-emphasis) both;
 }
 .diagram-three-way-comparison[data-compare="virus"] .mini-jump {
   opacity: 1;
   animation: dashFlow 1.1s linear infinite;
 }
 .diagram-three-way-comparison[data-compare="virus"] .mini-chain-a {
-  animation: miniChainA 1.65s var(--ease-emphasis) both;
+  animation: indelChainA 1.65s var(--ease-emphasis) both;
 }
 .diagram-three-way-comparison[data-compare="virus"] .mini-chain-jump {
-  animation: miniChainJump 1.65s var(--ease-emphasis) both;
+  animation: indelChainJump 1.65s var(--ease-emphasis) both;
 }
 .diagram-three-way-comparison[data-compare="virus"] .mini-chain-b {
-  animation: miniChainB 1.65s var(--ease-emphasis) both;
+  animation: indelChainB 1.65s var(--ease-emphasis) both;
+}
+.diagram-three-way-comparison .comparison-card--virus .mini-template,
+.diagram-three-way-comparison .comparison-card--virus .mini-template-ticks line {
+  transition: stroke 220ms ease, opacity 220ms ease, filter 220ms ease;
+}
+.diagram-three-way-comparison[data-compare="virus"] .comparison-card--virus .template-a {
+  stroke: #1a3a4a;
+}
+.diagram-three-way-comparison[data-compare="virus"] .comparison-card--virus .mini-template-ticks line {
+  opacity: 0.55;
 }
 .diagram-base-substitution .replacement-base {
   opacity: 0;
@@ -1763,8 +1859,9 @@ body {
   stroke: var(--accent);
   filter: drop-shadow(0 0 8px var(--accent-glow));
 }
-.diagram-indel-mechanisms[data-indel="hairpin"] .hairpin-pol,
-.diagram-indel-mechanisms[data-indel="hairpin"] .hairpin-pol-label {
+.diagram-indel-mechanisms[data-indel="hairpin"] .hairpin-pol-group {
+  transform-box: fill-box;
+  transform-origin: center;
   animation: indelHairpinPol 1.8s var(--ease-emphasis) both;
 }
 .diagram-indel-mechanisms[data-indel="hairpin"] .hairpin-stall {
@@ -1928,11 +2025,11 @@ body {
   transform-box: fill-box;
   transform-origin: center;
 }
+.diagram-ins214epe .ins-route {
+  display: none;
+}
 .diagram-ins214epe[data-step="1"] .ins-peptide {
   animation: insertPeptide214 1.45s var(--ease-emphasis) both;
-}
-.diagram-ins214epe[data-step="1"] .ins-route {
-  animation: insertRouteDraw 1.05s linear both;
 }
 .diagram-ins214epe[data-step="1"] .ins-loop-backbone {
   animation: insertLoopFade 1.45s ease both;
