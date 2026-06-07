@@ -53,7 +53,7 @@
       "figureCaption": "点突变：从单个碱基变化到蛋白功能改变。",
       "caption": "点突变：从单个碱基变化到蛋白功能改变",
       "diagram": "base-substitution",
-      "layout": "image-led"
+      "layout": "image-focus"
     },
     {
       "label": "点突 02",
@@ -68,7 +68,10 @@
       "figureCaption": "图1：五种 SARS-CoV-2 刺突蛋白受体结合域变体所有单氨基酸突变的 ACE2 结合亲和力深度突变扫描图谱。",
       "caption": "RBD 突变同时作用于受体结合与抗体识别",
       "diagram": "dual-function",
-      "layout": "split-visual"
+      "layout": "split-visual",
+      "references": [
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424."
+      ]
     },
     {
       "label": "点突 03",
@@ -84,7 +87,10 @@
       "figureCaption": "图1：新冠病毒基因组图谱，标注了本研究中认定的 V1、V2 和 V3 序列特征突变的位置及其编码的氨基酸变化。",
       "caption": "N501Y 在多个谱系中独立出现，增强受体结合",
       "diagram": "convergence",
-      "layout": "visual-left"
+      "layout": "visual-left",
+      "references": [
+        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell, 2021, 184(20): 5189-5200.e7."
+      ]
     },
     {
       "label": "点突 04",
@@ -101,7 +107,10 @@
       "figureCaption": "奥密克戎 BA.1 突变的亲和力缓冲效应。每个图展示了在武汉-Hu-1（左）或 Beta（右）RBD 中测得的奥密克戎 BA.1 每个单 RBD 替换对 ACE2 结合亲和力[Δlog10(Kd)]的单独效应的累积叠加。即使背景中的参考状态不同，突变效应也按标注方向计算；例如，Beta 背景中的 N501Y 效应与测得的 Y501N 突变效应符号相反。红线表示武汉-Hu-1 的亲和力，星号表示奥密克戎 BA.1 RBD 相对于武汉-Hu-1 的实际亲和力",
       "caption": "Omicron 多突变组合显示亲和力缓冲效应",
       "diagram": "immune-escape",
-      "layout": "image-led"
+      "layout": "image-led",
+      "references": [
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424."
+      ]
     },
     {
       "label": "点突 05",
@@ -113,7 +122,10 @@
         "积累大量突变，最终扩散到人群"
       ],
       "diagram": "host-factory",
-      "layout": "diagram-stage"
+      "layout": "diagram-stage",
+      "references": [
+        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications, 2024, 15(1)."
+      ]
     },
     {
       "label": "点突 06",
@@ -129,7 +141,10 @@
       "figureCaption": "双突变循环图，展示 N501Y 与 Q498R 之间的正上位相互作用。星号表示假设加性效应时预期的双突变结合亲和力回到 PPT4，Omicron 这么多突变加起来，在原始株背景下亲和力会掉到很低，但在有 N501Y的 Beta 背景下就能维持正常亲和力，这就是上位性效应带来的 “亲和力缓冲”",
       "caption": "双突变循环揭示突变组合的非加性效应",
       "diagram": "epistasis",
-      "layout": "split-visual"
+      "layout": "split-visual",
+      "references": [
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424."
+      ]
     },
     {
       "label": "点突 07",
@@ -144,7 +159,13 @@
         "上位性让病毒进化更灵活"
       ],
       "diagram": "summary-map",
-      "layout": "center-summary"
+      "layout": "center-summary",
+      "referenceTitle": "点突变文献汇总",
+      "references": [
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424.",
+        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell, 2021, 184(20): 5189-5200.e7.",
+        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications, 2024, 15(1)."
+      ]
     },
     {
       "label": "重组 01",
@@ -307,6 +328,17 @@
       ],
       "diagram": "summary-map",
       "layout": "center-summary"
+    },
+    {
+      "label": "参考文献",
+      "title": "参考文献",
+      "layout": "references",
+      "referenceTitle": "点突变",
+      "references": [
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424.",
+        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell, 2021, 184(20): 5189-5200.e7.",
+        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications, 2024, 15(1)."
+      ]
     },
     {
       "label": "结束",

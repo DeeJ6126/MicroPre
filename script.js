@@ -1260,11 +1260,13 @@ function renderSlides() {
 
 function createSlideMarkup(slide, index) {
   const points = (slide.points || []).map(p => `<li>${escapeHtml(p)}</li>`).join('');
+  const references = createReferencesMarkup(slide);
   const label = slide.label || `Slide ${String(index + 1).padStart(2, '0')}`;
   const layout = slide.layout || 'hero-mechanism';
+  const referenceClass = references ? ' has-references' : '';
 
   return `
-    <section class="slide" data-slide-index="${index}" data-layout="${layout}" data-diagram="${escapeAttr(slide.diagram || '')}">
+    <section class="slide${referenceClass}" data-slide-index="${index}" data-layout="${layout}" data-diagram="${escapeAttr(slide.diagram || '')}">
       <div class="slide-content">
         <p class="slide-eyebrow">${escapeHtml(label)}</p>
         <h2 class="slide-title">${escapeHtml(slide.title || '')}</h2>
@@ -1273,7 +1275,20 @@ function createSlideMarkup(slide, index) {
         ${points ? `<ul class="bullet-list">${points}</ul>` : ''}
       </div>
       ${createVisualMarkup(slide)}
+      ${references}
     </section>
+  `;
+}
+
+function createReferencesMarkup(slide) {
+  if (!Array.isArray(slide.references) || slide.references.length === 0) return '';
+  const title = slide.referenceTitle || '参考文献';
+  const items = slide.references.map(ref => `<li>${escapeHtml(ref)}</li>`).join('');
+  return `
+    <aside class="slide-references" aria-label="${escapeAttr(title)}">
+      <strong>${escapeHtml(title)}</strong>
+      <ol>${items}</ol>
+    </aside>
   `;
 }
 

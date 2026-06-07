@@ -9,10 +9,11 @@ const html = read('index.html');
 const script = read('script.js');
 const style = read('style.css');
 
-assert.strictEqual(content.slides.length, 25, 'deck must contain 25 slides');
+assert.strictEqual(content.slides.length, 26, 'deck must contain 26 slides');
 assert.strictEqual(content.slides[0].title, 'SARS-CoV-2 分子进化', 'slide 1 must be the cover');
 assert.strictEqual(content.slides[1].title, '目录', 'slide 2 must be the agenda');
-assert.strictEqual(content.slides[24].title, '谢谢！', 'last slide must be the closing slide');
+assert.strictEqual(content.slides[24].title, '参考文献', 'slide before closing must be the reference summary slide');
+assert.strictEqual(content.slides[25].title, '谢谢！', 'last slide must be the closing slide');
 assert.ok(fs.existsSync(path.join(root, 'public/img/cover-evolution-bg.png')), 'cover background image must exist');
 assert.match(style, /cover-evolution-bg\.png/, 'cover layout must use the generated background image');
 assert.ok(fs.existsSync(path.join(root, 'public/img/closing-evolution-bg-v2.png')), 'closing background image must exist');
@@ -43,6 +44,16 @@ assert.deepStrictEqual(
 
 assert.strictEqual(content.slides[3].points.length, 2, 'point mutation slide 2 must keep only the two PDF functions');
 assert.strictEqual(content.slides[8].points.length, 6, 'point mutation summary must expose the six PDF summary items');
+assert.ok(content.slides[3].references?.[0]?.includes('Starr TN'), 'point mutation slide 2 must include its source reference');
+assert.ok(content.slides[4].references?.[0]?.includes('Martin DP'), 'N501Y slide must include its source reference');
+assert.ok(content.slides[5].references?.[0]?.includes('Starr TN'), 'Omicron slide must include its source reference');
+assert.ok(content.slides[6].references?.[0]?.includes('Ko SH'), 'immunocompromised-host slide must include its source reference');
+assert.ok(content.slides[7].references?.[0]?.includes('Starr TN'), 'epistasis slide must include its source reference');
+assert.strictEqual(content.slides[8].references.length, 3, 'point mutation summary must include the three provided references');
+assert.strictEqual(content.slides[23].references, undefined, 'indel final slide must not carry the provided reference summary');
+assert.strictEqual(content.slides[24].references.length, 3, 'the slide before closing must include the provided reference summary');
+assert.strictEqual(content.slides[24].referenceTitle, '点突变', 'reference summary card must be labeled by topic');
+assert.strictEqual(content.slides[24].subtitle, undefined, 'reference summary slide must not show the temporary explanatory subtitle');
 assert.strictEqual(content.slides[9].points, undefined, 'recombination slide 1 must not add explanatory bullets');
 assert.strictEqual(content.slides[10].points, undefined, 'recombination slide 2 must not add explanatory bullets');
 assert.strictEqual(content.slides[9].diagram, 'viral-template-switch', 'recombination slide 1 must use the detailed template-switch animation');
@@ -57,6 +68,9 @@ assert.match(script, /mini-chain-jump/, 'slide 11 template jumping must include 
 assert.match(script, /mini-chain-b/, 'slide 11 template jumping must include continued nascent chain on template B');
 assert.doesNotMatch(script, /C→U/, 'slide 1 must not show the old C to U text label');
 assert.match(script, /openFigureOverlay/, 'images must open a figure overlay with caption text');
+assert.match(script, /slide-references/, 'slides must render optional bottom references');
+assert.match(style, /\.slide\.has-references/, 'slides with references must reserve bottom space');
+assert.match(style, /data-layout="references"/, 'reference summary slide must use a dedicated layout');
 assert.match(script, /bindIndelMechanisms\(slide\)/, 'slide 17 indel mechanisms must register dedicated click interactions');
 assert.match(script, /class="indel-card indel-card--slippage"/, 'slide 17 must render a slippage card');
 assert.match(script, /class="indel-card indel-card--switch"/, 'slide 17 must render a template-switch card');

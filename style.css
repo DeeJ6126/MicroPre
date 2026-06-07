@@ -270,6 +270,10 @@ body {
   will-change: transform, opacity;
 }
 
+.slide.has-references {
+  padding-bottom: clamp(36px, 5.2vh, 62px);
+}
+
 .slide.is-active {
   opacity: 1;
   transform: translateX(0) scale(1);
@@ -349,6 +353,89 @@ body {
   color: var(--fg);
   max-width: 42em;
   white-space: pre-line;
+}
+
+.slide-references {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(8px, 0.7vw, 14px);
+  align-items: start;
+  padding: clamp(6px, 0.55vw, 10px) clamp(10px, 0.9vw, 16px);
+  font-family: var(--font-system);
+  font-size: clamp(14px, 0.9vw, 19px);
+  line-height: 1.38;
+  color: color-mix(in oklab, var(--muted), var(--fg) 18%);
+  background: rgba(249, 249, 247, 0.92);
+  border-top: 1px solid rgba(226, 230, 234, 0.9);
+}
+
+.slide[data-layout="references"] {
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+}
+
+.slide[data-layout="references"].has-references {
+  padding-bottom: 0;
+}
+
+.slide[data-layout="references"] .slide-content {
+  align-self: start;
+  max-width: 72%;
+}
+
+.slide[data-layout="references"] .slide-eyebrow,
+.slide[data-layout="references"] .slide-subtitle {
+  display: none;
+}
+
+.slide[data-layout="references"] .slide-references {
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  align-self: end;
+  display: block;
+  max-width: min(1180px, 92%);
+  margin-top: clamp(18px, 2vw, 34px);
+  padding: clamp(18px, 1.8vw, 32px) clamp(22px, 2.1vw, 38px);
+  font-size: clamp(18px, 1.08vw, 24px);
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(226, 230, 234, 0.9);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.slide[data-layout="references"] .slide-references strong {
+  display: block;
+  margin-bottom: clamp(10px, 1vw, 18px);
+  font-size: clamp(20px, 1.25vw, 28px);
+}
+
+.slide[data-layout="references"] .slide-references ol {
+  gap: clamp(8px, 0.8vw, 16px);
+}
+
+.slide-references strong {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.slide-references ol {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding-left: 1.35em;
+}
+
+.slide-references li {
+  padding-left: 0.15em;
 }
 
 .bullet-list {
