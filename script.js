@@ -29,6 +29,8 @@ const nextBtn = document.getElementById('next-btn');
 
 /* ─── Diagram title map ─────────────────────────────────────── */
 const diagramTitles = {
+  'cover-molecular':       'SARS-CoV-2 分子进化封面背景',
+  'agenda-map':            '演示目录结构图',
   'base-substitution':      '碱基替换到蛋白功能改变',
   'dual-function':          '点突变的受体结合与免疫逃逸双功能',
   'convergence':            'N501Y 趋同进化示意',
@@ -54,6 +56,87 @@ const diagramTitles = {
 
 /* ─── SVG diagram definitions ──────────────────────────────── */
 const diagrams = {
+
+  /* ── Cover / Agenda / Closing ─────────────────────────── */
+  'cover-molecular': `
+    <svg class="cover-svg" viewBox="0 0 960 540" aria-hidden="true">
+      <defs>
+        <radialGradient id="cover-virus" cx="45%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#dcefe9"/>
+          <stop offset="62%" stop-color="#7ba995"/>
+          <stop offset="100%" stop-color="#1f5164"/>
+        </radialGradient>
+        <linearGradient id="cover-rna" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#1a3a4a"/>
+          <stop offset="55%" stop-color="#3a8c6f"/>
+          <stop offset="100%" stop-color="#c17f3b"/>
+        </linearGradient>
+        <filter id="cover-soft" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="10"/>
+        </filter>
+      </defs>
+      <rect width="960" height="540" fill="#f4f7f8"/>
+      <circle cx="770" cy="122" r="138" fill="rgba(26,58,74,0.06)" filter="url(#cover-soft)"/>
+      <circle cx="760" cy="160" r="108" fill="url(#cover-virus)" opacity="0.94"/>
+      <g class="cover-spikes" stroke="#1a3a4a" stroke-width="5" stroke-linecap="round" opacity="0.42">
+        <path d="M760 44v-34"/><path d="M820 62l20-28"/><path d="M865 110l32-13"/><path d="M876 174l35 7"/>
+        <path d="M850 232l27 24"/><path d="M705 238l-24 26"/><path d="M652 176l-34 8"/><path d="M662 96l-31-16"/>
+      </g>
+      <g class="cover-dots" fill="#ffffff" opacity="0.7">
+        <circle cx="714" cy="132" r="7"/><circle cx="790" cy="106" r="5"/><circle cx="815" cy="172" r="6"/>
+        <circle cx="738" cy="205" r="4"/><circle cx="694" cy="173" r="5"/>
+      </g>
+      <path class="cover-rna-main" d="M70 420 C180 330, 262 470, 360 365 S570 300, 660 374 S830 456, 910 348" fill="none" stroke="url(#cover-rna)" stroke-width="7" stroke-linecap="round"/>
+      <path class="cover-rna-ghost" d="M96 456 C190 380, 282 510, 382 404 S594 334, 708 416 S846 488, 930 420" fill="none" stroke="#1a3a4a" stroke-width="2" stroke-dasharray="12 16" opacity="0.22"/>
+      <g class="cover-marks" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700">
+        <text x="286" y="333" fill="#3a8c6f">SNV</text>
+        <text x="555" y="306" fill="#c17f3b">recombination</text>
+        <text x="738" y="438" fill="#1a3a4a">indel</text>
+      </g>
+      <g class="cover-particles" fill="#3a8c6f" opacity="0.45">
+        <circle cx="528" cy="98" r="5"/><circle cx="580" cy="142" r="3"/><circle cx="630" cy="72" r="4"/>
+        <circle cx="894" cy="292" r="4"/><circle cx="128" cy="128" r="5"/><circle cx="214" cy="90" r="3"/>
+      </g>
+    </svg>
+  `,
+
+  'agenda-map': `
+    <svg class="agenda-svg" viewBox="0 0 760 430" aria-hidden="true">
+      <defs>
+        <marker id="agenda-arrow-snv" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0 0 L10 5 L0 10Z" fill="#3a8c6f"/>
+        </marker>
+        <marker id="agenda-arrow-recomb" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0 0 L10 5 L0 10Z" fill="#1f6f8b"/>
+        </marker>
+        <marker id="agenda-arrow-indel" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0 0 L10 5 L0 10Z" fill="#c17f3b"/>
+        </marker>
+      </defs>
+      <circle class="agenda-core" cx="380" cy="215" r="78" fill="rgba(58,140,111,0.12)" stroke="#3a8c6f" stroke-width="2.5"/>
+      <circle class="agenda-core-pulse" cx="380" cy="215" r="96" fill="none" stroke="#3a8c6f" stroke-width="1.5" opacity="0.2"/>
+      <text x="380" y="208" fill="#1a3a4a" font-family="system-ui" font-size="22" font-weight="800" text-anchor="middle">SARS-CoV-2</text>
+      <text x="380" y="236" fill="#5a6a7a" font-family="system-ui" font-size="15" font-weight="700" text-anchor="middle">分子进化</text>
+      <g class="agenda-node agenda-node--snv">
+        <rect x="24" y="46" width="220" height="92" rx="16" fill="#fff" stroke="#dbe4e7" stroke-width="1.5"/>
+        <text x="58" y="86" fill="#1a3a4a" font-family="system-ui" font-size="22" font-weight="800">点突变</text>
+        <text x="58" y="114" fill="#5a6a7a" font-family="system-ui" font-size="14">单碱基替换</text>
+      </g>
+      <g class="agenda-node agenda-node--recomb">
+        <rect x="516" y="46" width="220" height="92" rx="16" fill="#fff" stroke="#dbe4e7" stroke-width="1.5"/>
+        <text x="544" y="86" fill="#1a3a4a" font-family="system-ui" font-size="22" font-weight="800">重组</text>
+        <text x="544" y="114" fill="#5a6a7a" font-family="system-ui" font-size="14">模板切换</text>
+      </g>
+      <g class="agenda-node agenda-node--indel">
+        <rect x="270" y="352" width="220" height="76" rx="16" fill="#fff" stroke="#dbe4e7" stroke-width="1.5"/>
+        <text x="302" y="386" fill="#1a3a4a" font-family="system-ui" font-size="22" font-weight="800">插入与缺失</text>
+        <text x="302" y="410" fill="#5a6a7a" font-family="system-ui" font-size="14">结构性微整形</text>
+      </g>
+      <path class="agenda-link agenda-link--snv" d="M324 184 C276 132, 246 102, 244 92" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-linecap="round" marker-end="url(#agenda-arrow-snv)"/>
+      <path class="agenda-link agenda-link--recomb" d="M436 184 C484 132, 514 102, 516 92" fill="none" stroke="#1f6f8b" stroke-width="3" stroke-linecap="round" marker-end="url(#agenda-arrow-recomb)"/>
+      <path class="agenda-link agenda-link--indel" d="M380 294 C380 320, 380 340, 380 352" fill="none" stroke="#c17f3b" stroke-width="3" stroke-linecap="round" marker-end="url(#agenda-arrow-indel)"/>
+    </svg>
+  `,
 
   /* ── 01 碱基替换 ─────────────────────────────────────── */
   'base-substitution': `
@@ -797,15 +880,26 @@ diagrams['host-factory'] = `
       <marker id="hf-arrow-new" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
         <path d="M 0 0 L 10 5 L 0 10 z" fill="#3a8c6f"/>
       </marker>
+      <marker id="hf-arrow-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#c84b4b"/>
+      </marker>
     </defs>
     <text class="svg-kicker" x="42" y="32">persistent infection creates a mutation reservoir</text>
-    <g class="host-body" transform="translate(96 70)">
-      <circle cx="54" cy="30" r="24" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="2"/>
-      <path d="M 18 110 C 24 66, 86 66, 92 110 Z" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/>
-      <text x="54" y="142" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">免疫缺陷宿主</text>
+    <path class="entry-arrow" marker-end="url(#hf-arrow-red)" d="M 40 108 C 70 92, 108 92, 132 104" fill="none" stroke="#c84b4b" stroke-width="2.5"/>
+    <g class="entry-virus">
+      <circle cx="42" cy="108" r="8" fill="rgba(200,75,75,0.18)" stroke="#c84b4b" stroke-width="1.6"/>
+      <circle cx="36" cy="100" r="2" fill="#c84b4b"/>
+      <circle cx="49" cy="102" r="2" fill="#c84b4b"/>
+      <circle cx="34" cy="113" r="2" fill="#c84b4b"/>
+      <circle cx="50" cy="115" r="2" fill="#c84b4b"/>
     </g>
+    <g class="host-body" transform="translate(96 70)">
+      <circle class="host-head" cx="54" cy="30" r="24" fill="rgba(26,58,74,0.08)" stroke="#e2e6ea" stroke-width="2"/>
+      <path class="host-torso" d="M 18 110 C 24 66, 86 66, 92 110 Z" fill="rgba(26,58,74,0.06)" stroke="#e2e6ea" stroke-width="2"/>
+    </g>
+    <text class="host-label" x="150" y="212" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">免疫缺陷宿主</text>
     <rect class="infection-window" x="242" y="78" width="236" height="72" rx="16" fill="rgba(26,58,74,0.04)" stroke="#e2e6ea" stroke-width="1.5"/>
-    <text x="360" y="104" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="700" text-anchor="middle">长期持续感染</text>
+    <text x="360" y="104" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">长期持续感染</text>
     <text x="360" y="128" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">数月复制压力下持续产生突变</text>
     <g class="mutation-burst">
       <circle cx="292" cy="176" r="5" fill="#3a8c6f"/>
@@ -816,13 +910,18 @@ diagrams['host-factory'] = `
       <circle cx="444" cy="166" r="5" fill="#3a8c6f"/>
     </g>
     <path class="spread-arrow" marker-end="url(#hf-arrow-new)" d="M 480 118 C 534 102, 574 108, 620 126" fill="none" stroke="#3a8c6f" stroke-width="3" stroke-dasharray="8 8"/>
-    <g class="population-cloud">
-      <circle cx="634" cy="112" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
-      <circle cx="662" cy="132" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
-      <circle cx="614" cy="150" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
-      <text x="638" y="194" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="700" text-anchor="middle">进入人群</text>
+    <g class="spillover-viruses">
+      <circle cx="496" cy="118" r="5" fill="rgba(200,75,75,0.18)" stroke="#c84b4b" stroke-width="1.4"/>
+      <circle cx="510" cy="111" r="4" fill="rgba(200,75,75,0.18)" stroke="#c84b4b" stroke-width="1.3"/>
+      <circle cx="510" cy="129" r="4" fill="rgba(200,75,75,0.18)" stroke="#c84b4b" stroke-width="1.3"/>
     </g>
-    <text x="360" y="224" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">点击推进：持续感染 → 突变积累 → 外溢传播</text>
+    <g class="population-cloud">
+      <circle class="population-person population-person-a" cx="634" cy="112" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <circle class="population-person population-person-b" cx="662" cy="132" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <circle class="population-person population-person-c" cx="614" cy="150" r="14" fill="rgba(26,58,74,0.07)" stroke="#e2e6ea" stroke-width="1.5"/>
+      <text x="638" y="194" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="600" text-anchor="middle">进入人群</text>
+    </g>
+    <text x="360" y="224" fill="#1a3a4a" font-family="system-ui" font-size="13" font-weight="500" text-anchor="middle">点击推进：病毒进入 → 突变积累 → 外溢传播</text>
   </svg>
 `;
 
@@ -1028,7 +1127,24 @@ diagrams['deletion-cases'] = `
       <text x="716" y="288" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">不同谱系反复命中相近表面</text>
     </g>
 
-    <text x="430" y="398" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">缺失片段消失 → loop 收拢 → 多谱系汇聚：趋同进化与正选择信号</text>
+    <text x="430" y="362" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">缺失片段消失 → loop 收拢 → 多谱系汇聚：趋同进化与正选择信号</text>
+    <g class="indel-play" transform="translate(318,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="66" height="26" rx="6" fill="#3a8c6f"/>
+      <text x="33" y="18" fill="#fff" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">▶ 播放</text>
+    </g>
+    <g class="indel-reset" transform="translate(394,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="64" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+      <text x="32" y="18" fill="#42627a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">⟳ 重置</text>
+    </g>
+    <g class="indel-speed-down" transform="translate(508,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="30" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+      <text x="15" y="18" fill="#42627a" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">−</text>
+    </g>
+    <text class="indel-speed-label" x="574" y="404" fill="#42627a" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">速度 0.75x</text>
+    <g class="indel-speed-up" transform="translate(620,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="30" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+      <text x="15" y="18" fill="#42627a" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">＋</text>
+    </g>
   </svg>
 `;
 
@@ -1060,9 +1176,8 @@ diagrams['ins214epe'] = `
     <path class="ins-route" d="M 668 166 C 596 174, 486 188, 386 210" fill="none" stroke="#3a8c6f" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#ins-arrow)" opacity="0"/>
 
     <g class="ins-origin-note">
-      <rect x="122" y="318" width="616" height="48" rx="14" fill="rgba(26,58,74,.035)" stroke="#d7dde3"/>
+      <rect x="122" y="318" width="616" height="30" rx="14" fill="rgba(26,58,74,.035)" stroke="#d7dde3"/>
       <text x="430" y="338" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">可能来源：模板切换 / 局部重复 / 聚合酶滑移</text>
-      <text x="430" y="358" fill="#5a6a7a" font-family="system-ui" font-size="12" text-anchor="middle">动画只表示“插入发生并改变局部表面”，不把来源画成定论</text>
     </g>
 
     <text x="430" y="404" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">E-P-E 插入 214 位 → loop 局部撑开 → NTD 表面被微整形</text>
@@ -1115,7 +1230,24 @@ diagrams['chronic-indel'] = `
       <text class="chronic-count chronic-count-del" x="616" y="338" fill="#c84b4b" font-family="JetBrains Mono,monospace" font-size="22" font-weight="800" text-anchor="middle">8</text>
     </g>
 
-    <text x="430" y="404" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">长期复制窗口中，SNV 与 deletion 共同积累，并在免疫压力相关区域富集</text>
+    <text x="430" y="362" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">长期复制窗口中，SNV 与 deletion 共同积累，并在免疫压力相关区域富集</text>
+    <g class="indel-play" transform="translate(318,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="66" height="26" rx="6" fill="#3a8c6f"/>
+      <text x="33" y="18" fill="#fff" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">▶ 播放</text>
+    </g>
+    <g class="indel-reset" transform="translate(394,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="64" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+      <text x="32" y="18" fill="#42627a" font-family="system-ui" font-size="12" font-weight="600" text-anchor="middle">⟳ 重置</text>
+    </g>
+    <g class="indel-speed-down" transform="translate(508,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="30" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+      <text x="15" y="18" fill="#42627a" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">−</text>
+    </g>
+    <text class="indel-speed-label" x="574" y="404" fill="#42627a" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">速度 0.75x</text>
+    <g class="indel-speed-up" transform="translate(620,386)" role="button" tabindex="0" style="cursor:pointer">
+      <rect x="0" y="0" width="30" height="26" rx="6" fill="#e2e6ea" stroke="#d5d5d5" stroke-width="1"/>
+      <text x="15" y="18" fill="#42627a" font-family="system-ui" font-size="13" font-weight="800" text-anchor="middle">＋</text>
+    </g>
   </svg>
 `;
 
@@ -1306,8 +1438,17 @@ function updateNav() {
   try{window.history.replaceState(null,'','#slide-'+(deckState.currentIndex+1))}catch(e){}
 
   // Update section label
-  const section = deckState.currentIndex < 7 ? 'Point Mutation' : (deckState.currentIndex < 15 ? 'Recombination' : 'Indel');
+  const section = getSectionLabel(deckState.currentIndex);
   if (deckSection) deckSection.textContent = section;
+}
+
+function getSectionLabel(index) {
+  if (index === 0) return '封面';
+  if (index === 1) return '目录';
+  if (index >= 2 && index <= 8) return '点突变';
+  if (index >= 9 && index <= 16) return '重组';
+  if (index >= 17 && index <= 23) return '插入与缺失';
+  return '结尾';
 }
 
 function getInitialSlideIndex() {
@@ -1326,6 +1467,7 @@ function activateSlideEffects(slide) {
   restartDiagramMotion(slide);
   bindNarrativeInteraction(slide);
   bindIndelMechanisms(slide);
+  bindIndelPlaybackControls(slide);
   bindTemplateSwitch(slide);
   bindProkaryoticTransfer(slide);
   mountProteinViewer(slide);
@@ -1334,7 +1476,7 @@ function activateSlideEffects(slide) {
 function restartDiagramMotion(slide) {
   const cards = slide.querySelectorAll('.diagram-card');
   cards.forEach(card => {
-    card.classList.remove('is-animated', 'is-focused', 'is-transforming', 'is-conjugating', 'is-transducing');
+    card.classList.remove('is-animated', 'is-focused', 'is-transforming', 'is-conjugating', 'is-transducing', 'is-indel-playing');
     delete card.dataset.step;
     delete card.dataset.compare;
     void card.offsetWidth;  // force reflow for animation restart
@@ -1346,7 +1488,12 @@ function restartDiagramMotion(slide) {
 function bindNarrativeInteraction(slide) {
   const diagram = slide.querySelector('.diagram-card');
   if (!diagram || diagram.dataset.narrativeBound === 'true') return;
-  if (diagram.classList.contains('diagram-prokaryotic-transfer') || diagram.classList.contains('diagram-viral-template-switch')) return;
+  if (
+    diagram.classList.contains('diagram-prokaryotic-transfer') ||
+    diagram.classList.contains('diagram-viral-template-switch') ||
+    diagram.classList.contains('diagram-deletion-cases') ||
+    diagram.classList.contains('diagram-chronic-indel')
+  ) return;
 
   diagram.dataset.narrativeBound = 'true';
   diagram.tabIndex = 0;
@@ -1439,6 +1586,81 @@ function bindIndelMechanisms(slide) {
     const current = order.indexOf(diagram.dataset.indel);
     activate(order[(current + 1) % order.length]);
   });
+}
+
+function bindIndelPlaybackControls(slide) {
+  const diagram = slide.querySelector('.diagram-deletion-cases, .diagram-chronic-indel');
+  if (!diagram || diagram.dataset.indelPlaybackBound === 'true') return;
+  diagram.dataset.indelPlaybackBound = 'true';
+
+  const speedOptions = [
+    { label: '0.5x', factor: 1.75 },
+    { label: '0.75x', factor: 1.32 },
+    { label: '1x', factor: 1 },
+    { label: '1.25x', factor: 0.82 },
+    { label: '1.5x', factor: 0.68 }
+  ];
+  let speedIndex = 1;
+
+  const playBtn = diagram.querySelector('.indel-play');
+  const resetBtn = diagram.querySelector('.indel-reset');
+  const speedDownBtn = diagram.querySelector('.indel-speed-down');
+  const speedUpBtn = diagram.querySelector('.indel-speed-up');
+  const speedLabel = diagram.querySelector('.indel-speed-label');
+
+  function updateSpeed() {
+    const option = speedOptions[speedIndex];
+    diagram.style.setProperty('--indel-factor', String(option.factor));
+    if (speedLabel) speedLabel.textContent = '速度 ' + option.label;
+  }
+
+  function play() {
+    diagram.dataset.step = '1';
+    diagram.classList.remove('is-focused', 'is-indel-playing');
+    void diagram.offsetWidth;
+    diagram.classList.add('is-focused', 'is-indel-playing');
+  }
+
+  function reset() {
+    delete diagram.dataset.step;
+    diagram.classList.remove('is-focused', 'is-indel-playing');
+    void diagram.offsetWidth;
+  }
+
+  playBtn?.addEventListener('click', play);
+  playBtn?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    play();
+  });
+  resetBtn?.addEventListener('click', reset);
+  resetBtn?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    reset();
+  });
+  speedDownBtn?.addEventListener('click', () => {
+    speedIndex = Math.max(0, speedIndex - 1);
+    updateSpeed();
+  });
+  speedUpBtn?.addEventListener('click', () => {
+    speedIndex = Math.min(speedOptions.length - 1, speedIndex + 1);
+    updateSpeed();
+  });
+  speedDownBtn?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    speedIndex = Math.max(0, speedIndex - 1);
+    updateSpeed();
+  });
+  speedUpBtn?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    speedIndex = Math.min(speedOptions.length - 1, speedIndex + 1);
+    updateSpeed();
+  });
+
+  updateSpeed();
 }
 
 /* ─── Slide 12: Detailed template-switch interaction ───────── */

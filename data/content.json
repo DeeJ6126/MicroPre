@@ -1,11 +1,11 @@
 {
-  "deckTitle": "SARS-CoV-2 分子进化：点突变与重组",
-  "section": "Point Mutation → Recombination → Indel",
-  "author": "Molecular Evolution Lab",
+  "deckTitle": "SARS-CoV-2 分子进化",
+  "section": "封面",
+  "author": "Microbiology Presentation",
   "theme": "science-documentary",
   "directionC": {
     "palette": {
-      "bg": "#F7F8FA",
+      "bg": "#F9F9F7",
       "surface": "#FFFFFF",
       "fg": "#1A3A4A",
       "muted": "#5A6A7A",
@@ -22,6 +22,24 @@
     "glassShadow": "0 8px 32px rgba(26, 58, 74, 0.08)"
   },
   "slides": [
+    {
+      "label": "封面",
+      "title": "SARS-CoV-2 分子进化",
+      "subtitle": "点突变 · 重组 · 插入与缺失",
+      "layout": "cover"
+    },
+    {
+      "label": "目录",
+      "title": "目录",
+      "subtitle": "本次展示按三类分子进化机制展开。",
+      "points": [
+        "一、点突变：单碱基变化如何影响受体结合与免疫逃逸",
+        "二、重组：RNA 复制过程中的模板切换与嵌合基因组",
+        "三、插入与缺失：局部结构改变如何重塑抗原表面"
+      ],
+      "diagram": "agenda-map",
+      "layout": "agenda"
+    },
     {
       "label": "点突 01",
       "title": "引入：什么是点突变？",
@@ -289,6 +307,18 @@
       ],
       "diagram": "summary-map",
       "layout": "center-summary"
+    },
+    {
+      "label": "结束",
+      "title": "谢谢！",
+      "points": [
+        "演讲：鞠然",
+        "做网页：蒋贤迪",
+        "点突变：章之谦",
+        "重组：张智博",
+        "插入与缺失：章博爱"
+      ],
+      "layout": "closing"
     }
   ]
 }

@@ -9,7 +9,14 @@ const html = read('index.html');
 const script = read('script.js');
 const style = read('style.css');
 
-assert.strictEqual(content.slides.length, 22, 'deck must contain 22 slides');
+assert.strictEqual(content.slides.length, 25, 'deck must contain 25 slides');
+assert.strictEqual(content.slides[0].title, 'SARS-CoV-2 分子进化', 'slide 1 must be the cover');
+assert.strictEqual(content.slides[1].title, '目录', 'slide 2 must be the agenda');
+assert.strictEqual(content.slides[24].title, '谢谢！', 'last slide must be the closing slide');
+assert.ok(fs.existsSync(path.join(root, 'public/img/cover-evolution-bg.png')), 'cover background image must exist');
+assert.match(style, /cover-evolution-bg\.png/, 'cover layout must use the generated background image');
+assert.ok(fs.existsSync(path.join(root, 'public/img/closing-evolution-bg-v2.png')), 'closing background image must exist');
+assert.match(style, /closing-evolution-bg-v2\.png/, 'closing layout must use the generated background image');
 
 const expectedTitles = [
   '引入：什么是点突变？',
@@ -29,17 +36,17 @@ const expectedTitles = [
   '重组对于病毒进化的重要性'
 ];
 assert.deepStrictEqual(
-  content.slides.slice(0, 15).map((slide) => slide.title),
+  content.slides.slice(2, 17).map((slide) => slide.title),
   expectedTitles,
   'first two chapters must use PDF titles'
 );
 
-assert.strictEqual(content.slides[1].points.length, 2, 'slide 2 must keep only the two PDF functions');
-assert.strictEqual(content.slides[6].points.length, 6, 'slide 7 must expose the six PDF summary items');
-assert.strictEqual(content.slides[7].points, undefined, 'slide 8 must not add explanatory bullets');
-assert.strictEqual(content.slides[8].points, undefined, 'slide 9 must not add explanatory bullets');
-assert.strictEqual(content.slides[7].diagram, 'viral-template-switch', 'slide 8 must use the detailed template-switch animation');
-assert.strictEqual(content.slides[11].diagram, 'rdRp-switch-engine', 'slide 12 must use the concept-level switch diagram');
+assert.strictEqual(content.slides[3].points.length, 2, 'point mutation slide 2 must keep only the two PDF functions');
+assert.strictEqual(content.slides[8].points.length, 6, 'point mutation summary must expose the six PDF summary items');
+assert.strictEqual(content.slides[9].points, undefined, 'recombination slide 1 must not add explanatory bullets');
+assert.strictEqual(content.slides[10].points, undefined, 'recombination slide 2 must not add explanatory bullets');
+assert.strictEqual(content.slides[9].diagram, 'viral-template-switch', 'recombination slide 1 must use the detailed template-switch animation');
+assert.strictEqual(content.slides[13].diagram, 'rdRp-switch-engine', 'mechanism slide must use the concept-level switch diagram');
 assert.match(script, /class="comparison-card comparison-card--euk"/, 'slide 11 must render a neutral eukaryotic comparison card');
 assert.match(script, /同源染色体配对/, 'slide 11 first card must be renamed to homologous chromosome pairing');
 assert.match(script, /外源 DNA 摄取/, 'slide 11 second card must be renamed to extracellular DNA uptake');
@@ -59,29 +66,29 @@ assert.match(script, /slip-unpaired-bulge/, 'slide 17 slippage animation must sh
 assert.doesNotMatch(script, /class="slip-loop"/, 'slide 17 slippage animation must not use the old dashed loop');
 assert.match(script, /indel-chain-b/, 'slide 17 template switching must show nascent chain on the new template');
 assert.match(script, /hairpin-stem-left/, 'slide 17 hairpin diagram must use a clear stem-loop structure');
-assert.strictEqual(content.slides[16].text, undefined, 'slide 17 hairpin explanation must live inside the diagram, not outside it');
+assert.strictEqual(content.slides[18].text, undefined, 'indel mechanisms hairpin explanation must live inside the diagram, not outside it');
 
 const proteinSlides = content.slides
   .map((slide, index) => slide.proteinViewer ? index + 1 : null)
   .filter(Boolean);
-assert.deepStrictEqual(proteinSlides, [13], 'only slide 13 may keep a protein viewer');
-assert.strictEqual(content.slides[12].proteinViewer.pdbId, '8IOS');
-assert.strictEqual(content.slides[12].proteinViewer.modelUrl, 'public/vendor/8IOS.pdb');
-assert.strictEqual(content.slides[12].proteinViewer.proteinColor, '#d86fa6');
+assert.deepStrictEqual(proteinSlides, [15], 'only the XBB example slide may keep a protein viewer');
+assert.strictEqual(content.slides[14].proteinViewer.pdbId, '8IOS');
+assert.strictEqual(content.slides[14].proteinViewer.modelUrl, 'public/vendor/8IOS.pdb');
+assert.strictEqual(content.slides[14].proteinViewer.proteinColor, '#d86fa6');
 assert.deepStrictEqual(
-  content.slides[12].proteinViewer.highlightResidues,
+  content.slides[14].proteinViewer.highlightResidues,
   [83, 213, 339, 346, 368, 408, 445, 446, 460, 486, 490, 614],
-  'slide 13 must expose the source figure XBB.1 Spike sites with modeled coordinates'
+  'XBB example slide must expose the source figure XBB.1 Spike sites with modeled coordinates'
 );
 assert.deepStrictEqual(
-  content.slides[12].proteinViewer.unresolvedResidues,
+  content.slides[14].proteinViewer.unresolvedResidues,
   [146, 183, 252],
-  'slide 13 must disclose source figure sites omitted from 3D because coordinates are unresolved'
+  'XBB example slide must disclose source figure sites omitted from 3D because coordinates are unresolved'
 );
 assert.deepStrictEqual(
-  content.slides[12].proteinViewer.unresolvedLabels,
+  content.slides[14].proteinViewer.unresolvedLabels,
   ['H146Q', 'Q183E', 'G252V'],
-  'slide 13 must name unresolved source-figure mutation sites'
+  'XBB example slide must name unresolved source-figure mutation sites'
 );
 assert.ok(fs.existsSync(path.join(root, 'public/vendor/ngl.js')), 'pinned local NGL runtime must exist');
 assert.ok(fs.existsSync(path.join(root, 'public/vendor/8IOS.pdb')), 'local RCSB 8IOS PDB export must exist');
