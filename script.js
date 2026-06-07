@@ -1230,7 +1230,7 @@ diagrams['chronic-indel'] = `
       <text class="chronic-count chronic-count-del" x="616" y="338" fill="#c84b4b" font-family="JetBrains Mono,monospace" font-size="22" font-weight="800" text-anchor="middle">8</text>
     </g>
 
-    <text x="430" y="362" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">长期复制窗口中，SNV 与 deletion 共同积累，并在免疫压力相关区域富集</text>
+    <text x="430" y="372" fill="#1a3a4a" font-family="system-ui" font-size="14" font-weight="600" text-anchor="middle">长期复制窗口中，SNV 与 deletion 共同积累，并在免疫压力相关区域富集</text>
     <g class="indel-play" transform="translate(318,386)" role="button" tabindex="0" style="cursor:pointer">
       <rect x="0" y="0" width="66" height="26" rx="6" fill="#3a8c6f"/>
       <text x="33" y="18" fill="#fff" font-family="system-ui" font-size="12" font-weight="700" text-anchor="middle">▶ 播放</text>
