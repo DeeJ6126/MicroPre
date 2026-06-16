@@ -1286,7 +1286,6 @@ function createReferencesMarkup(slide) {
   const items = slide.references.map(ref => `<li>${escapeHtml(ref)}</li>`).join('');
   return `
     <aside class="slide-references" aria-label="${escapeAttr(title)}">
-      <strong>${escapeHtml(title)}</strong>
       <ol>${items}</ol>
     </aside>
   `;

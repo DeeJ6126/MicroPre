@@ -361,10 +361,7 @@ body {
   right: 0;
   bottom: 0;
   z-index: 12;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(8px, 0.7vw, 14px);
-  align-items: start;
+  display: block;
   padding: clamp(6px, 0.55vw, 10px) clamp(10px, 0.9vw, 16px);
   font-family: var(--font-system);
   font-size: clamp(14px, 0.9vw, 19px);
@@ -411,20 +408,8 @@ body {
   box-shadow: var(--glass-shadow);
 }
 
-.slide[data-layout="references"] .slide-references strong {
-  display: block;
-  margin-bottom: clamp(10px, 1vw, 18px);
-  font-size: clamp(20px, 1.25vw, 28px);
-}
-
 .slide[data-layout="references"] .slide-references ol {
   gap: clamp(8px, 0.8vw, 16px);
-}
-
-.slide-references strong {
-  color: var(--accent);
-  font-weight: 700;
-  white-space: nowrap;
 }
 
 .slide-references ol {

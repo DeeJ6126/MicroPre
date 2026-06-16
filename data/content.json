@@ -70,7 +70,7 @@
       "diagram": "dual-function",
       "layout": "split-visual",
       "references": [
-        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424."
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896."
       ]
     },
     {
@@ -89,7 +89,7 @@
       "diagram": "convergence",
       "layout": "visual-left",
       "references": [
-        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell, 2021, 184(20): 5189-5200.e7."
+        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell. 2021;184(20):5189-5200.e7. doi: 10.1016/j.cell.2021.09.003."
       ]
     },
     {
@@ -109,7 +109,7 @@
       "diagram": "immune-escape",
       "layout": "image-led",
       "references": [
-        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424."
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896."
       ]
     },
     {
@@ -124,7 +124,7 @@
       "diagram": "host-factory",
       "layout": "diagram-stage",
       "references": [
-        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications, 2024, 15(1)."
+        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications. 2024;15(1)."
       ]
     },
     {
@@ -143,7 +143,7 @@
       "diagram": "epistasis",
       "layout": "split-visual",
       "references": [
-        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424."
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896."
       ]
     },
     {
@@ -162,9 +162,9 @@
       "layout": "center-summary",
       "referenceTitle": "点突变文献汇总",
       "references": [
-        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424.",
-        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell, 2021, 184(20): 5189-5200.e7.",
-        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications, 2024, 15(1)."
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896.",
+        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell. 2021;184(20):5189-5200.e7. doi: 10.1016/j.cell.2021.09.003.",
+        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications. 2024;15(1)."
       ]
     },
     {
@@ -225,7 +225,10 @@
         "unresolvedResidues": [146, 183, 252],
         "unresolvedLabels": ["H146Q", "Q183E", "G252V"]
       },
-      "layout": "protein-focus"
+      "layout": "protein-focus",
+      "references": [
+        "Chakraborty C, Bhattacharya M, Chopra H, et al. The SARS-CoV-2 Omicron recombinant subvariants XBB, XBB.1, and XBB.1.5 are expanding rapidly with unique mutations, antibody evasion, and immune escape properties - an alarming global threat of a surge in COVID-19 cases again? International Journal of Surgery. 2023;109(4):1041-1043. doi: 10.1097/JS9.0000000000000246."
+      ]
     },
     {
       "label": "重组 07",
@@ -242,7 +245,10 @@
       "figureCaption": "Omicron 时代，重组、抗原漂移、趋同进化共同推动 SARS-CoV-2 改变抗原性。大规模系统发育研究在 160 万条序列中识别出 589 个重组事件，约 2.7% 测序基因组有可检测重组祖先，且刺突基因区域存在重组频率峰值。",
       "caption": "大规模系统发育分析显示，重组断点在 3’ 端与 Spike 区域更集中。",
       "diagram": "frequency-landscape",
-      "layout": "image-led"
+      "layout": "image-led",
+      "references": [
+        "Turakhia Y, Thornlow B, Hinrichs A, et al. Pandemic-scale phylogenomics reveals the SARS-CoV-2 recombination landscape. Nature. 2022;609(7929):994-997. doi: 10.1038/s41586-022-05189-9."
+      ]
     },
     {
       "label": "重组 08",
@@ -283,7 +289,10 @@
         "NTD 含免疫显性的“超级位点”，是中和抗体的重要靶点；改动它即可重塑抗体识别表面，实现免疫逃逸。"
       ],
       "diagram": "ntd-hotspot",
-      "layout": "diagram-stage"
+      "layout": "diagram-stage",
+      "references": [
+        "Aldas-Bulos VD, et al. Adaptive advantage of deletion repair in the N-terminal domain of the SARS-CoV-2 spike protein in variants of concern. bioRxiv. 2024:2024.01.23.575696. doi: 10.1101/2024.01.23.575696."
+      ]
     },
     {
       "label": "Indel 04",
@@ -298,14 +307,20 @@
       "figureCaption": "（A） 开放构象中刺尖同三位体的表面表示，每种单体以不同深浅的灰度表示。右侧单体显示的 69–77 残基环为青色，中和抗体（4A8）结合的 NTD 表位为品红色。\n（B）由于 His69 和 Val70 残基缺失，预测刺突 NTD 的构象变化。预缺失结构以青色表示，残基 69 和 70 除外，残基为红色。预测的缺失后结构以绿色显示。预缺失结构的残基 66–77 以棒状表示并按原子颜色（氮为蓝色，氧为珊瑚）。黄色线连接缺失前和后缺失结构的比对残基 66–77，并在缺失前后构象中，Thr73α碳比对的 6 Å间距被标记。",
       "caption": "ΔH69/V70 缺失与 NTD loop 构象变化示意。",
       "diagram": "deletion-cases",
-      "layout": "split-visual"
+      "layout": "split-visual",
+      "references": [
+        "Meng B, Abdullahi A, Ferreira IATM, et al. Recurrent emergence of SARS-CoV-2 spike deletion H69/V70 and its role in the Alpha variant B.1.1.7. Cell Reports. 2021;35(13):109292. doi: 10.1016/j.celrep.2021.109292."
+      ]
     },
     {
       "label": "Indel 05",
       "title": "典型插入案例",
       "subtitle": "Omicron BA.1 刺突蛋白独有的 ins214EPE：在 214 位插入三个氨基酸，此前所有谱系中从未出现。推测最可能来自模板切换，也可能来自局部重复或聚合酶滑移。",
       "diagram": "ins214epe",
-      "layout": "diagram-stage"
+      "layout": "diagram-stage",
+      "references": [
+        "Venkatakrishnan AJ, Anand P, Lenehan PJ, et al. On the Origins of Omicron's Unique Spike Gene Insertion. Vaccines. 2022;10(9):1509. doi: 10.3390/vaccines10091509."
+      ]
     },
     {
       "label": "Indel 06",
@@ -316,7 +331,11 @@
         "521 天病例（Schmidt 等）：对异基因造血干细胞移植的免疫缺陷患者做 521 天纵向全基因组测序，病毒累积 34 个替换 + 8 个缺失，RBD 区替换富集达随机预期约 15 倍——强烈正选择的直接证据；缺失与大量替换并存，是病毒持续逃逸抗体压力的适应性变异。"
       ],
       "diagram": "chronic-indel",
-      "layout": "diagram-stage"
+      "layout": "diagram-stage",
+      "references": [
+        "Álvarez-Herrera M, Sevilla J, Ruiz-Rodriguez P, et al. VIPERA: Viral Intra-Patient Evolution Reporting and Analysis. Virus Evolution. 2024;10(1):veae018. doi: 10.1093/ve/veae018.",
+        "Schmidt H, Schick L, Podlech J, et al. Adaptive evolution of SARS-CoV-2 during a persistent infection for 521 days in an immunocompromised patient. npj Genomic Medicine. 2025;10(1):4. doi: 10.1038/s41525-025-00463-x."
+      ]
     },
     {
       "label": "Indel 07",
@@ -333,11 +352,17 @@
       "label": "参考文献",
       "title": "参考文献",
       "layout": "references",
-      "referenceTitle": "点突变",
       "references": [
-        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science, 2022, 377(6604): 420-424.",
-        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell, 2021, 184(20): 5189-5200.e7.",
-        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications, 2024, 15(1)."
+        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896.",
+        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell. 2021;184(20):5189-5200.e7. doi: 10.1016/j.cell.2021.09.003.",
+        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications. 2024;15(1).",
+        "Chakraborty C, Bhattacharya M, Chopra H, et al. The SARS-CoV-2 Omicron recombinant subvariants XBB, XBB.1, and XBB.1.5 are expanding rapidly with unique mutations, antibody evasion, and immune escape properties - an alarming global threat of a surge in COVID-19 cases again? International Journal of Surgery. 2023;109(4):1041-1043. doi: 10.1097/JS9.0000000000000246.",
+        "Turakhia Y, Thornlow B, Hinrichs A, et al. Pandemic-scale phylogenomics reveals the SARS-CoV-2 recombination landscape. Nature. 2022;609(7929):994-997. doi: 10.1038/s41586-022-05189-9.",
+        "Aldas-Bulos VD, et al. Adaptive advantage of deletion repair in the N-terminal domain of the SARS-CoV-2 spike protein in variants of concern. bioRxiv. 2024:2024.01.23.575696. doi: 10.1101/2024.01.23.575696.",
+        "Meng B, Abdullahi A, Ferreira IATM, et al. Recurrent emergence of SARS-CoV-2 spike deletion H69/V70 and its role in the Alpha variant B.1.1.7. Cell Reports. 2021;35(13):109292. doi: 10.1016/j.celrep.2021.109292.",
+        "Venkatakrishnan AJ, Anand P, Lenehan PJ, et al. On the Origins of Omicron's Unique Spike Gene Insertion. Vaccines. 2022;10(9):1509. doi: 10.3390/vaccines10091509.",
+        "Álvarez-Herrera M, Sevilla J, Ruiz-Rodriguez P, et al. VIPERA: Viral Intra-Patient Evolution Reporting and Analysis. Virus Evolution. 2024;10(1):veae018. doi: 10.1093/ve/veae018.",
+        "Schmidt H, Schick L, Podlech J, et al. Adaptive evolution of SARS-CoV-2 during a persistent infection for 521 days in an immunocompromised patient. npj Genomic Medicine. 2025;10(1):4. doi: 10.1038/s41525-025-00463-x."
       ]
     },
     {
