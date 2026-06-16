@@ -382,7 +382,7 @@ body {
 
 .slide[data-layout="references"] .slide-content {
   align-self: start;
-  max-width: 72%;
+  max-width: 100%;
 }
 
 .slide[data-layout="references"] .slide-eyebrow,
@@ -397,19 +397,29 @@ body {
   bottom: auto;
   align-self: end;
   display: block;
-  max-width: min(1180px, 92%);
-  margin-top: clamp(18px, 2vw, 34px);
-  padding: clamp(18px, 1.8vw, 32px) clamp(22px, 2.1vw, 38px);
+  max-width: 100%;
+  margin-top: clamp(12px, 1.5vw, 24px);
+  padding: 0;
   font-size: clamp(18px, 1.08vw, 24px);
   line-height: 1.5;
-  background: rgba(255, 255, 255, 0.58);
-  border: 1px solid rgba(226, 230, 234, 0.9);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--glass-shadow);
 }
 
 .slide[data-layout="references"] .slide-references ol {
   gap: clamp(8px, 0.8vw, 16px);
+}
+
+.slide[data-layout="references"] .ref-group + .ref-group {
+  margin-top: clamp(20px, 2.4vw, 40px);
+}
+
+.ref-group__title {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.1vw, 22px);
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 clamp(6px, 0.5vw, 10px) 0;
+  padding: 0;
+  letter-spacing: 0.02em;
 }
 
 .slide-references ol {

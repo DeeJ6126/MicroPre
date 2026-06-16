@@ -1281,6 +1281,22 @@ function createSlideMarkup(slide, index) {
 }
 
 function createReferencesMarkup(slide) {
+  // Grouped references (referenceGroups) for the dedicated references slide
+  if (Array.isArray(slide.referenceGroups) && slide.referenceGroups.length) {
+    const title = slide.referenceTitle || '参考文献';
+    const groups = slide.referenceGroups.map(group => `
+      <div class="ref-group">
+        <h3 class="ref-group__title">${escapeHtml(group.title)}</h3>
+        <ol>${group.items.map(ref => `<li>${escapeHtml(ref)}</li>`).join('')}</ol>
+      </div>
+    `).join('');
+    return `
+      <aside class="slide-references" aria-label="${escapeAttr(title)}">
+        ${groups}
+      </aside>
+    `;
+  }
+  // Flat references array for per-slide footnotes
   if (!Array.isArray(slide.references) || slide.references.length === 0) return '';
   const title = slide.referenceTitle || '参考文献';
   const items = slide.references.map(ref => `<li>${escapeHtml(ref)}</li>`).join('');

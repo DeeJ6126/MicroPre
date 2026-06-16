@@ -352,17 +352,32 @@
       "label": "参考文献",
       "title": "参考文献",
       "layout": "references",
-      "references": [
-        "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896.",
-        "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell. 2021;184(20):5189-5200.e7. doi: 10.1016/j.cell.2021.09.003.",
-        "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications. 2024;15(1).",
-        "Chakraborty C, Bhattacharya M, Chopra H, et al. The SARS-CoV-2 Omicron recombinant subvariants XBB, XBB.1, and XBB.1.5 are expanding rapidly with unique mutations, antibody evasion, and immune escape properties - an alarming global threat of a surge in COVID-19 cases again? International Journal of Surgery. 2023;109(4):1041-1043. doi: 10.1097/JS9.0000000000000246.",
-        "Turakhia Y, Thornlow B, Hinrichs A, et al. Pandemic-scale phylogenomics reveals the SARS-CoV-2 recombination landscape. Nature. 2022;609(7929):994-997. doi: 10.1038/s41586-022-05189-9.",
-        "Aldas-Bulos VD, et al. Adaptive advantage of deletion repair in the N-terminal domain of the SARS-CoV-2 spike protein in variants of concern. bioRxiv. 2024:2024.01.23.575696. doi: 10.1101/2024.01.23.575696.",
-        "Meng B, Abdullahi A, Ferreira IATM, et al. Recurrent emergence of SARS-CoV-2 spike deletion H69/V70 and its role in the Alpha variant B.1.1.7. Cell Reports. 2021;35(13):109292. doi: 10.1016/j.celrep.2021.109292.",
-        "Venkatakrishnan AJ, Anand P, Lenehan PJ, et al. On the Origins of Omicron's Unique Spike Gene Insertion. Vaccines. 2022;10(9):1509. doi: 10.3390/vaccines10091509.",
-        "Álvarez-Herrera M, Sevilla J, Ruiz-Rodriguez P, et al. VIPERA: Viral Intra-Patient Evolution Reporting and Analysis. Virus Evolution. 2024;10(1):veae018. doi: 10.1093/ve/veae018.",
-        "Schmidt H, Schick L, Podlech J, et al. Adaptive evolution of SARS-CoV-2 during a persistent infection for 521 days in an immunocompromised patient. npj Genomic Medicine. 2025;10(1):4. doi: 10.1038/s41525-025-00463-x."
+      "referenceGroups": [
+        {
+          "title": "点突变",
+          "items": [
+            "Starr TN, et al. Shifting mutational constraints in the SARS-CoV-2 receptor-binding domain during viral evolution. Science. 2022;377(6604):420-424. doi: 10.1126/science.abo7896.",
+            "Martin DP, et al. The emergence and ongoing convergent evolution of the SARS-CoV-2 N501Y lineages. Cell. 2021;184(20):5189-5200.e7. doi: 10.1016/j.cell.2021.09.003.",
+            "Ko SH, et al. Rapid intra-host diversification and evolution of SARS-CoV-2 in advanced HIV infection. Nature Communications. 2024;15(1)."
+          ]
+        },
+        {
+          "title": "重组",
+          "items": [
+            "Chakraborty C, Bhattacharya M, Chopra H, et al. The SARS-CoV-2 Omicron recombinant subvariants XBB, XBB.1, and XBB.1.5 are expanding rapidly with unique mutations, antibody evasion, and immune escape properties - an alarming global threat of a surge in COVID-19 cases again? International Journal of Surgery. 2023;109(4):1041-1043. doi: 10.1097/JS9.0000000000000246.",
+            "Turakhia Y, Thornlow B, Hinrichs A, et al. Pandemic-scale phylogenomics reveals the SARS-CoV-2 recombination landscape. Nature. 2022;609(7929):994-997. doi: 10.1038/s41586-022-05189-9."
+          ]
+        },
+        {
+          "title": "插入与缺失",
+          "items": [
+            "Aldas-Bulos VD, et al. Adaptive advantage of deletion repair in the N-terminal domain of the SARS-CoV-2 spike protein in variants of concern. bioRxiv. 2024:2024.01.23.575696. doi: 10.1101/2024.01.23.575696.",
+            "Meng B, Abdullahi A, Ferreira IATM, et al. Recurrent emergence of SARS-CoV-2 spike deletion H69/V70 and its role in the Alpha variant B.1.1.7. Cell Reports. 2021;35(13):109292. doi: 10.1016/j.celrep.2021.109292.",
+            "Venkatakrishnan AJ, Anand P, Lenehan PJ, et al. On the Origins of Omicron's Unique Spike Gene Insertion. Vaccines. 2022;10(9):1509. doi: 10.3390/vaccines10091509.",
+            "Álvarez-Herrera M, Sevilla J, Ruiz-Rodriguez P, et al. VIPERA: Viral Intra-Patient Evolution Reporting and Analysis. Virus Evolution. 2024;10(1):veae018. doi: 10.1093/ve/veae018.",
+            "Schmidt H, Schick L, Podlech J, et al. Adaptive evolution of SARS-CoV-2 during a persistent infection for 521 days in an immunocompromised patient. npj Genomic Medicine. 2025;10(1):4. doi: 10.1038/s41525-025-00463-x."
+          ]
+        }
       ]
     },
     {
